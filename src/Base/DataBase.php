@@ -1,12 +1,12 @@
 <?php
-
+namespace Base;
 /**
  * Class DataBase
  */
 class DataBase
 {
     /**
-     * @var PDO|null
+     * @var \PDO|null
      */
     protected $pdo = null;
 
@@ -15,13 +15,13 @@ class DataBase
      */
     public function __construct()
     {
-        $this->pdo = new PDO('mysql:host=localhost;port=3306;dbname=boutique;charset=utf8', 'root', '');
+        $this->pdo = new \PDO('mysql:host=localhost;port=3306;dbname=boutique;charset=utf8', 'root', '');
     }
 
     /**
      * @param $request
      * @param array $args
-     * @return bool|false|PDOStatement
+     * @return bool|false|\PDOStatement
      */
     public function query($request, array $args = [])
     {
