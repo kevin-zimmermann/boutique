@@ -8,17 +8,28 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="error">
 
 </div>
-<form action="action.php" class="form-ajax" method="post">
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" class="input">
-    <label for="password">Password :</label>
-    <input type="password" id="password" name="password" class="input">
-    <input type="hidden" name="type" value="connexion" class="input">
+<form action="action.php" id="form" class="form form-ajax" method="post">
+<div class="form-control">
+    <h1 class="titre">CONNEXION</h1>
+        <label for="email">Votre email</label>
+        <input type="email" id="email" name="email">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+    </div>
+    <div class="form-control">
+        <label for="password">Votre mot de passe</label>
+        <input type="password" id="password" name="password">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+    </div>
     <button type="submit">Se connecter</button>
 </form>
 <script src="script.js"></script>

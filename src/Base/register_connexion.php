@@ -49,7 +49,7 @@ class register_connexion extends DataBase
                 $email
             ])->fetch();
             if (empty($user)) {
-                $errors[] = 'L\'utilisateur avec cette adresse email n\'existe pas';
+                $errors[] = 'L\'utilisateur de cette adresse email n\'existe pas';
             }
             if (!empty($user) && !password_verify($password, $user['password'])) {
                 $errors[] = 'Le mot de passe n\'est pas bon';

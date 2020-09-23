@@ -35,7 +35,12 @@ body {
 }
 
 .form {
-    padding: 30px 40px;
+    width: 790px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 72px 55px 90px 55px;
+
 }
 
 .form-control {
@@ -114,3 +119,9 @@ body {
     width: 100%;
 }
 
+input {
+
+    display: block;
+    outline: none;
+	border: none;
+}

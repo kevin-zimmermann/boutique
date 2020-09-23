@@ -12,6 +12,7 @@ session_start();
     <div class="error"></div>
 <form action="action.php" method="post" id="form" class="form form-ajax">
     <div class="form-control">
+    <h1 class="titre">INSCRIPTION</h1>
         <label for="prenom">Votre prénom</label>
         <input type="text" id="prenom" name="prenom">
         <i class="fas fa-check-circle"></i>
