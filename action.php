@@ -3,15 +3,15 @@ session_start();
 $url = "";
 include 'src/Base.php';
 $account = new Base\register_connexion();
-
+$error = [];
 if ($_POST['type'] == "inscription") {
     $url = "connexion.php";
-    $account->register();
+    $error = $account->register();
 }
 
 if ($_POST['type'] == "connexion") {
     $url = "index.php";
-    $account->connexion();
+    $error = $account->connexion();
 }
 
 

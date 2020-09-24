@@ -15,17 +15,17 @@ class register_connexion extends DataBase
             $user = $this->query('SELECT * FROM utilisateurs WHERE email = ?', [
                 $email
             ])->fetch();
+            
             if (!empty($user)) {
                 $error[] = "L'adresse email existe déjà !";
             } else {
                 $password = password_hash($password, PASSWORD_BCRYPT, ['cost' => 15]);
-                $this->query('INSERT INTO utilisateurs(nom, prenom, email, telephone, password, cart_id) VALUE(?, ?, ?, ?, ?, ?)', [
+                $this->query('INSERT INTO utilisateurs (nom, prenom, email, telephone, password) VALUE(?, ?, ?, ?, ?)', [
                     $nom,
                     $prenom,
                     $email,
                     $phone,
-                    $password,
-                    0
+                    $password
                 ]);
             }
             return $error;

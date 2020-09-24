@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #9b59b6;
+    background-color: #009ad6;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
@@ -34,19 +34,19 @@ body {
     margin: 0;
 }
 
+.titre {
+
+    font-size: 28px;
+    margin-left: 10px;
+    
+}
 .form {
-    width: 790px;
+
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding: 72px 55px 90px 55px;
+  padding: 15px 55px 50px 55px;
 
-}
-
-.form-control {
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    position: relative;
 }
 
 .form-control label {
@@ -55,12 +55,11 @@ body {
 }
 
 .form-control input {
-    border: 2px solid #f0f0f0;
-    border-radius: 4px;
+    border-bottom: 2px solid #f0f0f0;
     display: block;
     font-family: inherit;
     font-size: 14px;
-    padding: 10px;
+    padding: 5px;
     width: 100%;
 }
 
@@ -70,11 +69,11 @@ body {
 }
 
 .form-control.success input {
-    border-color: #2ecc71;
+    border-color: #1b8848;
 }
 
 .form-control.error input {
-    border-color: #e74c3c;
+    border-color: #5a1109;
 }
 
 .form-control i {
@@ -85,17 +84,17 @@ body {
 }
 
 .form-control.success i.fa-check-circle {
-    color: #2ecc71;
+    color: #1b8848;
     visibility: visible;
 }
 
 .form-control.error i.fa-exclamation-circle {
-    color: #e74c3c;
+    color: #5a1109;
     visibility: visible;
 }
 
-.form-control small {
-    color: #e74c3c;
+.form-control small { 
+    color: #5a1109;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -107,21 +106,22 @@ body {
 }
 
 .form button {
-    background-color: #8e44ad;
-    border: 2px solid #8e44ad;
+    background-color: #009ad6;
+    border: none;
     border-radius: 4px;
     color: #fff;
     display: block;
+    margin: auto;
     font-family: inherit;
     font-size: 16px;
-    padding: 10px;
-    margin-top: 20px;
-    width: 100%;
+    padding: 15px;
+    margin-top: 35px;
 }
 
 input {
 
     display: block;
     outline: none;
-	border: none;
+    border: none;
+    margin-bottom: 10px;
 }
