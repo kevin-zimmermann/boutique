@@ -30,6 +30,7 @@ session_start();
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
     </div>
+    <input type="hidden" name="type" value="connexion">
     <button type="submit">Se connecter</button>
 </form>
 <script src="script.js"></script>

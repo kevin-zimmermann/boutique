@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $url = "";
 include 'src/Base.php';
 $account = new Base\register_connexion();

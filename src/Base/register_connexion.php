@@ -1,6 +1,8 @@
 <?php
 namespace Base;
 
+use PDO;
+
 class register_connexion extends DataBase
 {
     public function register()
@@ -25,7 +27,7 @@ class register_connexion extends DataBase
                     $prenom,
                     $email,
                     $phone,
-                    $password
+                    $password,
                 ]);
             }
             return $error;
@@ -47,7 +49,7 @@ class register_connexion extends DataBase
             }
             $user = $this->query('SELECT * FROM utilisateurs WHERE email = ? ', [
                 $email
-            ])->fetch();
+            ])->fetch(PDO::FETCH_ASSOC);
             if (empty($user)) {
                 $errors[] = 'L\'utilisateur de cette adresse email n\'existe pas';
             }
@@ -59,7 +61,7 @@ class register_connexion extends DataBase
                 $_SESSION['prenom'] = $user['prenom'];
             }
         }
-
+        return $errors;
 
     }
 }
