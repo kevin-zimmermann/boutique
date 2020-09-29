@@ -3,23 +3,31 @@ namespace Base;
 
 use PDO;
 
-class profil_utilisateurs extends DataBase {
+class Profil extends DataBase {
 protected $test = "";
-// protected $nom;
-// protected $prenom;
-// protected $email;
-// protected $adresse;
-// protected $code_postal;
-// protected $ville;
-// protected $phone;
-// protected $password;
-// protected $newpassword;
-// protected $repeatnewpassword;
+protected $id = NULL;
+protected $nom = NULL;
+protected $prenom = NULL;
+protected $email = NULL;
+protected $adresse;
+protected $code_postal;
+protected $ville;
+protected $phone;
+protected $password;
+protected $newpassword;
+protected $repeatnewpassword;
+
+function __construct()
+    {
+      parent::__construct();
+      
+    }
 public function getUser()
 {
     return $this->query('SELECT * FROM utilisateurs WHERE id = ?', [
         $_SESSION['id']
     ])->fetch(PDO::FETCH_ASSOC);
+    //var_dump($user->tests);
 }
 public function __get($key)
 {
@@ -58,5 +66,27 @@ public function register( $password, $newpassword, $repeatnewpassword)
             return $error;
         }
 
+
+    public function change( $email, $nom, $prenom, $phone) {
+
+        $user = $this->query("SELECT * FROM utilisateurs WHERE id = '".$_SESSION['id']."'", [
+            $this->$_SESSION['id']
+            ])->fetch(PDO::FETCH_ASSOC);
+            var_dump($user);
+        
+        if (!empty($user)) {
+        $error[] = "L'adresse email existe déjà !";
+        } else {
+
+        $this->query('UPDATE utilisateurs (nom, prenom, email, phone) VALUE(?, ?, ?, ?)', [
+            $email,
+            $nom,
+            $prenom,
+            $phone,
+
+        ]);}
+        return $error;
     }
-?>
+
+}
+

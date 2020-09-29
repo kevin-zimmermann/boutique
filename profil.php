@@ -11,35 +11,15 @@
     <?php
 
 include 'src/Base.php'; 
-    $user = new Base\profil_utilisateurs;
+    $user = new Profil();
     var_dump($user->test);
-    $user->tests = "kkjckjlkj";
+    $user->tests = "Hello";
     var_dump($user->tests);
     ?>
     </div>
     <form action="action.php" id="form" class="form form-ajax" method="post">
         <div class="form-control">
-            <h1 class="titre">Modifier profil</h1>
-            <label for="password">Nom : </label>
-            <input type="password" id="password" name="nom">
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
-        </div>
-        <div class="form-control">
-        <label for="password">Prenom : </label>
-        <input type="password" id="password" name="prenom">
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small>Error message</small>
-        </div>
-        <div class="form-control">
-        <label for="email">Nouveau email : </label>
-        <input type="email" id="email" name="email">
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small>Error message</small>
-        </div>
+            <h1 class="titre">Modifier son mot de passe</h1>
         <div class="form-control">
             <label for="password">Votre ancien mot de passe : </label>
             <input type="password" id="password" name="password">
@@ -54,8 +34,15 @@ include 'src/Base.php';
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>     
         </div>
+        <div class="form-control">
+            <label for="password">Confirmation du nouveau mot de passe : </label>
+            <input type="password" id="password" name="new_password">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>     
+        </div>
         <input type="hidden" value="inscription" name="type">
-        <button type="submit">Submit</button>
+        <button type="submit">Confirmer</button>
     </form>
     </main>
 </body>
