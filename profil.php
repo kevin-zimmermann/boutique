@@ -11,7 +11,7 @@
     <?php
 
 include 'src/Base.php'; 
-    $user = new Profil();
+    $user = new profil_utilisateurs();
     var_dump($user->test);
     $user->tests = "Hello";
     var_dump($user->tests);

@@ -1,6 +1,5 @@
 <?php
 
-
 class AutoLoad
 {
     protected function  __loader($class)

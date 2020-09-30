@@ -58,9 +58,6 @@ class register_connexion extends DataBase
             }
             if (empty($errors)) {
                 $_SESSION['id'] = $user['id'];
-                $_SESSION['prenom'] = $user['prenom'];
-                $_SESSION['nom'] = $user['nom'];
-                $_SESSION['email'] = $user['email'];
             }
         }
         return $errors;

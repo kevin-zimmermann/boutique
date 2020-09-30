@@ -2,9 +2,17 @@
 namespace Base;
 
 use PDO;
-
-class Profil extends DataBase {
-protected $test = "";
+/**
+ * @proprety int id
+ * @proprety string email 
+ * @proprety string nom
+ * @proprety string telephone
+ * @proprety string password
+ * @proprety int cart_id
+ * @proprety int admin
+ */
+class profil_utilisateurs extends DataBase {
+protected $user = [];
 protected $id = NULL;
 protected $nom = NULL;
 protected $prenom = NULL;
@@ -18,10 +26,10 @@ protected $newpassword;
 protected $repeatnewpassword;
 
 function __construct()
-    {
-      parent::__construct();
-      
-    }
+{
+    parent::__construct();
+    $this->user = $this->getUser();
+}
 public function getUser()
 {
     return $this->query('SELECT * FROM utilisateurs WHERE id = ?', [
@@ -31,7 +39,11 @@ public function getUser()
 }
 public function __get($key)
 {
-    $user = $this->getUser();
+    return $this->getValue($key);
+}
+public function getValue($key)
+{
+    $user = $this->user;
     if(isset($user[$key]))
     {
         return $user[$key];
@@ -52,6 +64,7 @@ public function register( $password, $newpassword, $repeatnewpassword)
             $user = $this->getUser();
             if(!password_verify($password, $user['password']))
             {
+            
 
             }
 
@@ -67,24 +80,30 @@ public function register( $password, $newpassword, $repeatnewpassword)
         }
 
 
-    public function change( $email, $nom, $prenom, $phone) {
-
-        $user = $this->query("SELECT * FROM utilisateurs WHERE id = '".$_SESSION['id']."'", [
-            $this->$_SESSION['id']
+    public function change() 
+    {
+        $email = $_POST['email'];
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $phone = $_POST['telephone'];
+        $testEmail = $this->query("SELECT * FROM utilisateurs WHERE email = ? AND email != ?", [
+            $_POST['email'],
+            $this->email
             ])->fetch(PDO::FETCH_ASSOC);
-            var_dump($user);
-        
-        if (!empty($user)) {
-        $error[] = "L'adresse email existe déjà !";
+            var_dump($_SESSION);
+        $error = [];
+        if (!empty($testEmail)) {
+            $error[] = "L'adresse email existe déjà !";
         } else {
-
-        $this->query('UPDATE utilisateurs (nom, prenom, email, phone) VALUE(?, ?, ?, ?)', [
-            $email,
-            $nom,
-            $prenom,
-            $phone,
-
-        ]);}
+            
+            $this->query('UPDATE utilisateurs set nom = ? , prenom = ? , email = ?, telephone = ? where id = ?', [
+                $nom,
+                $prenom,
+                $email,
+                $phone,
+                $this->getValue('id')
+            ]);
+        }
         return $error;
     }
 

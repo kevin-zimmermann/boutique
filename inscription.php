@@ -35,7 +35,7 @@ session_start();
     </div>
     <div class="form-control">
         <label for="phone">Votre numéro de téléphone</label>
-        <input type="tel" id="phone" name="phone">
+        <input type="text" id="telephone" name="telephone">
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <small>Error message</small>
