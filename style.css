@@ -6,9 +6,11 @@
 }
 
 body {
-    background-color: #009ad6;
+    background-image: url('vienna-reyes-Zs_o1IjVPt4-unsplash.jpg');
+    background-size: cover;
     font-family: 'Open Sans', sans-serif;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -24,20 +26,11 @@ body {
     max-width: 100%;
 }
 
-.header {
-    border-bottom: 1px solid #f0f0f0;
-    background-color: #f7f7f7;
-    padding: 20px 40px;
-}
-
-.header h2 {
-    margin: 0;
-}
-
 .titre {
 
+    margin-left: 5px;
     font-size: 28px;
-    margin-left: 10px;
+    color:#009ad6;
     
 }
 .form {
@@ -45,68 +38,32 @@ body {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding: 15px 55px 50px 55px;
+  padding: 10px 65px;
 
 }
 
 .form-control label {
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .form-control input {
     border-bottom: 2px solid #f0f0f0;
     display: block;
     font-family: inherit;
-    font-size: 14px;
-    padding: 5px;
     width: 100%;
 }
 
 .form-control input:focus {
     outline: 0;
-    border-color: #777;
+    border-color: #009ad6;
 }
 
-.form-control.success input {
-    border-color: #1b8848;
-}
 
-.form-control.error input {
-    border-color: #5a1109;
-}
-
-.form-control i {
-    visibility: hidden;
-    position: absolute;
-    top: 40px;
-    right: 10px;
-}
-
-.form-control.success i.fa-check-circle {
-    color: #1b8848;
-    visibility: visible;
-}
-
-.form-control.error i.fa-exclamation-circle {
-    color: #5a1109;
-    visibility: visible;
-}
-
-.form-control small { 
-    color: #5a1109;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    visibility: hidden;
-}
-
-.form-control.error small {
-    visibility: visible;
-}
 
 .form button {
     background-color: #009ad6;
+    outline: none;
     border: none;
     border-radius: 4px;
     color: #fff;
@@ -115,7 +72,7 @@ body {
     font-family: inherit;
     font-size: 16px;
     padding: 15px;
-    margin-top: 35px;
+    margin-bottom: 15px;
 }
 
 input {
@@ -123,5 +80,5 @@ input {
     display: block;
     outline: none;
     border: none;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }

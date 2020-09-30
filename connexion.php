@@ -11,24 +11,19 @@ session_start();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="error">
 
 </div>
 <form action="action.php" id="form" class="form form-ajax" method="post">
 <div class="form-control">
     <h1 class="titre">CONNEXION</h1>
-        <label for="email">Votre email : </label>
-        <input type="email" id="email" name="email">
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small>Error message</small>
+        <label for="email">Email </label>
+        <input type="email" id="email" name="email" >
     </div>
     <div class="form-control">
-        <label for="password">Votre mot de passe : </label>
+        <label for="password"> Mot de passe </label>
         <input type="password" id="password" name="password">
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small>Error message</small>
+        <div class="error">
+        </div>
     </div>
     <input type="hidden" name="type" value="connexion">
     <button type="submit">Se connecter</button>
