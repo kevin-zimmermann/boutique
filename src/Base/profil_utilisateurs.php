@@ -32,9 +32,13 @@ function __construct()
 }
 public function getUser()
 {
-    return $this->query('SELECT * FROM utilisateurs WHERE id = ?', [
-        $_SESSION['id']
-    ])->fetch(PDO::FETCH_ASSOC);
+    if(isset($_SESSION['id']))
+    {
+        return $this->query('SELECT * FROM utilisateurs WHERE id = ?', [
+            $_SESSION['id']
+        ])->fetch(PDO::FETCH_ASSOC);
+    }
+    return [];
     //var_dump($user->tests);
 }
 public function __get($key)
@@ -53,6 +57,14 @@ public function getValue($key)
         return $this->{$key};
     }
     return null;
+}
+public function getIsConnect()
+{
+    if(empty($this->user))
+    {
+        return false;
+    }
+    return  true;
 }
 public function __set($key, $value)
 {

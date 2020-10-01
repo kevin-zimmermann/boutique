@@ -1,10 +1,8 @@
 <?php
 
 use Base\Profil;
-
-session_start();
-include 'src/Base/DataBase.php';
-include 'src/Base/profil_utilisateurs.php';
+include 'src/Base.php';
+$user = new Base\profil_utilisateurs();
 ?>
 <head>
     <link rel="stylesheet" href="styles/css/headerfooter.css">
@@ -35,8 +33,8 @@ include 'src/Base/profil_utilisateurs.php';
                         jqdsjbqsdjsqdbj
                     </a>
                 </li>
-                <li> <?php if (isset($_SESSION['id'])) { ?>
-                    Bonjour <?= $_SESSION['prenom'] ?></li>
+                <li> <?php if ($user->getIsConnect()) { ?>
+                    Bonjour <?= $user->prenom ?></li>
                 <?php } else { ?>
                     <li><a href="connexion.php">Connexion</a></li>
                     <li><a href="inscription.php">Inscription</a></li>

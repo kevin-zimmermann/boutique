@@ -3,7 +3,7 @@
 
 $url = "";
 include 'src/Base.php';
-$account = new Base\register_connexion();
+
 $error = [];
 if(in_array($_POST['type'], ['inscription', 'connexion']))
 {
