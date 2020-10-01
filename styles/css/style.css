@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url('vienna-reyes-Zs_o1IjVPt4-unsplash.jpg');
+    background-image: url('../image/vienna-reyes-Zs_o1IjVPt4-unsplash.jpg');
     background-size: cover;
     font-family: 'Open Sans', sans-serif;
     display: flex;
