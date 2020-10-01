@@ -1,9 +1,9 @@
-const nom = document.getElementById('nom');
-const prenom = document.getElementById('prenom');
-const email = document.getElementById('email');
-const phone = document.getElementById('phone')
-const password = document.getElementById('password');
-const confPassword = document.getElementById('confpassword');
+const nom = $('#nom');
+const prenom = $('#prenom');
+const email = $('#email');
+const phone = $('#telephone')
+const password = $('#password');
+const confPassword = $('#confpassword');
 var checkvalid = true;
 
 $(document).ready(function () {
@@ -12,7 +12,7 @@ $(document).ready(function () {
         if ($(this).find("[name=type]").val() === "inscription") {
             checkInputs();
         }
-
+        console.log(checkvalid)
         if (checkvalid){
             $.ajax({
                 url: $(this).attr('action'),
@@ -55,12 +55,12 @@ function renderHtml(errors)
 }
 
 function checkInputs() {
-    const nomValue = nom.value.trim();
-    const prenomValue = prenom.value.trim();
-    const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
-    const phoneValue = phone.value.trim();
-    const confPasswordValue = confPassword.value.trim();
+    const nomValue = nom.val().trim();
+    const prenomValue = prenom.val().trim();
+    const emailValue = email.val().trim();
+    const passwordValue = password.val().trim();
+    const phoneValue = phone.val().trim();
+    const confPasswordValue = confPassword.val().trim();
 
     if (nomValue === '') {
         setErrorFor(nom, 'Le nom ne peut pas être vide');
@@ -116,15 +116,25 @@ function checkInputs() {
 }
 
 function setErrorFor(input, message) {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
-    small.innerText = message;
+    const formControl = input.closest('.form-control');
+    if(formControl.find('.form-control').length)
+    {
+        formControl.find('.form-control').html(message);
+    }
+    else
+    {
+        formControl.append('<small class="form-control error">' + message + '</small>')
+    }
 }
 
 function setSuccessFor(input) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
+    const formControl = input.closest('.form-control');
+    if(formControl.find('.form-control').length)
+    {
+        formControl.addClass('.form-control success');
+        formControl.find('.form-control').remove();
+    }
+    formControl.addClass('.form-control success');
 }
 
 function isEmail(email) {

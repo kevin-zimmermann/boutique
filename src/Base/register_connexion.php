@@ -11,7 +11,7 @@ class register_connexion extends DataBase
             $nom = htmlentities($_POST['nom']);
             $prenom = htmlentities($_POST['prenom']);
             $email = htmlentities($_POST['email']);
-            $phone = htmlentities($_POST['phone']);
+            $phone = htmlentities($_POST['telephone']);
             $password = $_POST['password'];
             $error = [];
             $user = $this->query('SELECT * FROM utilisateurs WHERE email = ?', [
