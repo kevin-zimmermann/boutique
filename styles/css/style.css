@@ -38,7 +38,7 @@ body {
 
     font-size: 28px;
     margin-left: 10px;
-    
+
 }
 .form {
 
@@ -93,7 +93,7 @@ body {
     visibility: visible;
 }
 
-.form-control small { 
+.form-control small {
     color: #5a1109;
     position: absolute;
     bottom: 0;

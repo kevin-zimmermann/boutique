@@ -1,0 +1,92 @@
+html, body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body,ul,li,a,i{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    background-color: #009ad6;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.inline-nav-img {
+    position: relative;
+}
+
+.big-nav {
+    max-width: 1600px;
+    margin: auto;
+}
+
+header i {
+    font-size: 30px;
+}
+
+.big-nav img {
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    margin: auto;
+
+}
+
+.big-nav ul {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.big-nav li {
+    display: inline;
+    padding: 15px;
+
+}
+.list-header li{
+    text-align: center;
+    display: inline-flex;
+    padding: 5px;
+}
+.list-header{
+    display: flex;
+    justify-content: center;
+}
+form{
+    right: 0;
+    position: absolute;
+    display: flex;
+    padding: 10px;
+
+}
+.carousel, .card-deck{
+    padding-bottom: 20px !important;
+}
+.card-deck{
+    max-width: 1400px !important;
+    margin: auto !important;
+    display: flex !important;
+
+}
+
+footer {
+    background-color: #009ad6;
+    text-align: center;
+    padding: 10px 0;
+    margin-top:auto;
+
+}
+
