@@ -49,4 +49,5 @@ $user = new Base\profil_utilisateurs();
                       return false; 
                   } 
                   ?>
+    </div>
 </header>
