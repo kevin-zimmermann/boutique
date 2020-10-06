@@ -32,10 +32,11 @@ function __construct()
 }
 public function getUser()
 {
+    if(isset($_SESSION['id'])) {
     return $this->query('SELECT * FROM utilisateurs WHERE id = ?', [
         $_SESSION['id']
     ])->fetch(PDO::FETCH_ASSOC);
-    //var_dump($user->tests);
+}
 }
 public function __get($key)
 {

@@ -4,6 +4,7 @@ html, body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: white;
 }
 
 * {
@@ -33,6 +34,12 @@ header {
 
 header i {
     font-size: 30px;
+}
+
+.dropdown {
+
+    margin-top: 10px;
+    margin-right: 40px;
 }
 
 .title {
