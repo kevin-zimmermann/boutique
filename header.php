@@ -33,7 +33,7 @@ $user = new Base\profil_utilisateurs();
                             <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown"> <a href=""> <i class="fas fa-user"></i></a></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="moncompte.php">Mon compte</a>
-                                <a class="dropdown-item" href="connexion.php">Déconnexion</a>
+                                <a class="dropdown-item" href="disconnect.php">Déconnexion</a>
                                 <a class="dropdown-item" href="#"></a>
                             </div>
                         </div>
