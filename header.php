@@ -35,6 +35,17 @@ $user = new Base\profil_utilisateurs();
                         Calendrier
                     </a>
                 </li>
+                <?php
+                if ($user->isAdmin() == true){
+                    ?>
+                <li><a href="admin.php">
+                        Admin
+                    </a>
+                </li>
+                <?php } else{
+                    return false;
+                }
+                ?>
             </ul>
 
             <form class="form-inline">
