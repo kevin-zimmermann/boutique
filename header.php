@@ -6,6 +6,9 @@ include 'src/Base.php';
 $user = new Base\profil_utilisateurs();
 ?>
 
+<head>
+    <link rel="stylesheet" href="styles/css/headerfooter.css">
+</head>
 <header>
     <div class="big-header">
         <div class="inline-nav-img">
@@ -36,7 +39,7 @@ $user = new Base\profil_utilisateurs();
                         </div>
                         <li><a href=""> <i class="fas fa-cart-plus"></i></a></li>
                     </ul>
-                    <?php
+                <?php
                 }
                 ?>
             </nav>
@@ -55,25 +58,17 @@ $user = new Base\profil_utilisateurs();
                         Calendrier
                     </a>
                 </li>
-                <?php
-                if ($user->isAdmin() == true){
-                    ?>
-                    <li><a href="admin.php">
-                            Admin
-                        </a>
-                    </li>
-                <?php }  ?>
             </ul>
+
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-dark" type="submit">Search</button>
             </form>
         </div>
-
         <?php if ($user->getIsConnect()) { ?>Bonjour <?= $user->prenom ?></li>
-        <?php } else {
+    <?php } else {
             return false;
         }
-        ?>
+    ?>
     </div>
 </header>
