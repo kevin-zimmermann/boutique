@@ -35,6 +35,15 @@ class register_connexion extends DataBase
 
     } 
 
+    public function admin() {
+
+        if ($_POST['type'] == "admin") {
+            header('Location: index.php');
+
+
+        }
+
+    }
 
     public function connexion()
     {
