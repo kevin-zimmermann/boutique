@@ -20,7 +20,7 @@
     <title> Accueil - Foo2Foot</title>
 </head>
 <body>
-<?php include'header.php'?>
+<?php include 'header.php'?>
 <main>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -31,16 +31,16 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <a href=""> <img class="d-block w-100"
-                                 src="styles/image/index.jpg" alt="First slide"></a>
+                                 src="styles/image/jannes-glas-cuhQcfp3By4-unsplash.jpg" alt="First slide"></a>
             </div>
             <div class="carousel-item">
                 <a href=""><img class="d-block w-100"
-                                src="styles/image/index.jpg"
+                                src="styles/image/arseny-togulev-xjnSIF9keGY-unsplash.jpg"
                                 alt="Second slide"></a>
             </div>
             <div class="carousel-item">
                 <a href=""> <img class="d-block w-100"
-                                 src="styles/image/index.jpg"
+                                 src="styles/image/alvaro-mendoza-6dRiUBjRvsM-unsplash.jpg"
                                  alt="Third slide"></a>
             </div>
         </div>
@@ -53,35 +53,36 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <h1 class="title"> NOUVEAUX MAILLOTS 2020</h1>
     <div class="card-deck">
         <div class="card">
-            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/fr/thumb/4/43/Logo_Olympique_de_Marseille.svg/1200px-Logo_Olympique_de_Marseille.svg.png" height="150px" width="auto" alt="Card image cap">
+            <img class="card-img-top" src="styles/image/maillot-juv.jpg" height="auto" width="auto" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">Maillot third Juventus Turin 2020/21</h5>
+                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><button type="button" class="btn btn-primary">Voir plus</button></a>
             </div>
             <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+                <small class="text-muted">Mis en ligne récemment</small>
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/fr/thumb/4/43/Logo_Olympique_de_Marseille.svg/1200px-Logo_Olympique_de_Marseille.svg.png" height="300px" width="auto"  alt="Card image cap">
+            <img class="card-img-top" src="styles/image/maillot-OM.jpg" height="auto" width="auto"  alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">Maillot domicile OM 2020/21</h5>
+                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><button type="button" class="btn btn-primary">Voir plus</button></a>
             </div>
             <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+                <small class="text-muted">Mis en ligne récemment</small>
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/fr/thumb/4/43/Logo_Olympique_de_Marseille.svg/1200px-Logo_Olympique_de_Marseille.svg.png" height="150px" width="auto" alt="Card image cap">
+            <img class="card-img-top" src="styles/image/maillot-barca.jpg" height="autopx" width="auto" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <h5 class="card-title">Maillot third FC Barcelone Stadium 2020/21</h5>
+                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><button type="button" class="btn btn-primary">Voir plus</button></a>
             </div>
             <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+                <small class="text-muted">Mis en ligne récemment</small>
             </div>
         </div>
     </div>
