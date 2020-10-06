@@ -54,6 +54,14 @@ public function getValue($key)
     }
     return null;
 }
+public function getIsConnect()
+{
+    if(empty($this->user))
+    {
+        return false;
+    }
+    return  true;
+}
 public function __set($key, $value)
 {
     $this->{$key} = $value;

@@ -20,7 +20,7 @@
     <title> Accueil - Foo2Foot</title>
 </head>
 <body>
-<?php include'header.php'?>
+<?php include 'header.php'?>
 <main>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">

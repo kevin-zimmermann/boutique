@@ -5,10 +5,10 @@ use Base\Profil;
 session_start();
  include 'src/Base/DataBase.php';
  include 'src/Base/profil_utilisateurs.php';
+ include 'header.php';
 
 if (!isset($_SESSION['id'])) {
-    ?><a href="inscription.php">inscription</a>
-    <a href="connexion.php">connexion</a>
+    ?><a href="connexion.php"></a>
     <?php
 } else {
     ?>
