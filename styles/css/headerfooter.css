@@ -15,12 +15,16 @@ body,ul,li,a,i{
     list-style: none;
     text-decoration: none;
     color: #009ad6;
+
+}
+ul{
+    padding-inline-start: 0px !important;
 }
 
 header {
     background-color: whitesmoke;
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .inline-nav-img {
