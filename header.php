@@ -4,9 +4,7 @@ use Base\Profil;
 include 'src/Base.php';
 $user = new Base\profil_utilisateurs();
 ?>
-<head>
-    <link rel="stylesheet" href="styles/css/headerfooter.css">
-</head>
+
 <header>
     <div class="big-header">
         <div class="inline-nav-img">
@@ -49,7 +47,7 @@ $user = new Base\profil_utilisateurs();
                     </a>
                 </li>
                 <?php
-                if ($user->isAdmin() == true){
+                if ($user->isAdmin()){
                     ?>
                     <li><a href="admin.php">
                             Admin
@@ -63,7 +61,8 @@ $user = new Base\profil_utilisateurs();
             </form>
         </div>
 
-        <?php if ($user->getIsConnect()) { ?>Bonjour <?= $user->prenom ?></li>
+        <?php if ($user->getIsConnect()) {
+            ?>Bonjour <?= $user->prenom ?></li>
         <?php } else {
             return false;
         }
