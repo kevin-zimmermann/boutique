@@ -26,7 +26,7 @@
 use Base\Profil;
 $user = new Base\profil_utilisateurs();
 
-if ($user->isAdmin() == false) {
+if (!$user->isAdmin()){
     header('location:index.php');
 }
 ?>
