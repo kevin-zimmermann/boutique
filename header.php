@@ -56,7 +56,7 @@ $user = new Base\profil_utilisateurs();
                     </a>
                 </li>
                 <?php
-                if ($user->isAdmin() == true){
+                if ($user->isAdmin()){
                     ?>
                     <li><a href="admin.php">
                             Admin
@@ -70,7 +70,8 @@ $user = new Base\profil_utilisateurs();
             </form>
         </div>
 
-        <?php if ($user->getIsConnect()) { ?>Bonjour <?= $user->prenom ?></li>
+        <?php if ($user->getIsConnect()) {
+            ?>Bonjour <?= $user->prenom ?></li>
         <?php } else {
             return false;
         }
