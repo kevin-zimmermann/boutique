@@ -5,9 +5,7 @@ use Base\Profil;
 include 'src/Base.php';
 $user = new Base\profil_utilisateurs();
 ?>
-<head>
-    <link rel="stylesheet" href="styles/css/headerfooter.css">
-</head>
+
 <header>
     <div class="big-header">
         <div class="inline-nav-img">

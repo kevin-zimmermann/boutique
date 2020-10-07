@@ -35,16 +35,6 @@ class register_connexion extends DataBase
 
     } 
 
-    function membre()
-{ 
-    if(!isset($_SESSION['membre'])) return false;
-    else return true;
-}
-function admin()
-{
-    if(membre() && $_SESSION['membre']['admin'] == 1) return true;
-    else return false;
-}
 
     public function connexion()
     {

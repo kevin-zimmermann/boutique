@@ -125,6 +125,10 @@ class profil_utilisateurs extends DataBase
 
     public function isAdmin()
     {
+        if(empty($_SESSION['id']))
+        {
+            return false;
+        }
         if (isset($_SESSION)) {
             $isadmin = $this->query('SELECT admin FROM utilisateurs WHERE id = ?', [
                 $_SESSION['id'],
