@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="a564f78e-00bc-4cb8-aa48-6ac2652993e3" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="a564f78e-00bc-4cb8-aa48-6ac2652993e3" name="Default Changelist" comment="change admin">
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/headerfooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/headerfooter.css" afterDir="false" />
+    </list>
+>>>>>>> 4e528d12fcf27719458b8180e71ece03d8323967
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +17,16 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+>>>>>>> 4e528d12fcf27719458b8180e71ece03d8323967
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -28,6 +45,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
+=======
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+>>>>>>> 4e528d12fcf27719458b8180e71ece03d8323967
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -66,9 +87,24 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601980563537" />
+<<<<<<< HEAD
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601997177211">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601997177211" />
+=======
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602065282902">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602065282902" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601999741153">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601999741153" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602062519770">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602062519770" />
+>>>>>>> 4e528d12fcf27719458b8180e71ece03d8323967
   </component>
 </project>

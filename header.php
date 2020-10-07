@@ -4,7 +4,6 @@ use Base\Profil;
 include 'src/Base.php';
 $user = new Base\profil_utilisateurs();
 ?>
-
 <head>
     <link rel="stylesheet" href="styles/css/headerfooter.css">
 </head>
@@ -19,6 +18,21 @@ $user = new Base\profil_utilisateurs();
                     <li><a href="inscription.php"><i class="fas fa-user"></i></a></li>
                     <li><a href=""> <i class="fas fa-cart-plus"></i></a></li>
                 </ul>
+                <?php if (isset($_SESSION['id'])) { ?>
+                    <ul>
+                        <div class="dropdown">
+                            <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown"> <a href=""> <i class="fas fa-user"></i></a></button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="moncompte.php">Mon compte</a>
+                                <a class="dropdown-item" href="connexion.php">Déconnexion</a>
+                                <a class="dropdown-item" href="#"></a>
+                            </div>
+                        </div>
+                        <li><a href=""> <i class="fas fa-cart-plus"></i></a></li>
+                    </ul>
+                    <?php
+                }
+                ?>
             </nav>
         </div>
         <div class="list-header">
@@ -38,27 +52,22 @@ $user = new Base\profil_utilisateurs();
                 <?php
                 if ($user->isAdmin() == true){
                     ?>
-                <li><a href="admin.php">
-                        Admin
-                    </a>
-                </li>
-                <?php } else{
-                    return false;
-                }
-                ?>
+                    <li><a href="admin.php">
+                            Admin
+                        </a>
+                    </li>
+                <?php }  ?>
             </ul>
-
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-dark" type="submit">Search</button>
             </form>
         </div>
-        <?php if ($user->getIsConnect())
-                 { ?>Bonjour <?= $user->prenom ?></li> 
-                 <?php }
-                  else { 
-                      return false; 
-                  } 
-                  ?>
+
+        <?php if ($user->getIsConnect()) { ?>Bonjour <?= $user->prenom ?></li>
+        <?php } else {
+            return false;
+        }
+        ?>
     </div>
 </header>
