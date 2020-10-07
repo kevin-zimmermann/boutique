@@ -23,14 +23,68 @@
 <?php include 'header.php' ?>
 <body>
 <?php
+
 use Base\Profil;
+
 $user = new Base\profil_utilisateurs();
 
-if (!$user->isAdmin()){
+if (!$user->isAdmin()) {
     header('location:index.php');
 }
 ?>
 <main>
+    <h1 class="title"> Bienvenue dans le Panel Administration</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Liste des commandes</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Id_commande</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Prix</th>
+                                <th scope="col">Quantité</th>
+                                <th scope="col">Utilisateur</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>#</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>#</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>#</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
 
 </main>
 </body>

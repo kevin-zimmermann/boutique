@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="" />
+    <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="add admin.php">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,8 +37,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
@@ -44,12 +49,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a564f78e-00bc-4cb8-aa48-6ac2652993e3" name="Default Changelist" comment="" />
+      <changelist id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="add admin.php" />
       <created>1601980131107</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601980131107</updated>
       <workItem from="1601980132447" duration="8459000" />
+      <workItem from="1602082643575" duration="305000" />
+      <workItem from="1602082964210" duration="330000" />
+      <workItem from="1602083306711" duration="2574000" />
+      <workItem from="1602085923070" duration="1538000" />
     </task>
     <task id="LOCAL-00001" summary="add admin.php">
       <created>1601996894656</created>
@@ -62,17 +71,25 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add admin.php" />
     <option name="LAST_COMMIT_MESSAGE" value="add admin.php" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="89" key="CommitChangelistDialog2" timestamp="1601996893422">
+    <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1602083291352">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1601996893422" />
+    <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602083291352" />
+    <state x="585" y="89" key="CommitChangelistDialog2" timestamp="1602081812878">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602081812878" />
+    <state x="740" y="264" width="440" height="514" key="FileChooserDialogImpl" timestamp="1602083289115">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="264" width="440" height="514" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602083289115" />
     <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1602081364581">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -81,10 +98,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602065282902" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602081387934">
+    <state x="437" y="0" width="1366" height="1040" key="SettingsEditor" timestamp="1602086042687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602081387934" />
+    <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602081666064">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602081666064" />
     <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1602081251673">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
