@@ -6,13 +6,11 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="styles/css/style.css">
+    <title>Connexion</title>
 </head>
 <body>
-
-</div>
 <form action="action.php" id="form" class="form form-ajax" method="post">
 <div class="form-control">
     <h1 class="titre">CONNEXION</h1>
