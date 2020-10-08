@@ -111,4 +111,19 @@ footer {
 
     font-size: 35px;
 }
+.get-delete{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left:0;
+    bottom: 0;
+    background: #0000000f;
+    display: none;
+}
+.get-error-inner{
+    max-width: 500px;
+    margin: auto;
+    background: white;
+}
+
 

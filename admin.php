@@ -4,11 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/css/fa.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             crossorigin="anonymous"></script>
@@ -68,13 +64,13 @@ if (!$user->isAdmin()) {
                                 <td>#</td>
                                 <td>#</td>
                             </tr>
-                            <tr>
+                            <tr class="table-ajax">
                                 <th scope="row">3</th>
                                 <td>#</td>
                                 <td>#</td>
                                 <td>#</td>
                                 <td>#</td>
-                                <td>#</td>
+                                <td class="ajax-delete" data-id="12" data-name="user_id">#</td>
                             </tr>
                             </tbody>
                         </table>
@@ -84,7 +80,49 @@ if (!$user->isAdmin()) {
         </div>
     </div>
     </div>
+    <div class="get-delete">
+        <div class="get-error-inner">
+            <h1>Confirmation</h1>
+            <div class="content-delete">
+                blabla
+                <div class="conf">
+                    <form action="actionDelete.php" class="action-ajax" method="post">
+                        <input type="hidden" name="type" value="delete">
+                        <input type="hidden" class="action-input-hidden">
+                        <button class="btn btn-primary">button</button>
+                    </form>
 
+                </div>
+            </div>
+        </div>
+
+    </div>
+<script>
+    $('.ajax-delete').click(function () {
+        $('.get-delete').css('display', 'block');
+        $('.get-delete').find('.action-input-hidden')
+            .attr('name', $(this).data('name'))
+            .val($(this).data('id'))
+    })
+    $('.action-ajax').submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url : $(this).attr('action'),
+            method : $(this).attr('method'),
+            data : $(this).serialize(),
+            dataType : 'json',
+            success : (data) => {
+                console.log(data)
+                $('.get-delete').css('display', 'none')
+                $('[data-id=' + data['return'] + ']').closest('.table-ajax').remove()
+            },
+            error : (error) => {
+                console.log(error)
+            }
+        });
+        return false;
+    });
+</script>
 
 </main>
 </body>
