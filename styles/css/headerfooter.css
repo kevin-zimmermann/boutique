@@ -111,7 +111,7 @@ footer {
 
     font-size: 35px;
 }
-.get-delete{
+.get-delete, .get-error{
     position: absolute;
     top: 0;
     right: 0;
@@ -119,11 +119,44 @@ footer {
     bottom: 0;
     background: #0000000f;
     display: none;
+    opacity: 0;
 }
-.get-error-inner{
+.get-delete-inner, .get-error-inner{
     max-width: 500px;
     margin: auto;
     background: white;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
 }
-
+.conf {
+    padding: 10px;
+    background: #dbdbdb;
+    text-align: center;
+}
+.active-overlay{
+    display: flex;
+}
+.conf{
+    padding: 10px;
+}
+.get-delete-inner h3, .get-error h3{
+    color: white;
+    background: #009ad6;
+    padding: 10px;
+}
+.content-delete, .content-error{
+    padding: 10px;color: black;
+}
+.overlay-popup:after{
+    content : '\f00d';
+    color: white;
+    font-family: 'Font Awesome 5 Pro';
+}
+.overlay-popup{
+    float: right;
+}
+.overlay-popup:hover{
+    text-decoration: none;
+}
 
