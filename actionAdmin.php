@@ -7,11 +7,11 @@ $return = [];
 switch ($_POST['type'])
 {
     case 'delete' :
-        $url ='admin.php';
+        $url ='admin_user.php';
         $return = ['url' => $url, 'return' => $admin->deleteUser()];
         break;
     case 'modifAdminUser' :
-        $url ='admin.php';
+        $url ='admin_user.php';
         $return = [$url, $admin->updateUser()];
         break;
 }
