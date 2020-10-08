@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="styles/css/headerfooter.css">
     <title> Panel admin - Foo2Foot</title>
 </head>
-<?php include 'header.php' ?>
 <body>
+<?php include 'header.php' ?>
 <?php
 
 use Base\Profil;
@@ -29,12 +29,12 @@ if (!$user->isAdmin()) {
 }
 ?>
 <main>
-    <h1 class="title"> Bienvenue dans le Panel Administration</h1>
     <div class="container">
+    <h1 class="title"> Bienvenue dans le Panel Administration</h1>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Liste des commandes</div>
+                    <div class="card-header">Liste des commandes en cours </div>
                     <div class="card-body">
                         <table class="table">
                             <thead class="thead-dark">
@@ -80,6 +80,7 @@ if (!$user->isAdmin()) {
         </div>
     </div>
     </div>
+    <button class="btn btn-primary">Ajout d'article</button>
     <div class="get-delete">
         <div class="get-error-inner">
             <h1>Confirmation</h1>

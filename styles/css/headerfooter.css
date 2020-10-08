@@ -82,7 +82,7 @@ header i {
     display: flex;
     justify-content: center;
 }
-form{
+form.form-inline{
     right: 0;
     position: absolute;
     display: flex;
