@@ -24,11 +24,6 @@ class Admin extends DataBase
         return $userId;
     }
 
-/*    public function countUser()
-    {
-         $compte = $this->query('SELECT COUNT (id) FROM utilisateurs');
-         return $compte;
-    }*/
     public function getUsers(){
         $response = $this->query('SELECT * FROM utilisateurs');
         return $response->fetchALl(\PDO::FETCH_ASSOC);

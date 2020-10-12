@@ -50,6 +50,5 @@ if (!$user->isAdmin()) {
     <script src="script.js"></script>
 </main>
 </body>
-<?php include 'footer.php' ?>
-
+<?php include 'footer.php'?>
 </html>

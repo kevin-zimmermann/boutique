@@ -23,25 +23,25 @@
 <main>
     <div class="container">
         <h1 class="title"> Formulaire produit</h1>
-        <form action="action.php" id="form" class="form form-ajax" method="post">
+        <form action="admin_add_product.php" id="form" class="form form-ajax" method="post">
                 <div class="form-article">
-                <label  for="categorie">Catégorie</label> <br/>
-                <input type="text" id="text" name="categorie" >
+                <label for="categorie">Catégorie</label> <br/>
+                <input type="text" id="text" name="categorie">
                 </div>
                     <div class="form-article">
-                        <label  for="nom">Nom</label> <br/>
-                        <input type="text" id="text" name="nom_produit" >
+                        <label for="nom">Nom</label> <br/>
+                        <input type="text" id="nom_produit" name="nom_produit" >
             </div>
             <div class="form-article">
-                <label  for="photo">Image</label> <br/>
-                <input type="file" id="img" name="image" >
+                <label for="image">Image</label> <br/>
+                <input type="image" id="image" name="image">
             </div>
             <div class="form-article">
-                <label  for="des">Description du produit</label> <br/>
-                <input type="text" id="text" name="description" >
+                <label for="descripiton">Description du produit</label> <br/>
+                <input type="text" id="description" name="description">
             </div>
             <div class="form-article">
-                <label  for="taille">Taille du produit</label> <br/>
+                <label for="taille">Taille du produit</label> <br/>
                 <select name="taille">
                     <option value="S">S</option>
                     <option value="M">M</option>
@@ -50,12 +50,12 @@
                 </select><br/>
             </div>
             <div class="form-article">
-                <label  for="prix">Prix</label> <br/>
-                <input type="text" id="text" name="prix" >
+                <label for="prix">Prix</label> <br/>
+                <input type="text" id="prix" name="prix">
             </div>
             <div class="form-article">
-                <label  for="stock">Stock</label> <br/>
-                <input type="text" id="text" name="stock" >
+                <label for="stock">Quantité</label> <br/>
+                <input type="number" id="quantite" name="quantite">
             </div>
         </div>
     </form>

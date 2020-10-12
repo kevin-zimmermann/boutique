@@ -14,6 +14,10 @@ switch ($_POST['type'])
         $url ='admin_user.php';
         $return = [$url, $admin->updateUser()];
         break;
+    case 'modifAdminProduct' :
+        $url ='admin_user.php';
+        $return = [$url, $admin->updateProduct()];
+        break;
 }
 
 echo json_encode($return);
