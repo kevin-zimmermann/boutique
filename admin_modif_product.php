@@ -24,21 +24,30 @@ use Base\Profil;
 
 $user = new Base\profil_utilisateurs();
 $admin = new Base\Admin();
-
+$product = new Base\product__cat();
+$product = $product->setProduct();
 if (!$user->isAdmin()) {
     header('location:index.php');
 }
 ?>
 <main>
-    <h1 class="title"> Bienvenue dans le Panel Administration</h1>
-    <button class="btn btn-dark"><a href="admin_user.php">Modifier/Supprimer compte</a></button>
-    <button class="btn btn-dark"><a href="admin_product.php">Modifier/Supprimer/Ajouter produit</a></button>
-    <button class="btn btn-dark"><a href="admin_product.php">Modifier/Supprimer/Ajouter catégorie</a></button>
-    <button class="btn btn-dark"><a href="admin_user.php">Modifier/Supprimer commande</a></button>
-    <button class="btn btn-dark"><a href="admin_user.php">Commande auprès des fournisseurs</a></button>
+    <form action="actionAdmin.php?user_id=<?= $product->id ?>" method="post" id="form" class="form form-ajax">
+        <label for="image">Nouvelle image</label>
+        <input type="image" name="image" id="image" value="<?= $product->image ?>">
+        <label for="categorie_id">Modifier Catégorie</label>
+        <input type="text" name="categorie_id" id="categorie_id" value="<?= $product->categorie_id?>">
+        <label for="nom_produit">Nouveau nom de produit</label>
+        <input type="text" name="nom_produit" id="nom_produit" value="<?= $product->nom_produit ?>">
+        <label for="description">Nouvelle description</label>
+        <input type="text" name="description" id="description" value="<?= $product->description ?>">
+        <p>Quantité: <?= $product->quantite ?></p>
+        <p>Taille: <?= $product->taille ?></p>
+        <input type="hidden" name="type" value="modifAdminProduct">
+        <button type="submit">Valider <i class="fas fa-check"></i></button>
+    </form>
+    <script src="script.js"></script>
 </main>
 </body>
-<?php include 'footer.php' ?>
-
-
+<?php include 'footer.php'?>
 </html>
+
