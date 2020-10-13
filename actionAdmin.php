@@ -2,6 +2,7 @@
 include 'src/Base.php';
 $url = '';
 $admin = new \Base\Admin();
+$product = new \Base\product__cat();
 $return = [];
 
 switch ($_POST['type'])
@@ -14,9 +15,17 @@ switch ($_POST['type'])
         $url ='admin_user.php';
         $return = [$url, $admin->updateUser()];
         break;
+    case 'delete' :
+        $url ='admin_user.php';
+        $return = [$url, $product->deleteProduct()];
+        break;
     case 'modifAdminProduct' :
         $url ='admin_user.php';
-        $return = [$url, $admin->updateProduct()];
+        $return = [$url, $product->updateProduct()];
+        break;
+    case 'addproduct' :
+        $url ='admin_user.php';
+        $return = [$url, $product->addProduct()];
         break;
 }
 
