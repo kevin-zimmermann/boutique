@@ -56,6 +56,9 @@
             <div class="form-article">
                 <label  for="stock">Quantité</label> <br/>
                 <input type="number" id="quantité" name="stock" >
+
+                <input type="hidden" value="addproduct" name="type">
+                <button type="submit">Envoyer</button>
             </div>
         </div>
     </form>

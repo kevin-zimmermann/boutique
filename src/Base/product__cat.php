@@ -18,10 +18,11 @@ class product__cat extends DataBase
     protected $product = '';
     protected $newValue = [];
 
-    public function addProduct(){
-        if ($_POST['type'] == 'addproduct'){
+    public function addProduct()
+    {
+        if ($_POST['type'] == 'addproduct') {
             $productId = htmlentities($_POST['product_id']);
-            $image = htmlentities ($_POST['image']);
+            $image = htmlentities($_POST['image']);
             $cat = htmlentities($_POST['categorie']);
             $nproduit = htmlentities($_POST['nom_produit']);
             $description = htmlentities($_POST['description']);
@@ -40,24 +41,23 @@ class product__cat extends DataBase
 
             ]);
         }
-        if (empty ($cat || $image || $nproduit || $description || $taille || $prix ||$quantite)) {
+        if (empty ($cat || $image || $nproduit || $description || $taille || $prix || $quantite)) {
             $error[] = "Il manque un quelque chose....";
-        } else{
+        } else {
 
         }
         return $error;
 
 
-        }
+    }
 
     public function deleteProduct()
     {
         $productId = $_POST['product_id'];
-        $product= $this->query('SELECT * FROM produit WHERE id = ?', [
+        $product = $this->query('SELECT * FROM produit WHERE id = ?', [
             $productId,
         ])->fetch(\PDO::FETCH_ASSOC);
-        if(empty($product))
-        {
+        if (empty($product)) {
             $this->query('DELETE FROM produit WHERE id = ?', [
                 $productId
             ]);
@@ -66,33 +66,36 @@ class product__cat extends DataBase
         return $productId;
     }
 
-    public function getProducts(){
+    public function getProducts()
+    {
         $response = $this->query('SELECT * FROM produit');
         return $response->fetchAll(\PDO::FETCH_ASSOC);
     }
+
     public function setProduct()
     {
         $this->product = $this->query('SELECT * FROM produit WHERE id = ?', [$_GET['product_id']])->fetch(\PDO::FETCH_ASSOC);
         return $this;
     }
+
     public function __get($key)
     {
         $product = $this->$product;
         $newValue = $this->newValue;
-        if(!empty($newValue[$key]))
-        {
+        if (!empty($newValue[$key])) {
             return $newValue[$key];
         }
-        if(!empty($product[$key]))
-        {
+        if (!empty($product[$key])) {
             return $product[$key];
         }
         return '';
     }
+
     public function __set($key, $value)
     {
         $this->newValue[$key] = $value;
     }
+
     public function updateProduct()
     {
         $productId = $_POST['product_id'];
@@ -106,8 +109,7 @@ class product__cat extends DataBase
         $product = $this->query('SELECT * FROM produit WHERE id = ?', [
             $productId,
         ])->fetch(\PDO::FETCH_ASSOC);
-        if(!empty($product))
-        {
+        if (!empty($product)) {
             $this->query('UPDATE produit SET image = ?, categorie = ?, nom_produit = ?, description = ?, taille = ? , prix = ?, quantite = ?  WHERE id = ?', [
                 $image,
                 $cat,
@@ -120,6 +122,7 @@ class product__cat extends DataBase
         }
         return [];
     }
+
     /**
      * @return array
      */
@@ -153,6 +156,22 @@ class product__cat extends DataBase
         $productImg->name = $_FILES["file"]["name"];
         $productImg->save();
     }
-    public
+
+    public function addCategorie()
+    {
+        $error = [];
+        if ($_POST['type'] == 'addcategorie') {
+         $nom_categorie = htmlentities($_POST['nom_categorie']);
+            $this->query('INSERT INTO categorie (nom_categorie,	produit_id) VALUE(?,?)', [
+                $nom_categorie,
+                0
+            ]);
+        }
+        else{
+            $error[] = "Il manque un quelque chose....";
+
+        }
+        return [];
+        }
 
 }

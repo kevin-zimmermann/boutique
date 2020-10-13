@@ -31,11 +31,6 @@ main {
 
 }
 
-.form-article label {
-
-    margin-bottom: 3px;
-}
-
 .form-article input {
     border-bottom: 2px solid #f0f0f0;
     font-family: inherit;
@@ -49,9 +44,24 @@ main {
     border-color: #009ad6;
 }
 
+.form button {
+    background-color: #009ad6;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    margin: auto;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 input {
     display: block;
     outline: none;
     border: none;
-    margin-bottom: 20px;
+
 }
