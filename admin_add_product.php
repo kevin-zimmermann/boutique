@@ -19,14 +19,27 @@
     <title> Panel admin - Foo2Foot</title>
 </head>
 <body>
+
 <?php include 'header.php'?>
+<?php
+
+use Base\Profil;
+
+$user = new Base\profil_utilisateurs();
+$admin = new Base\Admin();
+$product = new Base\product__cat();
+
+if (!$user->isAdmin()) {
+    header('location:index.php');
+}
+?>
 <main>
     <div class="container">
         <h1 class="title"> Formulaire produit</h1>
         <form action="admin_add_product.php" id="form" class="form form-ajax" method="post">
                 <div class="form-article">
                 <label for="categorie">Catégorie</label> <br/>
-                <input type="text" id="text" name="categorie">
+                <input type="text" id="categorie" name="categorie">
                 </div>
                     <div class="form-article">
                         <label for="nom">Nom</label> <br/>
@@ -34,7 +47,7 @@
             </div>
             <div class="form-article">
                 <label for="image">Image</label> <br/>
-                <input type="image" id="img" name="image">
+                <input type="image" id="image" name="image">
             </div>
             <div class="form-article">
                 <label for="descripiton">Description du produit</label> <br/>
@@ -54,9 +67,11 @@
                 <input type="text" id="prix" name="prix">
             </div>
             <div class="form-article">
-                <label for="stock">Stock</label> <br/>
-                <input type="text" id="text" name="stock">
+                <label for="quantite">Quantité</label> <br/>
+                <input type="text" id="quantite" name="quantite">
             </div>
+            <input type="hidden" value="addproduct" name="type">
+            <button type="submit">Envoyer</button>
         </div>
     </form>
 </main>
