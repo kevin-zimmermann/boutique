@@ -13,7 +13,7 @@ html, body{
 }
 body,ul,li,a,i{
     list-style: none;
-    text-decoration: none;
+    text-decoration: none !important;
     color: #009ad6;
 
 }

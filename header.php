@@ -23,7 +23,13 @@ $user = new Base\profil_utilisateurs();
                         <div class="dropdown">
                             <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown"> <a href=""> <i class="fas fa-user"></i></a></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="admin.php">Mon compte</a>
+                                <?php
+                                if ($user->isAdmin()){
+                                    ?>
+                                    <a class="dropdown-item" href="admin.php">Panel admin</a>
+                                <?php }  ?>
+
+                                <a class="dropdown-item" href="profil_user.php">Mon profil</a>
                                 <a class="dropdown-item" href="disconnect.php">Déconnexion</a>
                                 <a class="dropdown-item" href="#"></a>
                             </div>
@@ -32,7 +38,6 @@ $user = new Base\profil_utilisateurs();
                         <li><a href="panier.php"> <i class="fas fa-cart-plus"></i></a></li>
                     </ul>
                 </div>
-            </nav>
                     <?php
                 }
                 ?>
@@ -52,6 +57,16 @@ $user = new Base\profil_utilisateurs();
                         Calendrier
                     </a>
                 </li>
+                <?php if (!isset($_SESSION['id'])) { ?>
+                <li><a href="inscription.php">
+                        Inscription
+                    </a>
+                </li>
+                <li><a href="connexion.php">
+                        Connexion
+                    </a>
+                </li>
+                <?php } ?>
             </ul>
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

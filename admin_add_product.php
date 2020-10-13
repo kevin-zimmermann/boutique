@@ -37,11 +37,11 @@
                 <input type="file" id="img" name="image" >
             </div>
             <div class="form-article">
-                <label  for="des">Description du produit</label> <br/>
-                <input type="text" id="text" name="description" >
+                <label  for="des">Description</label> <br/>
+                <input type="text" id="description" name="description" >
             </div>
             <div class="form-article">
-                <label  for="taille">Taille du produit</label> <br/>
+                <label  for="taille">Taille</label> <br/>
                 <select name="taille">
                     <option value="S">S</option>
                     <option value="M">M</option>
@@ -51,11 +51,11 @@
             </div>
             <div class="form-article">
                 <label  for="prix">Prix</label> <br/>
-                <input type="text" id="text" name="prix" >
+                <input type="number" id="prix" name="prix" >
             </div>
             <div class="form-article">
-                <label  for="stock">Stock</label> <br/>
-                <input type="text" id="text" name="stock" >
+                <label  for="stock">Quantité</label> <br/>
+                <input type="number" id="quantité" name="stock" >
             </div>
         </div>
     </form>
