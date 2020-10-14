@@ -33,9 +33,9 @@ if (!$user->isAdmin()) {
     <h1 class="title"> Bienvenue dans le Panel Administration</h1>
     <button class="btn btn-dark"><a href="admin_user.php">Modifier/Supprimer compte</a></button>
     <button class="btn btn-dark"><a href="admin_product.php">Modifier/Supprimer/Ajouter produit</a></button>
-    <button class="btn btn-dark"><a href="admin_product.php">Modifier/Supprimer/Ajouter catégorie</a></button>
-    <button class="btn btn-dark"><a href="admin_user.php">Modifier/Supprimer commande</a></button>
-    <button class="btn btn-dark"><a href="admin_user.php">Commande auprès des fournisseurs</a></button>
+    <button class="btn btn-dark"><a href="admin_categorie.php">Modifier/Supprimer/Ajouter catégorie</a></button>
+    <button class="btn btn-dark"><a href="admin_commande.php">Modifier/Supprimer commande</a></button>
+    <button class="btn btn-dark"><a href="admin_fournisseur.php">Commande auprès des fournisseurs</a></button>
 </main>
 </body>
 <?php include 'footer.php' ?>

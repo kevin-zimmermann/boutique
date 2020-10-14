@@ -32,19 +32,19 @@ if (!$user->isAdmin()) {
 <main>
 <form action="actionAdmin.php?user_id=<?= $admin->id ?>" method="post" id="form" class="form form-ajax">
     <label for="name">Nouveau nom</label>
-    <input type="text" name="nom" id="name" value="<?= $admin->nom ?>">
+    <input type="text" name="nom" id="name" value="<?= $admin->nom ?>" class="input">
     <label for="prenom">Nouveau prenom</label>
-    <input type="text" name="prenom" id="prenom" value="<?= $admin->prenom ?>">
+    <input type="text" name="prenom" id="prenom" value="<?= $admin->prenom ?>" class="input">
     <label for="email">Nouveau email</label>
-    <input type="email" name="email" id="email" value="<?= $admin->email ?>">
+    <input type="email" name="email" id="email" value="<?= $admin->email ?>" class="input">
     <label for="telephone">Nouveau numéro de telephone</label>
-    <input type="text" name="telephone" id="telephone"  value="<?= $admin->telephone ?>">
+    <input type="text" name="telephone" id="telephone"  value="<?= $admin->telephone ?>" class="input">
 
     <?php if($admin->id != $_SESSION['id']) { ?>
         <label for="admin">Admin?</label>
-        <input type="checkbox" name="admin" id="admin" <?= $admin->admin ? 'checked' : '' ?>>
+        <input type="checkbox" name="admin" id="admin" <?= $admin->admin ? 'checked' : '' ?> class="input">
     <?php } ?>
-    <input type="hidden" name="type" value="modifAdminUser">
+    <input type="hidden" name="type" value="modifAdminUser" class="input">
     <button type="submit">Valider <i class="fas fa-check"></i></button>
 </form>
     <script src="script.js"></script>

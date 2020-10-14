@@ -12,20 +12,32 @@ $(document).ready(function () {
         if ($(this).find("[name=type]").val() === "inscription") {
             checkInputs();
         }
+        var formData = new FormData()
+        $.each($('.input'), function () {
+            let input = $(this)[0];
+            if(input.type === 'file')
+            {
+                formData.append(input.name, input.files[0])
+            }else{
+                formData.append(input.name, input.value)
+            }
+        })
+        console.log(checkvalid)
         if (checkvalid){
             $.ajax({
                 url: $(this).attr('action'),
                 method: $(this).attr('method'),
-                data: $(this).serialize(),
+                data: formData,
                 dataType: "json",
+                enctype : 'multipart/form-data',
                 success: (data) => {
                     console.log(data)
                     if (data[1].length) {
                         $(".error").html(renderHtml(data[1]))
                     } else {
                         location.replace(data[0])
+
                     }
-        console.log(data)
                 },
                 error: (error) => {
                     console.log(error.responseText)

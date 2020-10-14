@@ -33,13 +33,13 @@ if (!$user->isAdmin()) {
 <main>
     <form action="actionAdmin.php?user_id=<?= $product->id ?>" method="post" id="form" class="form form-ajax">
         <label for="image">Nouvelle image</label>
-        <input type="image" name="image" id="image" value="<?= $product->image ?>">
+        <input type="image" name="image" id="image" value="<?= $product->image ?>" class="input">
         <label for="categorie_id">Modifier Catégorie</label>
-        <input type="text" name="categorie_id" id="categorie_id" value="<?= $product->categorie_id?>">
+        <input type="text" name="categorie_id" id="categorie_id" value="<?= $product->categorie_id?>" class="input">
         <label for="nom_produit">Nouveau nom de produit</label>
-        <input type="text" name="nom_produit" id="nom_produit" value="<?= $product->nom_produit ?>">
+        <input type="text" name="nom_produit" id="nom_produit" value="<?= $product->nom_produit ?>" class="input">
         <label for="description">Nouvelle description</label>
-        <input type="text" name="description" id="description" value="<?= $product->description ?>">
+        <input type="text" name="description" id="description" value="<?= $product->description ?>" class="input">
         <p>Quantité: <?= $product->quantite ?></p>
         <p>Taille: <?= $product->taille ?></p>
         <input type="hidden" name="type" value="modifAdminProduct">
