@@ -15,15 +15,15 @@ session_start();
 <div class="form-control">
     <h1 class="titre">CONNEXION</h1>
         <label for="email">Email </label>
-        <input type="email" id="email" name="email" >
+        <input type="email" id="email" name="email"  class="input">
     </div>
     <div class="form-control">
         <label for="password"> Mot de passe </label>
-        <input type="password" id="password" name="password">
+        <input type="password" id="password" name="password" class="input">
         <div class="error">
         </div>
     </div>
-    <input type="hidden" name="type" value="connexion">
+    <input type="hidden" name="type" value="connexion" class="input">
     <button type="submit">Se connecter</button>
 </form>
 <script src="script.js"></script>
