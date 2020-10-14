@@ -54,7 +54,7 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <h1 class="title"> NOUVEAUX MAILLOTS 2020</h1>
+    <h1 class="top-title"> NOUVEAUX MAILLOTS 2020</h1>
     <div class="card-deck">
         <div class="card">
             <img class="card-img-top" src="styles/image/maillot-juv.jpg" height="auto" width="auto" alt="Card image cap">

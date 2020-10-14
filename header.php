@@ -9,24 +9,35 @@ $user = new Base\profil_utilisateurs();
     <div class="big-header">
         <div class="inline-nav-img">
             <nav class="big-nav">
-                <h1 class="title">FOO2F<i class="far fa-futbol"></i>OT</h1>
-                <!--- <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/4/43/Logo_%C3%89quipe_France_Football_2018.svg/679px-Logo_%C3%89quipe_France_Football_2018.svg.png"
-                     width="auto" height="100px" alt="logo"> --->
-                <ul>
-                    <li><a href=""> <i class="fas fa-cart-plus"></i></a></li>
-                </ul>
+                <div class="bond" onMouseOver=""><h1 class="title">FOO2F<i class="far fa-futbol"></i>OT</h1></div>
                 <?php if (isset($_SESSION['id'])) { ?>
                     <ul>
+                        <div class="center">
+                        <?php if ($user->getIsConnect()) {
+                            ?>Bonjour <?= $user->prenom ?></li>
+                        <?php } else {
+                            return false;
+                        }
+                        ?>
+                        </div>
                         <div class="dropdown">
                             <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown"> <a href=""> <i class="fas fa-user"></i></a></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="admin.php">Mon compte</a>
-                                <a class="dropdown-item" href="connexion.php">Déconnexion</a>
+                                <?php
+                                if ($user->isAdmin()){
+                                    ?>
+                                    <a class="dropdown-item" href="admin.php">Panel admin</a>
+                                <?php }  ?>
+
+                                <a class="dropdown-item" href="profil_user.php">Mon profil</a>
+                                <a class="dropdown-item" href="disconnect.php">Déconnexion</a>
                                 <a class="dropdown-item" href="#"></a>
                             </div>
                         </div>
-                        <li><a href=""> <i class="fas fa-cart-plus"></i></a></li>
+                        <div class="cart-plus">
+                        <li><a href="panier.php"> <i class="fas fa-cart-plus"></i></a></li>
                     </ul>
+                </div>
                     <?php
                 }
                 ?>
@@ -34,38 +45,33 @@ $user = new Base\profil_utilisateurs();
         </div>
         <div class="list-header">
             <ul>
-                <li><a href="">
+                <li><a href="index.php">
                         Accueil
                     </a>
                 </li>
-                <li><a href="">
+                <li><a href="boutique.php">
                         Boutique
                     </a>
                 </li>
-                <li><a href="">
+                <li><a href="calendrier.php">
                         Calendrier
                     </a>
                 </li>
-                <?php
-                if ($user->isAdmin()){
-                    ?>
-                    <li><a href="admin.php">
-                            Admin
-                        </a>
-                    </li>
-                <?php }  ?>
+                <?php if (!isset($_SESSION['id'])) { ?>
+                <li><a href="inscription.php">
+                        Inscription
+                    </a>
+                </li>
+                <li><a href="connexion.php">
+                        Connexion
+                    </a>
+                </li>
+                <?php } ?>
             </ul>
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-dark" type="submit">Search</button>
             </form>
         </div>
-
-        <?php if ($user->getIsConnect()) {
-            ?>Bonjour <?= $user->prenom ?></li>
-        <?php } else {
-            return false;
-        }
-        ?>
     </div>
 </header>

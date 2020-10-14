@@ -5,6 +5,7 @@ namespace Base;
  */
 class DataBase
 {
+
     /**
      * @var \PDO|null
      */
