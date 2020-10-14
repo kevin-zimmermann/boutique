@@ -24,6 +24,9 @@ main {
     margin-bottom: 30px;
 }
 
+.card{
+    width: -moz-available;
+}
 .form-article {
 
     padding: 10px 40px;

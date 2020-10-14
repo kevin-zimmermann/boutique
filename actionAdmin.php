@@ -14,7 +14,7 @@ switch ($_POST['type']) {
         $url = 'admin_user.php';
         $return = [$url, $admin->updateUser()];
         break;
-    case 'delete' :
+    case 'deleteProduct' :
         $url = 'admin_user.php';
         $return = [$url, $product->deleteProduct()];
         break;
@@ -27,8 +27,12 @@ switch ($_POST['type']) {
         $return = [$url, $product->addProduct()];
         break;
     case 'addcategorie' :
-        $url ='admin_add_categorie.php';
+        $url ='admin_categorie.php';
         $return = [$url, $product->addCategorie()];
+        break;
+    case 'deleteCat' :
+        $url ='admin_categorie.php';
+        $return = ['url' => $url, 'return' => $product->deleteCategorie()];
         break;
 
 }

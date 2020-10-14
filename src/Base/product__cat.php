@@ -161,17 +161,44 @@ class product__cat extends DataBase
     {
         $error = [];
         if ($_POST['type'] == 'addcategorie') {
-         $nom_categorie = htmlentities($_POST['nom_categorie']);
+            $nom_categorie = htmlentities($_POST['nom_categorie']);
             $this->query('INSERT INTO categorie (nom_categorie,	produit_id) VALUE(?,?)', [
                 $nom_categorie,
                 0
             ]);
-        }
-        else{
+            $categorie = $this->query('SELECT * FROM categorie WHERE categorie_id = ?', [
+                $this->lastInsertId()
+            ])->fetch(\PDO::FETCH_ASSOC);
+            $categorie = [
+                'id' => $categorie['categorie_id'],
+                'name' => $categorie['nom_categorie']
+            ];
+
+        } else {
             $error[] = "Il manque un quelque chose....";
-
+            $categorie = null;
         }
-        return [];
-        }
+        return [
+            'value' => $categorie,
+            'error' => $error
+        ];
+    }
 
+
+    public function getCategorie()
+    {
+        $response = $this->query('SELECT * FROM categorie');
+        return $response->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function deleteCategorie()
+    {
+        $categorieId = $_POST['categorie_id'];
+        $this->query('DELETE FROM categorie WHERE categorie_id = ?', [
+            $categorieId
+        ]);
+
+        return $categorieId;
+
+    }
 }

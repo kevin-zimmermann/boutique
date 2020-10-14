@@ -12,7 +12,6 @@ $(document).ready(function () {
         if ($(this).find("[name=type]").val() === "inscription") {
             checkInputs();
         }
-        console.log(checkvalid)
         if (checkvalid){
             $.ajax({
                 url: $(this).attr('action'),
@@ -25,8 +24,8 @@ $(document).ready(function () {
                         $(".error").html(renderHtml(data[1]))
                     } else {
                         location.replace(data[0])
-
                     }
+        console.log(data)
                 },
                 error: (error) => {
                     console.log(error.responseText)
