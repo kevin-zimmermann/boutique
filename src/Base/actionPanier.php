@@ -18,9 +18,10 @@ class panier extends DataBase
     protected $panier = '';
     protected $Value = [];
 
-    public function creationPanier(){
-        if (!isset($_SESSION['panier'])){
-            $_SESSION['panier']=array();
+    public function creationPanier()
+    {
+        if (!isset($_SESSION['panier'])) {
+            $_SESSION['panier'] = array();
             $_SESSION['panier']['libelleProduit'] = array();
             $_SESSION['panier']['qteProduit'] = array();
             $_SESSION['panier']['prixProduit'] = array();
@@ -28,3 +29,4 @@ class panier extends DataBase
         }
         return true;
     }
+}
