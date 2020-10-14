@@ -9,7 +9,16 @@ $user = new Base\profil_utilisateurs();
     <div class="big-header">
         <div class="inline-nav-img">
             <nav class="big-nav">
-                <div class="bond" onMouseOver=""><h1 class="title">FOO2F<i class="far fa-futbol"></i>OT</h1></div>
+                <div class="bond-title">
+                    <h1 class="title">FOO2F
+                        <span class="ballon-inner">
+                            <i onMouseOver="" class=" bond far fa-futbol"></i>
+                            <span class="ombre-other">
+                                <span class="ombre"></span></span>
+                            <span class="ballon"></span>
+                        </span>OT
+                    </h1>
+                </div>
                 <?php if (isset($_SESSION['id'])) { ?>
                     <ul>
                         <div class="center">

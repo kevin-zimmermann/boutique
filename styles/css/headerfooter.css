@@ -26,11 +26,57 @@ header {
     width: 100%;
     padding-bottom: 10px;
 }
+.bond-title {
+    position: relative;
+}
 
-.bond{
+.bond {
+    position: absolute;
     animation: bounce 0.35s ease infinite alternate;
 }
-@keyframes bounce{ from {transform: translateY(0);}
+
+.ballon {
+    padding-left: 35px;
+}
+
+.ombre {
+    background-color: rgba(14, 14, 16, 0.11);
+    width: 33px;
+    height: 7px;
+    border-radius: 100%;
+    display: block;
+    position: absolute;
+    right: 0;
+    animation: bounceT 0.35s ease infinite alternate;
+}
+
+.ballon-inner {
+    position: relative;
+}
+
+.ombre-other {
+    width: 33px;
+    height: 7px;
+    display: block;
+    position: absolute;
+    right: 1px;
+
+}
+
+@keyframes bounceT {
+    from {
+        transform: scale(.2);
+    }
+    to {
+        transform: scale(1.2);
+
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
     to {
         transform: translateY(-20px);
 
