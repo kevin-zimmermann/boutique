@@ -42,12 +42,23 @@
             </div>
             <div class="form-article">
                 <label  for="taille">Taille</label> <br/>
-                <select name="taille">
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                </select><br/>
+                <label  for="taille">S</label> <br/>
+                <input type="number" id="s" name="s" >
+            </div>
+                <div class="form-article">
+                <label  for="taille">M</label> <br/>
+                <input type="number" id="m" name="m" >
+                </div>
+
+                <div class="form-article">
+                <label  for="taille">L</label> <br/>
+                <input type="number" id="l" name="l" >
+              </div>
+
+            <div class="form-article">
+            <label  for="taille">XL</label> <br/>
+                <input type="number" id="xl" name="xl" >
+
             </div>
             <div class="form-article">
                 <label  for="prix">Prix</label> <br/>

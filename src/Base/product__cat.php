@@ -191,6 +191,24 @@ class product__cat extends DataBase
         return $response->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function setCategorie()
+    {
+        $this->product = $this->query('SELECT * FROM categorie WHERE id = ?', [$_GET['categorie_id']])->fetch(\PDO::FETCH_ASSOC);
+        return $this;
+    }
+
+    public function __get($key)
+    {
+        $product = $this->$product;
+        $newValue = $this->newValue;
+        if (!empty($newValue[$key])) {
+            return $newValue[$key];
+        }
+        if (!empty($product[$key])) {
+            return $product[$key];
+        }
+        return '';
+    }
     public function deleteCategorie()
     {
         $categorieId = $_POST['categorie_id'];
@@ -202,3 +220,6 @@ class product__cat extends DataBase
 
     }
 }
+
+
+

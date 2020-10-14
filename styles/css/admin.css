@@ -1,17 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
 
-
+*{
+    box-sizing: border-box;
+}
 main {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-height: 100vh;
-    margin: auto;
-    box-sizing: border-box;
-
-
+    margin-bottom: 20px;
 }
 
 .container {
@@ -20,8 +16,7 @@ main {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     width: 600px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .card{

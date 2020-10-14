@@ -1,4 +1,4 @@
-html, body{
+html, body {
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,13 +11,15 @@ html, body{
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-body,ul,li,a,i{
+
+body, ul, li, a, i {
     list-style: none;
     text-decoration: none !important;
     color: #009ad6;
 
 }
-ul{
+
+ul {
     padding-inline-start: 0px !important;
 }
 
@@ -27,14 +29,62 @@ header {
     padding-bottom: 10px;
 }
 
-.bond{
+.bond-title {
+    position: relative;
+}
+
+.bond {
+    position: absolute;
     animation: bounce 0.35s ease infinite alternate;
 }
-@keyframes bounce{ from {transform: translateY(0);}
+
+.ballon {
+    padding-left: 35px;
+}
+
+.ombre {
+    background-color: rgba(14, 14, 16, 0.11);
+    width: 33px;
+    height: 7px;
+    border-radius: 100%;
+    display: block;
+    position: absolute;
+    right: 0;
+    animation: bounceT 0.35s ease infinite alternate;
+}
+
+.ballon-inner {
+    position: relative;
+}
+
+.ombre-other {
+    width: 33px;
+    height: 7px;
+    display: block;
+    position: absolute;
+    right: 1px;
+
+}
+
+@keyframes bounceT {
+    from {
+        transform: scale(.2);
+    }
+    to {
+        transform: scale(1.2);
+
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
     to {
         transform: translateY(-20px);
 
-    }}
+    }
+}
 
 .inline-nav-img {
     position: relative;
@@ -90,6 +140,7 @@ i {
     justify-content: center;
     margin-bottom: 15px;
 }
+
 /**.big-nav img {
     display: flex;
     justify-content: center;
@@ -111,7 +162,8 @@ i {
     padding: 15px;
 
 }
-.list-header li{
+
+.list-header li {
     text-align: center;
     display: inline-flex;
     padding: 5px;
@@ -123,21 +175,24 @@ i {
     text-decoration: none !important;
 }
 
-.list-header{
+.list-header {
     display: flex;
     justify-content: center;
 }
-form.form-inline{
+
+form.form-inline {
     left: 0;
     position: absolute;
     display: flex;
     padding: 10px;
 
 }
-.carousel, .card-deck{
+
+.carousel, .card-deck {
     padding-bottom: 20px !important;
 }
-.card-deck{
+
+.card-deck {
     max-width: 1400px !important;
     margin: auto !important;
     display: flex !important;
@@ -148,7 +203,7 @@ footer {
     background-color: whitesmoke;
     text-align: center;
     padding: 10px 0;
-    margin-top:auto;
+    margin-top: auto;
 
 }
 
@@ -156,17 +211,19 @@ footer {
 
     font-size: 35px;
 }
-.get-delete, .get-error{
+
+.get-delete, .get-error {
     position: absolute;
     top: 0;
     right: 0;
-    left:0;
+    left: 0;
     bottom: 0;
     background: #0000000f;
     display: none;
     opacity: 0;
 }
-.get-delete-inner, .get-error-inner{
+
+.get-delete-inner, .get-error-inner {
     max-width: 500px;
     margin: auto;
     background: white;
@@ -174,34 +231,43 @@ footer {
     border-radius: 5px;
     overflow: hidden;
 }
+
 .conf {
     padding: 10px;
     background: #dbdbdb;
     text-align: center;
 }
-.active-overlay{
+
+.active-overlay {
     display: flex;
 }
-.conf{
+
+.conf {
     padding: 10px;
 }
-.get-delete-inner h3, .get-error h3{
+
+.get-delete-inner h3, .get-error h3 {
     color: white;
     background: #009ad6;
     padding: 10px;
 }
-.content-delete, .content-error{
-    padding: 10px;color: black;
+
+.content-delete, .content-error {
+    padding: 10px;
+    color: black;
 }
-.overlay-popup:after{
-    content : '\f00d';
+
+.overlay-popup:after {
+    content: '\f00d';
     color: white;
     font-family: 'Font Awesome 5 Pro';
 }
-.overlay-popup{
+
+.overlay-popup {
     float: right;
 }
-.overlay-popup:hover{
+
+.overlay-popup:hover {
     text-decoration: none;
 }
 
