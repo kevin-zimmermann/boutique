@@ -17,47 +17,51 @@ class product__cat extends DataBase
 {
     protected $product = '';
     protected $newValue = [];
+    protected $extensionType = ['.png', '.jpeg', '.jpg'];
+    public function addProduct()
+    {
+        $error = [];
 
-    public function addProduct(){
-        if ($_POST['type'] == 'addproduct'){
-            $productId = htmlentities($_POST['product_id']);
-            $image = htmlentities ($_POST['image']);
-            $cat = htmlentities($_POST['categorie']);
-            $nproduit = htmlentities($_POST['nom_produit']);
-            $description = htmlentities($_POST['description']);
-            $taille = htmlentities($_POST['taille']);
-            $prix = htmlentities($_POST['prix']);
-            $quantite = htmlentities($_POST['quantite']);
-            $error = [];
-            $this->query('INSERT INTO produits (image, categorie, nom_produit, description , taille , prix , quantite ) VALUE(?, ?, ?, ?, ?,? ,? )', [
-                $image,
+        $cat = htmlentities($_POST['categorie']);
+        $nproduit = htmlentities($_POST['nom_produit']);
+        $description = htmlentities($_POST['description']);
+        $taille = htmlentities($_POST['taille']);
+        $prix = htmlentities($_POST['prix']);
+        $quantite = htmlentities($_POST['quantite']);
+        $checkLog = $this->checkLogo();
+        $errors = [];
+        if (empty ($cat || $nproduit || $description || $taille || $prix || $quantite)) {
+            $error[] = "Il manque un quelque chose....";
+        }
+        if(!empty($checkLog['error']))
+        {
+            $errors[] = $checkLog['error'];
+        }
+        if (empty($errors)) {var_dump($_POST);
+            $test = $this->query('INSERT INTO produit(image, categorie_id, nom_produit, description, taille, prix, quantite) VALUES(?,?,?,?,?,?,?) ', [
+                '',
                 $cat,
                 $nproduit,
                 $description,
                 $taille,
                 $prix,
                 $quantite
-
             ]);
-        }
-        if (empty ($cat || $image || $nproduit || $description || $taille || $prix ||$quantite)) {
-            $error[] = "Il manque un quelque chose....";
-        } else{
-
+            var_dump($test);
+            $this->setLogo();
         }
         return $error;
 
 
-        }
+    }
 
     public function deleteProduct()
     {
         $productId = $_POST['product_id'];
-        $product= $this->query('SELECT * FROM produit WHERE id = ?', [
+        $product = $this->query('SELECT * FROM produit WHERE id = ?', [
             $productId,
         ])->fetch(\PDO::FETCH_ASSOC);
-        if(empty($product))
-        {
+        if (empty($product)) {
             $this->query('DELETE FROM produit WHERE id = ?', [
                 $productId
             ]);
@@ -66,37 +70,39 @@ class product__cat extends DataBase
         return $productId;
     }
 
-    public function getProducts(){
+    public function getProducts()
+    {
         $response = $this->query('SELECT * FROM produit');
         return $response->fetchAll(\PDO::FETCH_ASSOC);
     }
+
     public function setProduct()
     {
         $this->product = $this->query('SELECT * FROM produit WHERE id = ?', [$_GET['product_id']])->fetch(\PDO::FETCH_ASSOC);
         return $this;
     }
+
     public function __get($key)
     {
-        $product = $this->$product;
+        $product = $this->product;
         $newValue = $this->newValue;
-        if(!empty($newValue[$key]))
-        {
+        if (!empty($newValue[$key])) {
             return $newValue[$key];
         }
-        if(!empty($product[$key]))
-        {
+        if (!empty($product[$key])) {
             return $product[$key];
         }
         return '';
     }
+
     public function __set($key, $value)
     {
         $this->newValue[$key] = $value;
     }
+
     public function updateProduct()
     {
         $productId = $_POST['product_id'];
-        $image = $_POST['image'];
         $cat = $_POST['categorie'];
         $nproduit = $_POST['nom_produit'];
         $description = $_POST['description'];
@@ -106,9 +112,14 @@ class product__cat extends DataBase
         $product = $this->query('SELECT * FROM produit WHERE id = ?', [
             $productId,
         ])->fetch(\PDO::FETCH_ASSOC);
-        if(!empty($product))
+        $checkLog = $this->checkLogo();
+        $errors = [];
+        if(!empty($checkLog['error']))
         {
-            $this->query('UPDATE produit SET image = ?, categorie = ?, nom_produit = ?, description = ?, taille = ? , prix = ?, quantite = ?  WHERE id = ?', [
+             $errors[] = $checkLog['error'];
+        }
+        if (!empty($product) && empty($errors)) {
+            $this->query('UPDATE produit SET image = ?, categorie_id = ?, nom_produit = ?, description = ?, taille = ? , prix = ?, quantite = ?  WHERE id = ?', [
                 $image,
                 $cat,
                 $nproduit,
@@ -117,15 +128,17 @@ class product__cat extends DataBase
                 $prix,
                 $quantite
             ]);
+            $this->setLogo();
         }
         return [];
     }
+
     /**
      * @return array
      */
     public function checkLogo()
     {
-        $type = pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION);
+        $type = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
         $output = [
             'type' => $type
         ];
@@ -135,24 +148,19 @@ class product__cat extends DataBase
         return $output;
     }
 
-    /**
-     * @param ProductImg $productImg
-     * @throws \Exception
-     */
-    public function setLogo(ProductImg $productImg)
+
+    public function setLogo()
     {
         $pathAvatar = 'data/product_img/';
-        $name = $productImg->product_img_id . ".jpg";
+        $name = $this->lastInsertId() . ".jpg";
         foreach (scandir($pathAvatar) as $avatar) {
             if (pathinfo($avatar, PATHINFO_FILENAME) == pathinfo($name, PATHINFO_FILENAME)) {
                 $path = $pathAvatar . $avatar;
                 unset($path);
             }
         }
-        move_uploaded_file($_FILES["file"]["tmp_name"], $pathAvatar . $name);
-        $productImg->name = $_FILES["file"]["name"];
-        $productImg->save();
+        move_uploaded_file($_FILES["image"]["tmp_name"], $pathAvatar . $name);
     }
-    public
+
 
 }

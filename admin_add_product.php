@@ -36,26 +36,26 @@ if (!$user->isAdmin()) {
 <main>
     <div class="container">
         <h1 class="title"> Formulaire produit</h1>
-        <form action="admin_add_product.php" id="form" class="form form-ajax" method="post">
+        <form action="actionAdmin.php" id="form" class="form form-ajax" method="post" enctype="multipart/form-data">
                 <div class="form-article">
                 <label for="categorie">Catégorie</label> <br/>
-                <input type="text" id="categorie" name="categorie">
+                <input type="text" id="categorie" name="categorie" class="input">
                 </div>
                     <div class="form-article">
                         <label for="nom">Nom</label> <br/>
-                        <input type="text" id="nom_produit" name="nom_produit" >
+                        <input type="text" id="nom_produit" name="nom_produit" class="input">
             </div>
             <div class="form-article">
                 <label for="image">Image</label> <br/>
-                <input type="image" id="image" name="image">
+                <input type="file" id="image" name="image"  class="input">
             </div>
             <div class="form-article">
                 <label for="descripiton">Description du produit</label> <br/>
-                <input type="text" id="description" name="description">
+                <input type="text" id="description" name="description"  class="input">
             </div>
             <div class="form-article">
                 <label for="taille">Taille du produit</label> <br/>
-                <select name="taille">
+                <select name="taille"  class="input">
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
@@ -64,11 +64,11 @@ if (!$user->isAdmin()) {
             </div>
             <div class="form-article">
                 <label for="prix">Prix</label> <br/>
-                <input type="text" id="prix" name="prix">
+                <input type="text" id="prix" name="prix"  class="input">
             </div>
             <div class="form-article">
                 <label for="quantite">Quantité</label> <br/>
-                <input type="text" id="quantite" name="quantite">
+                <input type="text" id="quantite" name="quantite"  class="input">
             </div>
             <input type="hidden" value="addproduct" name="type">
             <button type="submit">Envoyer</button>

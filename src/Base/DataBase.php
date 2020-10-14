@@ -35,4 +35,8 @@ class DataBase
 
         return $statement ;
     }
+    public function lastInsertId()
+    {
+        return $this->pdo->lastInsertId();
+    }
 }
