@@ -19,42 +19,29 @@
     <title> Panel admin - Foo2Foot</title>
 </head>
 <body>
-
 <?php include 'header.php'?>
-<?php
-
-use Base\Profil;
-
-$user = new Base\profil_utilisateurs();
-$admin = new Base\Admin();
-$product = new Base\product__cat();
-
-if (!$user->isAdmin()) {
-    header('location:index.php');
-}
-?>
 <main>
     <div class="container">
         <h1 class="title"> Formulaire produit</h1>
-        <form action="admin_add_product.php" id="form" class="form form-ajax" method="post">
+        <form action="action.php" id="form" class="form form-ajax" method="post">
                 <div class="form-article">
-                <label for="categorie">Catégorie</label> <br/>
-                <input type="text" id="categorie" name="categorie">
+                <label  for="categorie">Catégorie</label> <br/>
+                <input type="text" id="text" name="categorie" >
                 </div>
                     <div class="form-article">
-                        <label for="nom">Nom</label> <br/>
-                        <input type="text" id="nom_produit" name="nom_produit" >
+                        <label  for="nom">Nom</label> <br/>
+                        <input type="text" id="text" name="nom_produit" >
             </div>
             <div class="form-article">
-                <label for="image">Image</label> <br/>
-                <input type="image" id="image" name="image">
+                <label  for="photo">Image</label> <br/>
+                <input type="file" id="img" name="image" >
             </div>
             <div class="form-article">
-                <label for="descripiton">Description du produit</label> <br/>
-                <input type="text" id="description" name="description">
+                <label  for="des">Description</label> <br/>
+                <input type="text" id="description" name="description" >
             </div>
             <div class="form-article">
-                <label for="taille">Taille du produit</label> <br/>
+                <label  for="taille">Taille</label> <br/>
                 <select name="taille">
                     <option value="S">S</option>
                     <option value="M">M</option>
@@ -63,15 +50,16 @@ if (!$user->isAdmin()) {
                 </select><br/>
             </div>
             <div class="form-article">
-                <label for="prix">Prix</label> <br/>
-                <input type="text" id="prix" name="prix">
+                <label  for="prix">Prix</label> <br/>
+                <input type="number" id="prix" name="prix" >
             </div>
             <div class="form-article">
-                <label for="quantite">Quantité</label> <br/>
-                <input type="text" id="quantite" name="quantite">
+                <label  for="stock">Quantité</label> <br/>
+                <input type="number" id="quantité" name="stock" >
+
+                <input type="hidden" value="addproduct" name="type">
+                <button type="submit">Envoyer</button>
             </div>
-            <input type="hidden" value="addproduct" name="type">
-            <button type="submit">Envoyer</button>
         </div>
     </form>
 </main>

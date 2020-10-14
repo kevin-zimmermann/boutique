@@ -24,16 +24,14 @@ main {
     margin-bottom: 30px;
 }
 
+.card{
+    width: -moz-available;
+}
 .form-article {
 
     padding: 10px 40px;
     overflow: hidden;
 
-}
-
-.form-article label {
-
-    margin-bottom: 3px;
 }
 
 .form-article input {
@@ -49,9 +47,24 @@ main {
     border-color: #009ad6;
 }
 
+.form button {
+    background-color: #009ad6;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    margin: auto;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 input {
     display: block;
     outline: none;
     border: none;
-    margin-bottom: 20px;
+
 }
