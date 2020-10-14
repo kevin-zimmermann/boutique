@@ -38,8 +38,12 @@ if (!$user->isAdmin()) {
         <h1 class="title"> Formulaire produit</h1>
         <form action="actionAdmin.php" id="form" class="form form-ajax" method="post" enctype="multipart/form-data">
                 <div class="form-article">
-                <label for="categorie">Catégorie</label> <br/>
-                <input type="text" id="categorie" name="categorie" class="input">
+                <label for="categorie-select">Catégorie</label> <br/>
+                    <select name="categorie" id="categorie-select">
+                        <?php foreach ($product->getCategorie() as $categorie){?>
+                        <option value="<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                     <div class="form-article">
                         <label for="nom">Nom</label> <br/>
@@ -77,5 +81,4 @@ if (!$user->isAdmin()) {
 </main>
 <?php include 'footer.php' ?>
 </body>
-
 </html>

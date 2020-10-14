@@ -18,6 +18,7 @@ class product__cat extends DataBase
     protected $product = '';
     protected $newValue = [];
     protected $extensionType = ['.png', '.jpeg', '.jpg'];
+
     public function addProduct()
     {
         $error = [];
@@ -161,6 +162,12 @@ class product__cat extends DataBase
         }
         move_uploaded_file($_FILES["image"]["tmp_name"], $pathAvatar . $name);
     }
+    public function getCategorie()
+    {
+        $response = $this->query('SELECT * FROM categorie');
+        return $response->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
 
 
 }
