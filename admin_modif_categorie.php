@@ -25,24 +25,17 @@ use Base\Profil;
 $user = new Base\profil_utilisateurs();
 $admin = new Base\Admin();
 $product = new Base\product__cat();
-$product = $product->setCatgeorie();
 if (!$user->isAdmin()) {
     header('location:index.php');
 }
+$category = $product->setCatgeorie();
 ?>
 <main>
-    <form action="actionAdmin.php?user_id=<?= $product->id ?>" method="post" id="form" class="form form-ajax">
-        <label for="image">Nouvelle image</label>
-        <input type="image" name="image" id="image" value="<?= $product->image ?>" class="input">
-        <label for="categorie_id">Modifier Catégorie</label>
-        <input type="text" name="categorie_id" id="categorie_id" value="<?= $product->categorie_id?>" class="input">
-        <label for="nom_produit">Nouveau nom de produit</label>
-        <input type="text" name="nom_produit" id="nom_produit" value="<?= $product->nom_produit ?>" class="input">
-        <label for="description">Nouvelle description</label>
-        <input type="text" name="description" id="description" value="<?= $product->description ?>" class="input">
-        <p>Quantité: <?= $product->quantite ?></p>
-        <p>Taille: <?= $product->taille ?></p>
-        <input type="hidden" name="type" value="modifAdminProduct">
+    <form action="actionAdmin.php?categorie_id=<?= $category->categorie_id ?>" method="post" id="form" class="form form-ajax">
+        <label for="nom_categorie">Modifier nom Catégorie</label>
+        <input type="text" name="nom_categorie" id="nom_categorie" value="<?= $category->nom_categorie ?>" class="input">
+        <input type="hidden" name="type" value="modifCat" class="input">
+
         <button type="submit">Valider <i class="fas fa-check"></i></button>
     </form>
     <script src="script.js"></script>

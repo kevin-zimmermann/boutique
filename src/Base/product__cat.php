@@ -18,7 +18,8 @@ class product__cat extends DataBase
     protected $product = '';
     protected $newValue = [];
     protected $extensionType = ['.png', '.jpeg', '.jpg'];
-
+    protected $currentEntity = 'product';
+    protected $category = [];
     public function addProduct()
     {
         $error = [];
@@ -27,15 +28,11 @@ class product__cat extends DataBase
         $nproduit = htmlentities($_POST['nom_produit']);
         $description = htmlentities($_POST['description']);
         $prix = htmlentities($_POST['prix']);
-        if(empty($_FILES))
-        {
+        if (empty($_FILES)) {
             $error[] = "Il manque un quelque chose....";
-        }
-        else
-        {
+        } else {
             $checkLog = $this->checkLogo();
-            if(!empty($checkLog['error']))
-            {
+            if (!empty($checkLog['error'])) {
                 $error[] = $checkLog['error'];
             }
         }
@@ -57,14 +54,10 @@ class product__cat extends DataBase
                 'l',
                 'xl'
             ];
-            foreach ($arrayTaille as $taille)
-            {
-                if(empty($_POST[$taille]))
-                {
+            foreach ($arrayTaille as $taille) {
+                if (empty($_POST[$taille])) {
                     $currentTaille = 0;
-                }
-                else
-                {
+                } else {
                     $currentTaille = $_POST[$taille];
                 }
                 $this->query('INSERT INTO stock(taille, produit_id, stock) VALUES(?,?,?) ', [
@@ -91,8 +84,7 @@ class product__cat extends DataBase
                 $productId
             ]);
             $path = 'data/product_img/' . $productId . '.jpg';
-            if(file_exists($path))
-            {
+            if (file_exists($path)) {
                 unlink($path);
             }
             $this->query('DELETE FROM stock WHERE produit_id = ?', [
@@ -104,7 +96,22 @@ class product__cat extends DataBase
 
         return $productId;
     }
+    public function setCatgeorie()
+    {
+        $this->currentEntity = 'category';
+        $this->category = $this->query('SELECT * FROM categorie WHERE categorie_id = ?', [$_GET['categorie_id']])->fetch(\PDO::FETCH_ASSOC);
+        return $this;
+    }
+    public function deleteCategorie()
+    {
+        $categorieId = $_POST['categorie_id'];
+        $this->query('DELETE FROM categorie WHERE categorie_id = ?', [
+            $categorieId
+        ]);
 
+        return $categorieId;
+
+    }
     public function getProducts()
     {
         $response = $this->query('SELECT * FROM produit');
@@ -117,15 +124,50 @@ class product__cat extends DataBase
         return $this;
     }
 
+    public function addCategorie()
+    {
+        $error = [];
+        if ($_POST['type'] == 'addcategorie') {
+            $nom_categorie = htmlentities($_POST['nom_categorie']);
+            $this->query('INSERT INTO categorie (nom_categorie) VALUE(?)', [
+                $nom_categorie
+            ]);
+            $categorie = $this->query('SELECT * FROM categorie WHERE categorie_id = ?', [
+                $this->lastInsertId()
+            ])->fetch(\PDO::FETCH_ASSOC);
+            $categorie = [
+                'id' => $categorie['categorie_id'],
+                'name' => $categorie['nom_categorie']
+            ];
+
+        } else {
+            $error[] = "Il manque un quelque chose....";
+            $categorie = null;
+        }
+        return [
+            'value' => $categorie,
+            'error' => $error
+        ];
+    }
+
     public function __get($key)
     {
-        $product = $this->product;
         $newValue = $this->newValue;
         if (!empty($newValue[$key])) {
             return $newValue[$key];
         }
-        if (!empty($product[$key])) {
-            return $product[$key];
+        if ($this->product == 'product') {
+            $entity = $this->product;
+        } else {
+            $entity = $this->category;
+        }
+        return $this->getValue($entity, $key);
+    }
+
+    protected function getValue($entity, $key)
+    {
+        if (!empty($entity[$key])) {
+            return $entity[$key];
         }
         return '';
     }
@@ -149,9 +191,8 @@ class product__cat extends DataBase
         ])->fetch(\PDO::FETCH_ASSOC);
         $checkLog = $this->checkLogo();
         $errors = [];
-        if(!empty($checkLog['error']))
-        {
-             $errors[] = $checkLog['error'];
+        if (!empty($checkLog['error'])) {
+            $errors[] = $checkLog['error'];
         }
         if (!empty($product) && empty($errors)) {
             $this->query('UPDATE produit SET image = ?, categorie_id = ?, nom_produit = ?, description = ?, taille = ? , prix = ?, quantite = ?  WHERE id = ?', [
@@ -165,6 +206,15 @@ class product__cat extends DataBase
             ]);
             $this->setLogo();
         }
+        return [];
+    }
+    public function updateCategory()
+    {
+        $NameCategory = $_POST['nom_categorie'];
+        $this->query('UPDATE categorie SET nom_categorie = ? WHERE categorie_id = ?', [
+            $NameCategory,
+            $_GET['categorie_id']
+        ]);
         return [];
     }
 
@@ -196,12 +246,12 @@ class product__cat extends DataBase
         }
         move_uploaded_file($_FILES["image"]["tmp_name"], $pathAvatar . $name);
     }
+
     public function getCategorie()
     {
         $response = $this->query('SELECT * FROM categorie');
         return $response->fetchAll(\PDO::FETCH_ASSOC);
     }
-
 
 
 }

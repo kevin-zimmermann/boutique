@@ -34,7 +34,10 @@ switch ($_POST['type']) {
         $url ='admin_categorie.php';
         $return = ['url' => $url, 'return' => $product->deleteCategorie()];
         break;
-
+    case 'modifCat' ;
+        $url ='admin_categorie.php';
+        $return = [$url, $product->updateCategory()];
+        break;
 }
 
 echo json_encode($return);

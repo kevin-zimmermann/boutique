@@ -49,7 +49,7 @@ if (!$user->isAdmin()) {
             </div>
             <div class="form-article">
                 <label for="des">Description</label> <br/>
-                <textarea id="description" name="description" class="input" > </textarea>
+                <textarea id="description" name="description" class="input"> </textarea>
             </div>
             <div class="form-article">
                 <label  for="taille">Taille</label> <br/>

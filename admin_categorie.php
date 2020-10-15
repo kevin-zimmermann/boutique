@@ -71,9 +71,9 @@ if (!$user->isAdmin()) {
         <form action="actionAdmin.php" id="form" class="form form-ajax-other" method="post">
             <div class="form-article">
                 <label for="nom_categorie">Nom de la catégorie</label> <br/>
-                <input type="text" id="nom_categorie" name="nom_categorie">
+                <input type="text" id="nom_categorie" name="nom_categorie" class="input">
             </div>
-            <input type="hidden" value="addcategorie" name="type">
+            <input type="hidden" value="addcategorie" name="type" class="input">
             <button type="submit">Envoyer</button>
         </form>
     </div>
@@ -111,14 +111,17 @@ if (!$user->isAdmin()) {
             next();
         })
     }
-
-    $('.ajax-delete').click(function () {
-        $('.get-delete').addClass('active-overlay');
-        $('.get-delete').animate({opacity: 1}, {duration: 100});
-        $('.get-delete').find('.action-input-hidden')
-            .attr('name', $(this).data('name'))
-            .val($(this).data('id'));
-    })
+    function callback()
+    {
+        $('.ajax-delete').click(function () {
+            $('.get-delete').addClass('active-overlay');
+            $('.get-delete').animate({opacity: 1}, {duration: 100});
+            $('.get-delete').find('.action-input-hidden')
+                .attr('name', $(this).data('name'))
+                .val($(this).data('id'));
+        })
+    }
+    callback();
     $('.action-ajax').submit(function (e) {
         e.preventDefault();
         console.log('dd')
@@ -166,15 +169,15 @@ if (!$user->isAdmin()) {
             dataType: "json",
             success: (data) => {
                 console.log(data)
-                if (data[1].error.length) {
+                if (data[1].error.length) {console.log('dd')
                     $(".content-error").html(renderHtml(data[1]))
                     $('.get-error').animate({opacity : 1}, {duration : 100});
                     $('.get-error').find('.content-error').html($(this).data('phrase-error'));
                 }
                 else
                 {
-                    console.log('dd')
-                    $('.table tbody').append(renderHtml(data[1].value))
+                    $('.table tbody').append(renderHtml(data[1].value));
+                    callback();
                 }
                 console.log(data)
             },

@@ -3,6 +3,7 @@
 use Base\Profil;
 include 'src/Base.php';
 $user = new Base\profil_utilisateurs();
+$header = new Base\Header();
 ?>
 
 <header>
@@ -61,18 +62,11 @@ $user = new Base\profil_utilisateurs();
                 <li class="dropdown">
                     <p data-toggle="dropdown">Boutique</p>
                     <div class="dropdown-menu">
-                        <div class="dropdown-item">
-                            Maillots
+                        <?php foreach ($header->getCategories() as $categorie) { ?>
+                        <div class="dropdown-item" >
+                            <?= $categorie['nom_categorie'] ?>
                         </div>
-                        <div class="dropdown-item">
-                            Shorts
-                        </div>
-                        <div class="dropdown-item">
-                            Survêtements
-                        </div>
-                        <div class="dropdown-item">
-                            Chaussettes
-                        </div>
+                        <?php } ?>
                     </div>
                 </li>
                 <li><a href="calendrier.php">
