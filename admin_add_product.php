@@ -26,7 +26,7 @@
         <form action="action.php" id="form" class="form form-ajax" method="post">
                 <div class="form-article">
                 <label  for="categorie">Catégorie</label> <br/>
-                <input type="text" id="text" name="categorie" >
+                <?php foreach ($pro)?>
                 </div>
                     <div class="form-article">
                         <label  for="nom">Nom</label> <br/>
@@ -51,12 +51,12 @@
                 </div>
 
                 <div class="form-article">
-                <label  for="taille">L</label> <br/>
+                <label for="taille">L</label> <br/>
                 <input type="number" id="l" name="l" >
               </div>
 
             <div class="form-article">
-            <label  for="taille">XL</label> <br/>
+            <label for="taille">XL</label> <br/>
                 <input type="number" id="xl" name="xl" >
 
             </div>

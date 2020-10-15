@@ -30,6 +30,9 @@ $(document).ready(function () {
                 data: formData,
                 dataType: "json",
                 enctype : 'multipart/form-data',
+                contentType:false,
+                processData : false,
+                cache:false,
                 success: (data) => {
                     console.log(data)
                     if (data[1].length) {
