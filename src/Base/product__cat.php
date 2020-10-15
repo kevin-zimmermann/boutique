@@ -54,6 +54,7 @@ class product__cat extends DataBase
                 'l',
                 'xl'
             ];
+            $this->setLogo();
             foreach ($arrayTaille as $taille) {
                 if (empty($_POST[$taille])) {
                     $currentTaille = 0;
@@ -66,7 +67,6 @@ class product__cat extends DataBase
                     $currentTaille,
                 ]);
             }
-            $this->setLogo();
         }
         return $error;
 
@@ -120,10 +120,13 @@ class product__cat extends DataBase
 
     public function setProduct()
     {
-        $this->product = $this->query('SELECT * FROM produit WHERE id = ?', [$_GET['product_id']])->fetch(\PDO::FETCH_ASSOC);
+        $this->product = $this->query('SELECT * FROM produit WHERE produit_id = ?', [$_GET['produit_id']])->fetch(\PDO::FETCH_ASSOC);
         return $this;
     }
-
+    public function getSizes()
+    {
+        return $this->query('SELECT * FROM stock WHERE produit_id = ? ORDER BY taille', [$_GET['produit_id']])->fetchAll(\PDO::FETCH_ASSOC);
+    }
     public function addCategorie()
     {
         $error = [];
@@ -156,11 +159,13 @@ class product__cat extends DataBase
         if (!empty($newValue[$key])) {
             return $newValue[$key];
         }
-        if ($this->product == 'product') {
+
+        if ($this->currentEntity == 'product') {
             $entity = $this->product;
         } else {
             $entity = $this->category;
         }
+
         return $this->getValue($entity, $key);
     }
 
@@ -179,32 +184,42 @@ class product__cat extends DataBase
 
     public function updateProduct()
     {
-        $productId = $_POST['product_id'];
+        $productId = $_GET['produit_id'];
         $cat = $_POST['categorie'];
         $nproduit = $_POST['nom_produit'];
         $description = $_POST['description'];
-        $taille = $_POST['taille'];
         $prix = $_POST['prix'];
-        $quantite = $_POST['quantite'];
-        $product = $this->query('SELECT * FROM produit WHERE id = ?', [
+        $product = $this->query('SELECT * FROM produit WHERE produit_id = ?', [
             $productId,
         ])->fetch(\PDO::FETCH_ASSOC);
-        $checkLog = $this->checkLogo();
-        $errors = [];
-        if (!empty($checkLog['error'])) {
-            $errors[] = $checkLog['error'];
+        if (!empty($_FILES)){
+            $checkLog = $this->checkLogo();
+            $errors = [];
+            if (!empty($checkLog['error'])) {
+                $errors[] = $checkLog['error'];
+            }
         }
         if (!empty($product) && empty($errors)) {
-            $this->query('UPDATE produit SET image = ?, categorie_id = ?, nom_produit = ?, description = ?, taille = ? , prix = ?, quantite = ?  WHERE id = ?', [
+            $this->query('UPDATE produit SET image = ?, categorie_id = ?, nom_produit = ?, description = ?,  prix = ?  WHERE produit_id = ?', [
                 '',
                 $cat,
                 $nproduit,
                 $description,
-                $taille,
                 $prix,
-                $quantite
+                $_GET['produit_id']
             ]);
+            foreach ($this->getSizes() as $size)
+            {
+                $currentSize = $_POST[$size['taille']];
+                $this->query('UPDATE stock set stock = ? WHERE produit_id = ? AND taille = ? ', [
+                    $currentSize,
+                    $productId,
+                    $size['taille']
+                ]);
+            }
+            if (!empty($_FILES)){
             $this->setLogo();
+            }
         }
         return [];
     }

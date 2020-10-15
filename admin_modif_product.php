@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/css/headerfooter.css">
+    <link rel="stylesheet" href="styles/css/style.css">
     <title> Panel admin - Foo2Foot</title>
 </head>
 <?php include 'header.php' ?>
@@ -24,27 +25,49 @@ use Base\Profil;
 
 $user = new Base\profil_utilisateurs();
 $admin = new Base\Admin();
-$product = new Base\product__cat();
-$product = $product->setProduct();
+$produit = new Base\product__cat();
 if (!$user->isAdmin()) {
     header('location:index.php');
 }
+$product = $produit->setProduct();
 ?>
 <main>
-    <form action="actionAdmin.php?user_id=<?= $product->id ?>" method="post" id="form" class="form form-ajax">
-        <label for="image">Nouvelle image</label>
-        <input type="image" name="image" id="image" value="<?= $product->image ?>" class="input">
-        <label for="categorie_id">Modifier Catégorie</label>
-        <input type="text" name="categorie_id" id="categorie_id" value="<?= $product->categorie_id?>" class="input">
+    <div class="container">
+    <form action="actionAdmin.php?produit_id=<?= $product->produit_id ?>" method="post" id="form" class="form form-ajax" enctype="multipart/form-data">
+        <div class="form-article">
+        <label for="image">Ancienne image</label>
+        <img width="49px" src="data/product_img/<?= $product->produit_id?>.jpg" alt="<?= $product->nom_produit ?>">
+        </div>
+        <div class="form-article">
+        <input type="file" id="image" name="image" class="input">
+        </div>
+        <div class="form-article">
+        <label for="categorie-select">Catégorie</label> <br/>
+        <select name="categorie" id="categorie-select" class="input">
+            <?php foreach ( $product->getCategorie() as $categorie) { ?>
+                <option value="<?= $categorie['categorie_id']?>"><?= $categorie['nom_categorie'] ?></option>
+            <?php } ?>
+        </select>
+        </div>
+        <div class="form-article">
         <label for="nom_produit">Nouveau nom de produit</label>
         <input type="text" name="nom_produit" id="nom_produit" value="<?= $product->nom_produit ?>" class="input">
+        </div>
+        <label for="prix">Nouveau Prix</label>
+        <input type="number" min="0" step="0.01" name="prix" value="<?= $product->prix ?>" class="input">
+         <div class="form-article">
         <label for="description">Nouvelle description</label>
         <input type="text" name="description" id="description" value="<?= $product->description ?>" class="input">
-        <p>Quantité: <?= $product->quantite ?></p>
-        <p>Taille: <?= $product->taille ?></p>
+        <?php foreach ( $product->getSizes() as $size) { ?>
+            <label><?= strtoupper($size['taille']) ?></label>
+            <input type="number" value="<?= $size['stock'] ?>" name="<?= $size['taille'] ?>" class="input">
+
+        <?php } ?>
+         </div>
         <input type="hidden" name="type" value="modifAdminProduct" class="input">
         <button type="submit">Valider <i class="fas fa-check"></i></button>
     </form>
+    </div>
     <script src="script.js"></script>
 </main>
 </body>
