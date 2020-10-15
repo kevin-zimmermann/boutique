@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="add admin.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actionAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/actionAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_add_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_modif_categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modif_categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Base/product__cat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/product__cat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/headerfooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/headerfooter.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="kevin" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
