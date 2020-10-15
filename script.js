@@ -15,14 +15,16 @@ $(document).ready(function () {
         var formData = new FormData()
         $.each($('.input'), function () {
             let input = $(this)[0];
+
             if(input.type === 'file')
-            {
+            {console.log(input)
                 formData.append(input.name, input.files[0])
             }else{
                 formData.append(input.name, input.value)
             }
         })
-        console.log(checkvalid)
+        console.log(formData);
+
         if (checkvalid){
             $.ajax({
                 url: $(this).attr('action'),

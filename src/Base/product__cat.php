@@ -26,29 +26,53 @@ class product__cat extends DataBase
         $cat = htmlentities($_POST['categorie']);
         $nproduit = htmlentities($_POST['nom_produit']);
         $description = htmlentities($_POST['description']);
-        $taille = htmlentities($_POST['taille']);
         $prix = htmlentities($_POST['prix']);
-        $quantite = htmlentities($_POST['quantite']);
-        $checkLog = $this->checkLogo();
-        $errors = [];
-        if (empty ($cat || $nproduit || $description || $taille || $prix || $quantite)) {
+        if(empty($_FILES))
+        {
             $error[] = "Il manque un quelque chose....";
         }
-        if(!empty($checkLog['error']))
+        else
         {
-            $errors[] = $checkLog['error'];
+            $checkLog = $this->checkLogo();
+            if(!empty($checkLog['error']))
+            {
+                $error[] = $checkLog['error'];
+            }
         }
-        if (empty($errors)) {var_dump($_POST);
-            $test = $this->query('INSERT INTO produit(image, categorie_id, nom_produit, description, taille, prix, quantite) VALUES(?,?,?,?,?,?,?) ', [
+        if (empty ($cat || $nproduit || $description || $prix)) {
+            $error[] = "Il manque un quelque chose....";
+        }
+        if (empty($error)) {
+            $test = $this->query('INSERT INTO produit(image, categorie_id, nom_produit, description, prix) VALUES(?,?,?,?,?) ', [
                 '',
                 $cat,
                 $nproduit,
                 $description,
-                $taille,
                 $prix,
-                $quantite
             ]);
-            var_dump($test);
+            $productId = $this->lastInsertId();
+            $arrayTaille = [
+                's',
+                'm',
+                'l',
+                'xl'
+            ];
+            foreach ($arrayTaille as $taille)
+            {
+                if(empty($_POST[$taille]))
+                {
+                    $currentTaille = 0;
+                }
+                else
+                {
+                    $currentTaille = $_POST[$taille];
+                }
+                $this->query('INSERT INTO stock(taille, produit_id, stock) VALUES(?,?,?) ', [
+                    $taille,
+                    $productId,
+                    $currentTaille,
+                ]);
+            }
             $this->setLogo();
         }
         return $error;
@@ -59,13 +83,23 @@ class product__cat extends DataBase
     public function deleteProduct()
     {
         $productId = $_POST['product_id'];
-        $product = $this->query('SELECT * FROM produit WHERE id = ?', [
+        $product = $this->query('SELECT * FROM produit WHERE produit_id = ?', [
             $productId,
         ])->fetch(\PDO::FETCH_ASSOC);
-        if (empty($product)) {
-            $this->query('DELETE FROM produit WHERE id = ?', [
+        if (!empty($product)) {
+            $this->query('DELETE FROM produit WHERE produit_id = ?', [
                 $productId
             ]);
+            $path = 'data/product_img/' . $productId . '.jpg';
+            if(file_exists($path))
+            {
+                unlink($path);
+            }
+            $this->query('DELETE FROM stock WHERE produit_id = ?', [
+                $productId
+            ]);
+
+
         }
 
         return $productId;

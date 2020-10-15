@@ -48,8 +48,6 @@ if (!$user->isAdmin()) {
                                 <th scope="col">Nom produit</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Prix</th>
-                                <th scope="col">Quantité</th>
-                                <th scope="col">Taille</th>
                                 <th scope="col">Supprimer</th>
                                 <th scope="col">Modifier</th>
                             </tr>
@@ -63,11 +61,9 @@ if (!$user->isAdmin()) {
                                     <td><?= $product['nom_produit'] ?></td>
                                     <td><?= $product['description'] ?></td>
                                     <td><?= $product['prix'] ?></td>
-                                    <td><?= $product['quantite'] ?></td>
-                                    <td><?= $product['taille'] ?></td>
                                     <td class="ajax-delete" data-id="<?= $product['produit_id'] ?>" data-name="product_id"><i
                                                 class="fas fa-trash"></i></td>
-                                    <td><a href="admin_modif_user.php?user_id=<?= $product['produit_id'] ?>"><i
+                                    <td><a href="admin_modif_product.php?produit_id=<?= $product['produit_id'] ?>"><i
                                                     class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>
@@ -86,7 +82,7 @@ if (!$user->isAdmin()) {
             </div>
             <div class="conf">
                 <form action="actionAdmin.php" class="action-ajax" method="post">
-                    <input type="hidden" name="type" value="delete">
+                    <input type="hidden" name="type" value="deleteProduct">
                     <input type="hidden" class="action-input-hidden">
                     <button class="btn btn-primary">button</button>
                 </form>
@@ -113,17 +109,11 @@ if (!$user->isAdmin()) {
         }
 
         $('.ajax-delete').click(function () {
-            if ($(this).data('can-delete') === 'yes') {
-                $('.get-delete').addClass('active-overlay');
-                $('.get-delete').animate({opacity: 1}, {duration: 100});
-                $('.get-delete').find('.action-input-hidden')
-                    .attr('name', $(this).data('name'))
-                    .val($(this).data('id'));
-            } else {
-                $('.get-error').addClass('active-overlay');
-                $('.get-error').animate({opacity: 1}, {duration: 100});
-                $('.get-error').find('.content-error').html($(this).data('phrase-error'));
-            }
+            $('.get-delete').addClass('active-overlay');
+            $('.get-delete').animate({opacity: 1}, {duration: 100});
+            $('.get-delete').find('.action-input-hidden')
+                .attr('name', $(this).data('name'))
+                .val($(this).data('id'));
         })
         $('.action-ajax').submit(function (e) {
             e.preventDefault();
@@ -133,13 +123,11 @@ if (!$user->isAdmin()) {
                 data: $(this).serialize(),
                 dataType: 'json',
                 success: (data) => {
-                    console.log(data)
-                    $('.get-delete').css('display', 'none')
                     $('[data-id=' + data['return'] + ']').closest('.table-ajax').remove();
-
+                    leavePopup($('.get-delete'));
                 },
                 error: (error) => {
-                    console.log(error)
+                    console.log(error.responseText)
                 }
             });
             return false;

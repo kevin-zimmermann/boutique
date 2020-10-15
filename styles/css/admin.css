@@ -63,3 +63,9 @@ input {
     border: none;
 
 }
+textarea.input{
+    resize: none;
+}
+.input{
+    width: 100%;
+}

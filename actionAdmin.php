@@ -16,7 +16,7 @@ switch ($_POST['type']) {
         break;
     case 'deleteProduct' :
         $url = 'admin_user.php';
-        $return = [$url, $product->deleteProduct()];
+        $return = ['url' => $url, 'return' => $product->deleteProduct()];
         break;
     case 'modifAdminProduct' :
         $url = 'admin_user.php';
