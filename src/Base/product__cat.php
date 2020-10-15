@@ -253,5 +253,4 @@ class product__cat extends DataBase
         return $response->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-
 }
