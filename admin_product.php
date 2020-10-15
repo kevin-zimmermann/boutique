@@ -57,17 +57,17 @@ if (!$user->isAdmin()) {
                             <tbody>
                             <?php foreach ($product->getProducts() as $product) { ?>
                                 <tr class="table-ajax">
-                                    <th scope="row"><?= $product['id'] ?></th>
-                                    <td><?= $product['image'] ?></td>
+                                    <th scope="row"><?= $product['produit_id'] ?></th>
+                                    <td><img width="49px" src="data/product_img/<?= $product['produit_id'] ?>.jpg" alt="<?= $product['nom_produit'] ?>"></td>
                                     <td><?= $product['categorie_id'] ?></td>
                                     <td><?= $product['nom_produit'] ?></td>
                                     <td><?= $product['description'] ?></td>
                                     <td><?= $product['prix'] ?></td>
                                     <td><?= $product['quantite'] ?></td>
                                     <td><?= $product['taille'] ?></td>
-                                    <td class="ajax-delete" data-id="<?= $product['id'] ?>" data-name="product_id"><i
+                                    <td class="ajax-delete" data-id="<?= $product['produit_id'] ?>" data-name="product_id"><i
                                                 class="fas fa-trash"></i></td>
-                                    <td><a href="admin_modif_user.php?user_id=<?= $product['id'] ?>"><i
+                                    <td><a href="admin_modif_user.php?user_id=<?= $product['produit_id'] ?>"><i
                                                     class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>

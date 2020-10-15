@@ -20,13 +20,24 @@
 </head>
 <body>
 <?php include 'header.php'?>
+<?php
+$user = new \Base\profil_utilisateurs();
+$admin = new Base\Admin();
+$product = new Base\product__cat();
+if (!$user->isAdmin()) {
+    header('location:index.php');
+}?>
 <main>
     <div class="container">
         <h1 class="title"> Formulaire produit</h1>
         <form action="action.php" id="form" class="form form-ajax" method="post">
                 <div class="form-article">
-                <label  for="categorie">Catégorie</label> <br/>
-                <?php foreach ($pro)?>
+                <label for="categorie-select">Catégorie</label> <br/>
+                    <select name="categorie" id="categorie-select">
+                <?php foreach ($product->getCategorie() as $categorie) { ?>
+                    <option value="<?= $categorie['categorie_id']?>"><?= $categorie['nom_categorie'] ?></option>
+                    <?php } ?>
+                    </select>
                 </div>
                     <div class="form-article">
                         <label  for="nom">Nom</label> <br/>

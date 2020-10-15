@@ -121,7 +121,7 @@ class product__cat extends DataBase
         }
         if (!empty($product) && empty($errors)) {
             $this->query('UPDATE produit SET image = ?, categorie_id = ?, nom_produit = ?, description = ?, taille = ? , prix = ?, quantite = ?  WHERE id = ?', [
-                $image,
+                '',
                 $cat,
                 $nproduit,
                 $description,
