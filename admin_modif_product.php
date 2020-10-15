@@ -57,7 +57,7 @@ $product = $produit->setProduct();
         <input type="number" min="0" step="0.01" name="prix" value="<?= $product->prix ?>" class="input">
          <div class="form-article">
         <label for="description">Nouvelle description</label>
-        <input type="text" name="description" id="description" value="<?= $product->description ?>" class="input">
+        <textarea type="text" name="description" id="description" value="<?= $product->description ?>" class="input">
         <?php foreach ( $product->getSizes() as $size) { ?>
             <label><?= strtoupper($size['taille']) ?></label>
             <input type="number" value="<?= $size['stock'] ?>" name="<?= $size['taille'] ?>" class="input">
