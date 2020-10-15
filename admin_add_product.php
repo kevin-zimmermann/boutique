@@ -38,7 +38,7 @@
             </div>
             <div class="form-article">
                 <label  for="des">Description</label> <br/>
-                <input type="text" id="description" name="description" >
+                <textarea type="text" id="description" name="description" ></textarea>
             </div>
             <div class="form-article">
                 <label  for="taille">Taille</label> <br/>

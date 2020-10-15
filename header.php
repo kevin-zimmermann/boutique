@@ -10,7 +10,7 @@ $user = new Base\profil_utilisateurs();
         <div class="inline-nav-img">
             <nav class="big-nav">
                 <div class="bond-title">
-                    <h1 class="title">FOO2F
+                    <h1 class="title">FOO2F <a href="index"</a>
                         <span class="ballon-inner">
                             <i onMouseOver="" class=" bond far fa-futbol"></i>
                             <span class="ombre-other">
@@ -29,10 +29,15 @@ $user = new Base\profil_utilisateurs();
                         }
                         ?>
                         </div>
-                        <div class="dropdown">
+                        <div class="dropdown-marge dropdown">
                             <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown"> <a href=""> <i class="fas fa-user"></i></a></button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="admin.php">Mon compte</a>
+                                <?php
+                                if ($user->isAdmin()) {
+                                    ?>
+                                    <a class="dropdown-item" href="admin.php">Panel admin</a>
+                                <?php } ?>
+                                <a class="dropdown-item" href="admin.php">Mon profil</a>
                                 <a class="dropdown-item" href="disconnect.php">Déconnexion</a>
                                 <a class="dropdown-item" href="#"></a>
                             </div>
@@ -53,9 +58,22 @@ $user = new Base\profil_utilisateurs();
                         Accueil
                     </a>
                 </li>
-                <li><a href="boutique.php">
-                        Boutique
-                    </a>
+                <li class="dropdown">
+                    <p data-toggle="dropdown">Boutique</p>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item">
+                            Maillots
+                        </div>
+                        <div class="dropdown-item">
+                            Shorts
+                        </div>
+                        <div class="dropdown-item">
+                            Survêtements
+                        </div>
+                        <div class="dropdown-item">
+                            Chaussettes
+                        </div>
+                    </div>
                 </li>
                 <li><a href="calendrier.php">
                         Calendrier

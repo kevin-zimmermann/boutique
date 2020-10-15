@@ -21,8 +21,9 @@ $(document).ready(function () {
             }else{
                 formData.append(input.name, input.value)
             }
-        })
-        console.log(checkvalid)
+        });
+
+        console.log(formData)
         if (checkvalid){
             $.ajax({
                 url: $(this).attr('action'),
@@ -30,6 +31,9 @@ $(document).ready(function () {
                 data: formData,
                 dataType: "json",
                 enctype : 'multipart/form-data',
+                processData : false,
+                contentType : false,
+                cache:false,
                 success: (data) => {
                     console.log(data)
                     if (data[1].length) {
