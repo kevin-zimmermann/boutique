@@ -12,6 +12,9 @@ $(document).ready(function () {
         if ($(this).find("[name=type]").val() === "inscription") {
             checkInputs();
         }
+        if ($(this).find("[name=type]").val() === "change_profil_email") {
+            checkpUser();
+        }
         var formData = new FormData()
         $.each($('.input'), function () {
             let input = $(this)[0];
@@ -69,7 +72,43 @@ function renderHtml(errors)
     }
     return output;
 }
+function checkpUser(){
+    const nomValue = nom.val().trim();
+    const prenomValue = prenom.val().trim();
+    const emailValue = email.val().trim();
+    const phoneValue = phone.val().trim();
+    if (nomValue === '') {
+        setErrorFor(nom, 'Le nom ne peut pas être vide');
+        checkvalid = false;
+    } else {
+        setSuccessFor(nom);
+    }
+    if (prenomValue === '') {
+        setErrorFor(prenom, 'Le prenom ne peut pas être vide');
+        checkvalid = false;
+    } else {
+        setSuccessFor(prenom);
+    }
 
+    if (emailValue === '') {
+        setErrorFor(email, " l'adresse email vide");
+        checkvalid = false;
+    } else if (!isEmail(emailValue)) {
+        setErrorFor(email, 'Adresse mail non valide');
+        checkvalid = false;
+    } else {
+        setSuccessFor(email);
+    }
+    if (phoneValue === ""){
+        setErrorFor(phone, 'Votre numéro de téléphone ne doit être vide');
+        checkvalid = false;
+    } else if (!isphone(phoneValue)) {
+        setErrorFor(phone, 'Votre numéro ne correspond pas à la norme');
+        checkvalid = false;
+    }else{
+        setSuccessFor(phone);
+    }
+}
 function checkInputs() {
     const nomValue = nom.val().trim();
     const prenomValue = prenom.val().trim();

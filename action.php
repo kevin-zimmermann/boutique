@@ -3,7 +3,6 @@
 
 $url = "";
 include 'src/Base.php';
-
 $error = [];
 if(in_array($_POST['type'], ['inscription', 'connexion']))
 {
@@ -18,10 +17,18 @@ if(in_array($_POST['type'], ['inscription', 'connexion']))
         $error = $account->connexion();
     }
 }
-if($_POST['type'] == 'change_profil_email')
+if($_POST['type'] == "modif_password"){
+    $profil = new Base\profil_utilisateurs;
+    $url = "profil.php";
+    $error = $profil->register();
+}
+
+if($_POST['type'] == "change_profil_email")
 {
     $profil = new Base\profil_utilisateurs;
-    $profil->change();
+    $url = "profil_user.php";
+    $error = $profil->change();
+
 }
 
 echo json_encode([$url, $error]);

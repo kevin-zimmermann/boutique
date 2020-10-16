@@ -106,11 +106,14 @@ class profil_utilisateurs extends DataBase
             $_POST['email'],
             $this->email
         ])->fetch(PDO::FETCH_ASSOC);
-        var_dump($_SESSION);
         $error = [];
         if (!empty($testEmail)) {
             $error[] = "L'adresse email existe déjà !";
-        } else {
+        }
+        if (empty($prenom|| $nom || $phone|| $email)) {
+            $error[] = "Euh je crois qu'il manque quelque chose !";
+        }
+        else {
 
             $this->query('UPDATE utilisateurs set nom = ? , prenom = ? , email = ?, telephone = ? where id = ?', [
                 $nom,
