@@ -69,6 +69,7 @@ if (!$user->isAdmin()) {
                             <?php } ?>
                             </tbody>
                         </table>
+                        <button class="btn btn-dark"><a href="admin_add_product.php">Ajouter des produits</a></button>
                     </div>
                 </div>
             </div>

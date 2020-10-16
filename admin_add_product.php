@@ -68,7 +68,7 @@ if (!$user->isAdmin()) {
 
             <div class="form-article">
             <label for="taille">XL</label> <br/>
-                <input type="number" id="xl" name="xl"class="input"  min="0">
+                <input type="number" id="xl" name="xl" class="input"  min="0">
 
             </div>
             <div class="form-article">
@@ -79,6 +79,7 @@ if (!$user->isAdmin()) {
             <button type="submit">Envoyer</button>
         </div>
     </form>
+
 </main>
 <?php include 'footer.php' ?>
 </body>

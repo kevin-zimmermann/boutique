@@ -4,7 +4,7 @@
 namespace Base;
 
 
-class Header extends  DataBase
+class Header extends DataBase
 {
     public function getCategories()
     {
