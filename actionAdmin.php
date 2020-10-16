@@ -15,15 +15,15 @@ switch ($_POST['type']) {
         $return = [$url, $admin->updateUser()];
         break;
     case 'deleteProduct' :
-        $url = 'admin_user.php';
+        $url = 'admin_product.php';
         $return = ['url' => $url, 'return' => $product->deleteProduct()];
         break;
     case 'modifAdminProduct' :
-        $url = 'admin_user.php';
+        $url = 'admin_product.php';
         $return = [$url, $product->updateProduct()];
         break;
     case 'addproduct' :
-        $url = 'admin_user.php';
+        $url = 'admin_product.php';
         $return = [$url, $product->addProduct()];
         break;
     case 'addcategorie' :

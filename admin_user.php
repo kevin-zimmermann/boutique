@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/css/fa.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"a
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" a
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
@@ -33,7 +33,7 @@ if (!$user->isAdmin()) {
     <h1 class="title"> Bienvenue dans le Panel Administration</h1>
     <div class="container">
         <div class="row justify-content-center">
-            <div >
+            <div>
                 <div class="card">
                     <div class="card-header">Liste des commandes</div>
                     <div class="card-body">
@@ -51,7 +51,7 @@ if (!$user->isAdmin()) {
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($admin->getUsers() as $user) {?>
+                            <?php foreach ($admin->getUsers() as $user) { ?>
                                 <tr class="table-ajax">
                                     <th scope="row"><?= $user['id'] ?></th>
                                     <td><?= $user['prenom'] ?></td>
@@ -61,8 +61,10 @@ if (!$user->isAdmin()) {
                                     <td><?= $user['admin'] ?></td>
                                     <td class="ajax-delete" data-id="<?= $user['id'] ?>" data-name="user_id"
                                         <?= $user['id'] == $_SESSION['id'] ? 'data-phrase-error="Impossible de supprimer ce compte !"' : '' ?>
-                                        data-can-delete="<?= $user['id'] != $_SESSION['id'] ? 'yes' : 'no' ?>"><i class="fas fa-trash"></i></td>
-                                    <td><a href="admin_modif_user.php?user_id=<?= $user['id'] ?>"><i class="fas fa-pen"></i></a></td>
+                                        data-can-delete="<?= $user['id'] != $_SESSION['id'] ? 'yes' : 'no' ?>"><i
+                                                class="fas fa-trash"></i></td>
+                                    <td><a href="admin_modif_user.php?user_id=<?= $user['id'] ?>"><i
+                                                    class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>
                             </tbody>
@@ -99,26 +101,23 @@ if (!$user->isAdmin()) {
 
     </div>
     <script>
-        function leavePopup(getPopup)
-        {
-            getPopup.animate({opacity : 0}, {duration : 100}).delay(100).queue(function (next) {
+        function leavePopup(getPopup) {
+            getPopup.animate({opacity: 0}, {duration: 100}).delay(100).queue(function (next) {
                 $(this).removeClass('active-overlay');
                 next();
             })
         }
+
         $('.ajax-delete').click(function () {
-            if($(this).data('can-delete') === 'yes')
-            {
+            if ($(this).data('can-delete') === 'yes') {
                 $('.get-delete').addClass('active-overlay');
-                $('.get-delete').animate({opacity : 1}, {duration : 100});
+                $('.get-delete').animate({opacity: 1}, {duration: 100});
                 $('.get-delete').find('.action-input-hidden')
                     .attr('name', $(this).data('name'))
                     .val($(this).data('id'));
-            }
-            else
-            {
+            } else {
                 $('.get-error').addClass('active-overlay');
-                $('.get-error').animate({opacity : 1}, {duration : 100});
+                $('.get-error').animate({opacity: 1}, {duration: 100});
                 $('.get-error').find('.content-error').html($(this).data('phrase-error'));
             }
         })
@@ -143,8 +142,7 @@ if (!$user->isAdmin()) {
         });
         $('.get-popup').click(function (e) {
             let div = $(this).find('.get-popup-inner');
-            if(!$(e.target).is(div) && !$.contains(div[0], e.target))
-            {
+            if (!$(e.target).is(div) && !$.contains(div[0], e.target)) {
                 leavePopup($(this));
             }
         });
