@@ -17,11 +17,6 @@
         if(isset($_SESSION['id'])) {
             $user->getUser();
         }
-        // var_dump($user->test);
-        // $user->tests = "Hello";
-        // var_dump($user->tests);
-        var_dump($_SESSION);
-        // session_destroy();
         ?>
     </div>
     <form action="action.php" id="form" class="form form-ajax" method="post">
