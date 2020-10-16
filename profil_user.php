@@ -34,7 +34,7 @@
         </div>
         <div class="form-control">
             <label for="prenom">Nouveau nom : </label>
-            <input type="text" id="nom" name="nom">
+            <input type="text" id="nom" name="nom"class="input">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>
@@ -47,7 +47,7 @@
         </div>
         <div class="form-control">
             <label for="prenom">Nouveau prenom : </label>
-            <input type="text" id="prenom" name="prenom">
+            <input type="text" id="prenom" name="prenom" class="input">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>
@@ -60,7 +60,7 @@
         </div>
              <div class="form-control">
             <label for="email">Nouveau email :</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" class="input">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>
@@ -73,12 +73,12 @@
         </div>
         <div class="form-control">
             <label for="telephone">Nouveau numéro : </label>
-            <input type="" id="telephone" name="telephone">
+            <input type="" id="telephone" name="telephone" class="input">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>
         </div>
-        <input type="hidden" value="change_profil_email" name="type">
+        <input type="hidden" value="change_profil_email" name="type" class="input">
         <button type="submit">Confirmer</button>
     </form>
     </main>

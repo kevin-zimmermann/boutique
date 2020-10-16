@@ -11,7 +11,7 @@
     <?php
 
 include 'src/Base.php'; 
-    $user = new profil_utilisateurs();
+    $user = new Base\profil_utilisateurs();
     var_dump($user->test);
     $user->tests = "Hello";
     var_dump($user->tests);
@@ -22,26 +22,26 @@ include 'src/Base.php';
             <h1 class="titre">Modifier son mot de passe</h1>
         <div class="form-control">
             <label for="password">Votre ancien mot de passe : </label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password" class="input">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>
         </div>
         <div class="form-control">
             <label for="password">Votre nouveau mot de passe : </label>
-            <input type="password" id="password" name="new_password">
+            <input type="password" id="password" name="new_password" class="input">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>     
         </div>
         <div class="form-control">
             <label for="password">Confirmation du nouveau mot de passe : </label>
-            <input type="password" id="password" name="new_password">
+            <input type="password" id="password" name="new_password" class="input">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>     
         </div>
-        <input type="hidden" value="inscription" name="type">
+        <input type="hidden" value="inscription" name="type" class="input">
         <button type="submit">Confirmer</button>
     </form>
     </main>
