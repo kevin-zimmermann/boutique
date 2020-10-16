@@ -1,4 +1,4 @@
-<footer>
+<footer style="width: 100%">
 <div class="list-header">
             <ul>
                 <li><a href="">
