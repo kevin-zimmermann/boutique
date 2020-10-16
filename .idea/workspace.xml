@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="add admin.php">
+    <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/boutique.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/css/boutique.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Base/product__cat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/product__cat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/css/headerfooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/headerfooter.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,10 +126,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="188" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602768357296" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602153144721">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602853670279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602153144721" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602853670279" />
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor" timestamp="1602086042687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -136,10 +138,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602693159965" />
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1602174634257">
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1602842010795">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602174634257" />
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602842010795" />
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1602841970744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602841970744" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602062519770">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
