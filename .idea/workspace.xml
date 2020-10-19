@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/product_img/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/product_img/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/boutique.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/boutique.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,10 +141,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602862388672">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603100348393">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602862388672" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603100348393" />
     <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1602842010795">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

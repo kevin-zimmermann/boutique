@@ -60,7 +60,7 @@
             <img class="card-img-top" src="styles/image/maillot-juv.jpg" height="auto" width="auto" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Maillot third Juventus Turin 2020/21</h5>
-                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><button type="button" class="btn btn-primary">Voir plus</button></a>
+                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><a href=""<button type="button" class="btn btn-primary">Voir plus</button></a>
             </div>
             <div class="card-footer">
                 <small class="text-muted">Mis en ligne récemment</small>
@@ -70,7 +70,7 @@
             <img class="card-img-top" src="styles/image/maillot-OM.jpg" height="auto" width="auto"  alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Maillot domicile OM 2020/21</h5>
-                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><button type="button" class="btn btn-primary">Voir plus</button></a>
+                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><a href="product.php?produit_id=<?= $product['produit_id'] ?>"<button type="button" class="btn btn-primary">Voir plus</button></a>
             </div>
             <div class="card-footer">
                 <small class="text-muted">Mis en ligne récemment</small>
@@ -80,7 +80,7 @@
             <img class="card-img-top" src="styles/image/maillot-barca.jpg" height="autopx" width="auto" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Maillot third FC Barcelone Stadium 2020/21</h5>
-                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><button type="button" class="btn btn-primary">Voir plus</button></a>
+                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><a href=""<button type="button" class="btn btn-primary">Voir plus</button></a>
             </div>
             <div class="card-footer">
                 <small class="text-muted">Mis en ligne récemment</small>
