@@ -12,8 +12,8 @@ html, body{
     box-sizing: border-box;
 }
 body,ul,li,a,i{
-    list-style: none; !important;
-    text-decoration: none; !important;
+    list-style: none !important;
+    text-decoration: none !important;
     color: #009ad6;
 
 }
@@ -116,14 +116,12 @@ i {
     justify-content: center;
     align-items: center;
     margin-right: 10px;
-    margin-top: 30px;
     text-decoration: none !important;
+    align-items: center;
 
 }
 
 .dropdown-marge {
-
-    margin-top: 20px;
     margin-right: 30px;
 }
 
@@ -154,11 +152,6 @@ i {
     right: 0;
 }
 
-.big-nav li {
-    display: inline;
-    padding: 15px;
-
-}
 .list-header li{
     text-align: center;
     display: inline-flex;

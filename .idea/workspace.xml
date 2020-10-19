@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="add admin.php">
+    <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boutique.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="kevin" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,7 +49,7 @@
       <recent name="C:\wamp64\www\boutique\styles\css" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -70,7 +70,7 @@
       <workItem from="1602234674943" duration="7758000" />
       <workItem from="1602494209233" duration="11005000" />
       <workItem from="1602752442456" duration="6117000" />
-      <workItem from="1602838983991" duration="4788000" />
+      <workItem from="1603099203853" duration="603000" />
     </task>
     <task id="LOCAL-00001" summary="add admin.php">
       <created>1601996894656</created>
@@ -86,49 +86,25 @@
       <option name="project" value="LOCAL" />
       <updated>1602173862676</updated>
     </task>
-    <task id="LOCAL-00003" summary="product -&gt; good">
-      <created>1602778828617</created>
+    <task id="LOCAL-00003" summary="page boutique.php">
+      <created>1602862377738</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1602778828617</updated>
+      <updated>1602862377739</updated>
     </task>
-    <task id="LOCAL-00004" summary="textarea add">
-      <created>1602778929648</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1602778929649</updated>
-    </task>
-    <task id="LOCAL-00005" summary="add button for add product">
-      <created>1602841522615</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1602841522615</updated>
-    </task>
-    <task id="LOCAL-00006" summary="class input">
-      <created>1602843170268</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1602843170268</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add admin.php" />
     <MESSAGE value="form produit" />
     <MESSAGE value="header.php" />
-    <MESSAGE value="product -&gt; good" />
-    <MESSAGE value="textarea add" />
-    <MESSAGE value="add button for add product" />
-    <MESSAGE value="class input" />
-    <option name="LAST_COMMIT_MESSAGE" value="class input" />
+    <MESSAGE value="page boutique.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="page boutique.php" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1602157973020">
@@ -139,14 +115,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="756" y="238" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602768405275" />
-    <state x="585" y="89" key="CommitChangelistDialog2" timestamp="1602843169234">
+    <state x="585" y="22" key="CommitChangelistDialog2" timestamp="1602862376541">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602843169234" />
-    <state x="184" y="88" key="DiffContextDialog" timestamp="1602841514067">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="184" y="88" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602841514067" />
+    <state x="585" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602862376541" />
     <state x="740" y="264" width="440" height="514" key="FileChooserDialogImpl" timestamp="1602083289115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -159,22 +131,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="188" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602768357296" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602153144721">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602853670279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602153144721" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602853670279" />
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor" timestamp="1602086042687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602841531519">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602862388672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602841531519" />
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1602174634257">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602862388672" />
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1602842010795">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602174634257" />
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602842010795" />
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1602841970744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602841970744" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602062519770">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

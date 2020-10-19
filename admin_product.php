@@ -44,7 +44,7 @@ if (!$user->isAdmin()) {
                             <tr>
                                 <th scope="col">#id</th>
                                 <th scope="col">Image</th>
-                                <th scope="col">catégorie id</th>
+                                <th scope="col">id_cat</th>
                                 <th scope="col">Nom produit</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Prix</th>
