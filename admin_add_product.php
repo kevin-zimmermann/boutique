@@ -15,36 +15,35 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/css/headerfooter.css">
     <link rel="stylesheet" href="styles/css/admin.css">
-    <script src="script.js"></script>
     <title> Panel admin - Foo2Foot</title>
 </head>
 <body>
-<?php include 'header.php'?>
+<?php include 'header.php' ?>
 <?php
 $user = new \Base\profil_utilisateurs();
 $admin = new Base\Admin();
 $product = new Base\product__cat();
 if (!$user->isAdmin()) {
     header('location:index.php');
-}?>
+} ?>
 <main>
     <div class="container">
         <h1 class="title"> Formulaire produit</h1>
         <form action="actionAdmin.php" id="form" class="form form-ajax" method="post" enctype="multipart/form-data">
-                <div class="form-article">
+            <div class="form-article">
                 <label for="categorie-select">Catégorie</label> <br/>
-                    <select name="categorie" id="categorie-select" class="input">
-                <?php foreach ($product->getCategorie() as $categorie) { ?>
-                    <option value="<?= $categorie['categorie_id']?>"><?= $categorie['nom_categorie'] ?></option>
+                <select name="categorie" id="categorie-select" class="input">
+                    <?php foreach ($product->getCategorie() as $categorie) { ?>
+                        <option value="<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></option>
                     <?php } ?>
-                    </select>
-                </div>
-                    <div class="form-article">
-                        <label  for="nom">Nom</label> <br/>
-                        <input type="text" id="text" name="nom_produit" class="input" >
+                </select>
             </div>
             <div class="form-article">
-                <label  for="image">Image</label> <br/>
+                <label for="nom">Nom</label> <br/>
+                <input type="text" id="text" name="nom_produit" class="input">
+            </div>
+            <div class="form-article">
+                <label for="image">Image</label> <br/>
                 <input type="file" id="image" name="image" class="input">
             </div>
             <div class="form-article">
@@ -52,36 +51,35 @@ if (!$user->isAdmin()) {
                 <textarea id="description" name="description" class="input"> </textarea>
             </div>
             <div class="form-article">
-                <label  for="taille">Taille</label> <br/>
-                <label  for="taille">S</label> <br/>
-                <input type="number" id="s" name="s"  min="0">
+                <label for="taille">Taille</label> <br/>
+                <label for="taille">S</label> <br/>
+                <input type="number" id="s" name="s" min="0">
             </div>
-                <div class="form-article">
-                <label  for="taille">M</label> <br/>
-                <input type="number" id="m" name="m"  class="input" min="0">
-                </div>
+            <div class="form-article">
+                <label for="taille">M</label> <br/>
+                <input type="number" id="m" name="m" class="input" min="0">
+            </div>
 
-                <div class="form-article">
+            <div class="form-article">
                 <label for="taille">L</label> <br/>
-                <input type="number" id="l" name="l" class="input"  min="0">
-              </div>
+                <input type="number" id="l" name="l" class="input" min="0">
+            </div>
 
             <div class="form-article">
-            <label for="taille">XL</label> <br/>
-                <input type="number" id="xl" name="xl" class="input"  min="0">
+                <label for="taille">XL</label> <br/>
+                <input type="number" id="xl" name="xl" class="input" min="0">
 
             </div>
             <div class="form-article">
-                <label  for="prix">Prix</label> <br/>
-                <input type="number" id="prix" name="prix" class="input"  min="0" step="0.01">
+                <label for="prix">Prix</label> <br/>
+                <input type="number" id="prix" name="prix" class="input" min="0" step="0.01">
             </div>
             <input type="hidden" value="addproduct" name="type" class="input">
             <button type="submit">Envoyer</button>
-        </div>
-    </form>
-
+        </form>
+    </div>
 </main>
 <?php include 'footer.php' ?>
 </body>
-
+<script src="script.js"></script>
 </html>

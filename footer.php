@@ -1,21 +1,17 @@
-<footer>
+<footer style="width: 100%">
 <div class="list-header">
             <ul>
-                <li><a href="">
+                <li><a href="index.php">
                         Accueil
                     </a>
                 </li>
-                <li><a href="">
+                <li><a href="boutique.php">
                         Boutique
                     </a>
                 </li>
-                <li><a href="">
-                       Calendrier
-                    </a>
-                </li>
     <?php if (!isset($_SESSION['id'])) { ?>
-        <a href="inscription.php">Inscription</a>
-        <a href="connexion.php">Connexion</a>
+        <li><a href="inscription.php">Inscription</a></li>
+        <li><a href="connexion.php">Connexion</a></li>
     <?php } else { ?>
         <li><a href="disconnect.php">Déconnexion</a></li>
     <?php } ?>
