@@ -267,5 +267,10 @@ class product__cat extends DataBase
         $response = $this->query('SELECT * FROM categorie');
         return $response->fetchAll(\PDO::FETCH_ASSOC);
     }
+    public function getLastProducts(){
+        $response = $this->query('SELECT * from produit WHERE categorie_id = 9 ORDER BY produit_id DESC LIMIT 3');
+        return $response->fetchAll(\PDO::FETCH_ASSOC);
+
+    }
 
 }
