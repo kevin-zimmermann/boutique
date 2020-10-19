@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/boutique.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/css/boutique.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/headerfooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/headerfooter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boutique.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +70,7 @@
       <workItem from="1602234674943" duration="7758000" />
       <workItem from="1602494209233" duration="11005000" />
       <workItem from="1602752442456" duration="6117000" />
+      <workItem from="1603099203853" duration="603000" />
     </task>
     <task id="LOCAL-00001" summary="add admin.php">
       <created>1601996894656</created>
@@ -89,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602173862676</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="page boutique.php">
+      <created>1602862377738</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602862377739</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,7 +103,8 @@
     <MESSAGE value="add admin.php" />
     <MESSAGE value="form produit" />
     <MESSAGE value="header.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="header.php" />
+    <MESSAGE value="page boutique.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="page boutique.php" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1602157973020">
@@ -110,10 +115,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="756" y="238" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602768405275" />
-    <state x="585" y="89" key="CommitChangelistDialog2" timestamp="1602081812878">
+    <state x="585" y="22" key="CommitChangelistDialog2" timestamp="1602862376541">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602081812878" />
+    <state x="585" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602862376541" />
     <state x="740" y="264" width="440" height="514" key="FileChooserDialogImpl" timestamp="1602083289115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -134,10 +139,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602693159965">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602862388672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602693159965" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602862388672" />
     <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1602842010795">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
