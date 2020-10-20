@@ -26,25 +26,51 @@
 <?php
 $product = new Base\product__cat();
 $product = $product->setProduct();
+$size = $product->getSizes();
 ?>
 <main>
     <div class="cards-list">
-            <div class="card-desk-content">
-                <div class="card">
-                    <img class="card-img-top" src="data/product_img/<?= $product-> produit_id ?>.jpg"
-                         alt="<?= $product->nom_produit ?>">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $product->nom_produit ?></h5>
-                        <p><?= $product->description ?></p>
+        <div class="card-desk-content">
+            <div class="card">
+                <img class="card-img-top" src="data/product_img/<?= $product->produit_id ?>.jpg"
+                     alt="<?= $product->nom_produit ?>">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $product->nom_produit ?></h5>
+                    <p><?= $product->description ?></p>
+                    <form action="action.php" id="form" class="form form-ajax-other" method="post">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Choisir taille:</label>
+                            <select class="form-control" id="exampleFormControlSelect1" class="input">
+                                <option value="s">S</option>
+                                <option value="m">M</option>
+                                <option value="l">L</option>
+                                <option value="xl">XL</option>
+                            </select>
+                        </div>
+                        <?php
+                        var_dump($size);
+                        ?>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Choisir quantité:</label>
+                            <select class="form-control" id="exampleFormControlSelect1" class="input">
+                                <?php
+                                $i = 0;
+                                while ($i < 30) {
+                                    $i++; ?>
+                                    <option value="<?= $i ?>"><?= $i ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
                         <h5 class="card-title-prix"><?= $product->prix ?>€</h5>
-                    </div>
-                    <div class="footer-product">
-                            <button type="button" class="btn btn-primary">Ajouter au panier</button>
-                        </p>
-                        <a/>
-                    </div>
                 </div>
+                <div class="footer-product">
+                    <input type="hidden" name="type" value="panierAdd" class="input">
+                    <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+                </div>
+                </form>
             </div>
+        </div>
 
     </div>
 
