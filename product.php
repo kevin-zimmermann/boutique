@@ -28,6 +28,7 @@ $sizes = $product->getSizes();
 ?>
 <main>
     <div class="cards-list">
+        <?php foreach ($product-> setProduct() as $product) { ?>
         <div class="card-desk-content">
             <div class="card">
                 <img class="card-img-top" src="data/product_img/<?= $product->produit_id ?>.jpg"
@@ -52,6 +53,7 @@ $sizes = $product->getSizes();
                                 <option value="<?= $size['taille'] ?>" data-value-stock="<?= $size['stock'] ?>"><?= strtoupper($size['taille']) ?></option>
                                 <?php } ?>
                             </select>
+                            <?php } ?>
                         </div>
 
                         <div class="form-group">
@@ -69,7 +71,7 @@ $sizes = $product->getSizes();
                 </div>
                 <a class="footer-product">
                     <input type="hidden" name="type" value="panierAdd" class="input">
-                    <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+                    <a href="addpanier.php?produit_id=<?= $product->produit_id ?>"<button type="submit" class="btn btn-primary">Ajouter au panier</button></a>
                 </div>
                 </form>
             </div>
