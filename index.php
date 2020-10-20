@@ -18,10 +18,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/css/headerfooter.css">
+    <link rel="stylesheet" href="styles/css/boutique.css">
     <title> Accueil - Foo2Foot</title>
 </head>
 <body>
 <?php include 'header.php'?>
+<?php
+$product = new Base\product__cat();
+?>
 <main>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -55,37 +59,22 @@
         </a>
     </div>
     <h1 class="top-title"> NOUVEAUX MAILLOTS 2020</h1>
-    <div class="card-deck">
+    <div class="cards-list">
+    <?php foreach ($product->getLastProducts() as $product) { ?>
+    <div class="card-desk-content">
         <div class="card">
-            <img class="card-img-top" src="styles/image/maillot-juv.jpg" height="auto" width="auto" alt="Card image cap">
+            <img class="card-img-top" src="data/product_img/<?= $product['produit_id'] ?>.jpg"  width="100px" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Maillot third Juventus Turin 2020/21</h5>
+                <h5 class="card-title"><?= $product['nom_produit'] ?></h5>
+                <h5 class="card-title-prix"><?= $product['prix'] ?>€</h5>
                 <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><button type="button" class="btn btn-primary">Voir plus</button></a>
             </div>
             <div class="card-footer">
                 <small class="text-muted">Mis en ligne récemment</small>
             </div>
         </div>
-        <div class="card">
-            <img class="card-img-top" src="styles/image/maillot-OM.jpg" height="auto" width="auto"  alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Maillot domicile OM 2020/21</h5>
-                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><button type="button" class="btn btn-primary">Voir plus</button></a>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Mis en ligne récemment</small>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="styles/image/maillot-barca.jpg" height="autopx" width="auto" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Maillot third FC Barcelone Stadium 2020/21</h5>
-                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><button type="button" class="btn btn-primary">Voir plus</button></a>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Mis en ligne récemment</small>
-            </div>
-        </div>
+      </div>
+        <?php } ?>
     </div>
 </main>
 <?php include 'footer.php' ?>
