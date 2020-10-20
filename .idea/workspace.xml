@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,13 +18,25 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1iV5sw8HKFwcwYN2722FpCs2i85" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -146,10 +156,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603106861498" />
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1603106840917">
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1603187243387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603106840917" />
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603187243387" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602062519770">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
