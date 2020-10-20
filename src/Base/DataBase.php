@@ -5,6 +5,7 @@ namespace Base;
  */
 class DataBase
 {
+    private $db;
 
     /**
      * @var \PDO|null
@@ -39,5 +40,12 @@ class DataBase
     public function lastInsertId()
     {
         return $this->pdo->lastInsertId();
+    }
+
+    public function requete($sql, $data = array())
+    {
+        $req = $this->db->prepare($sql);
+        $req -> execute($data);
+        return $req->fetchAll(PDO::FETCH_OBJ);
     }
 }

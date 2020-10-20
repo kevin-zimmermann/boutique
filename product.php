@@ -30,6 +30,7 @@ $size = $product->getSizes();
 ?>
 <main>
     <div class="cards-list">
+        <?php foreach ($product-> setProduct() as $product) { ?>
         <div class="card-desk-content">
             <div class="card">
                 <img class="card-img-top" src="data/product_img/<?= $product->produit_id ?>.jpg"
@@ -46,6 +47,7 @@ $size = $product->getSizes();
                                 <option value="l">L</option>
                                 <option value="xl">XL</option>
                             </select>
+                            <?php } ?>
                         </div>
                         <?php
                         var_dump($size);
@@ -64,9 +66,9 @@ $size = $product->getSizes();
                         </div>
                         <h5 class="card-title-prix"><?= $product->prix ?>€</h5>
                 </div>
-                <div class="footer-product">
+                <a class="footer-product">
                     <input type="hidden" name="type" value="panierAdd" class="input">
-                    <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+                    <a href="addpanier.php?produit_id=<?= $product->produit_id ?>"<button type="submit" class="btn btn-primary">Ajouter au panier</button></a>
                 </div>
                 </form>
             </div>

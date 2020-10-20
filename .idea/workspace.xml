@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/addPanier.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/product_img/14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Base/product__cat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/product__cat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/boutique.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/boutique.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Base/DataBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/DataBase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Base/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/Header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Base/actionPanier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/actionPanier.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +76,7 @@
       <workItem from="1602494209233" duration="11005000" />
       <workItem from="1602752442456" duration="6117000" />
       <workItem from="1603099203853" duration="603000" />
+      <workItem from="1603188141643" duration="18232000" />
     </task>
     <task id="LOCAL-00001" summary="add admin.php">
       <created>1601996894656</created>
@@ -134,18 +137,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="188" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602768357296" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602853670279">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1603201368959">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602853670279" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603201368959" />
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor" timestamp="1602086042687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603111649221">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603188211148">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603111649221" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603188211148" />
     <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603106861498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
