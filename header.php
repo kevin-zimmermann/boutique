@@ -5,6 +5,8 @@ use Base\Profil;
 include 'src/Base.php';
 $user = new Base\profil_utilisateurs();
 $header = new Base\Header();
+$product = new Base\product__cat();
+$panier = new Base\actionPanier();
 ?>
 
 <header>

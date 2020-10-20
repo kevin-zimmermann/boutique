@@ -3,6 +3,7 @@
 
 namespace Base;
 
+use PDO;
 
 class Header extends DataBase
 {
