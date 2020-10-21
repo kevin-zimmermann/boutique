@@ -48,7 +48,7 @@ $panier = new Base\actionPanier();
                         </div>
                     </li>
                     <li class="cart-plus">
-                        <a href="panier.php">
+                        <a href="cart.php">
                             <i class="fas fa-cart-plus"></i>
                         </a>
                     </li>

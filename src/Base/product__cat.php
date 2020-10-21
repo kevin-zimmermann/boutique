@@ -300,35 +300,44 @@ class product__cat extends DataBase
             $size,
             $productId
         ])->fetch(\PDO::FETCH_ASSOC);
-        if($stockSize['stock'] >= $stock)
+        if(isset($_SESSION['id']))
         {
-            $id = $_SESSION['id'];
-
-            $existCarts = $this->query('SELECT * FROM panier WHERE product_id = ? AND user_id = ? AND size = ?', [
-                $productId,
-                $id,
-                $size
-            ])->fetch(\PDO::FETCH_ASSOC);
-            if(!empty($existCarts))
+            if($stockSize['stock'] >= $stock)
             {
-                $this->query('UPDATE panier SET quantity = ? WHERE product_id = ? AND user_id = ? AND size = ?', [
-                    $stock,
+                $id = $_SESSION['id'];
+
+                $existCarts = $this->query('SELECT * FROM panier WHERE product_id = ? AND user_id = ? AND size = ?', [
                     $productId,
                     $id,
                     $size
-                ]);
-            }
-            else
-            {
-                $this->query('INSERT INTO panier(product_id, user_id, quantity, size) VALUES(?,?,?,?)', [
-                    $productId,
-                    $id,
-                    $stock,
-                    $size
-                ]);
-            }
+                ])->fetch(\PDO::FETCH_ASSOC);
+                if(!empty($existCarts))
+                {
+                    $this->query('UPDATE panier SET quantity = ? WHERE product_id = ? AND user_id = ? AND size = ?', [
+                        $stock,
+                        $productId,
+                        $id,
+                        $size
+                    ]);
+                }
+                else
+                {
+                    $this->query('INSERT INTO panier(product_id, user_id, quantity, size) VALUES(?,?,?,?)', [
+                        $productId,
+                        $id,
+                        $stock,
+                        $size
+                    ]);
+                }
 
-            return [];
+                return [];
+            }
+        }
+        else
+        {
+            if (!isset($_SESSION['panier'])) {
+                $_SESSION['panier'] = array();
+            }
         }
         return ['Vous avez sélectionné trop de stock !'];
     }
