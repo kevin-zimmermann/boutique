@@ -175,6 +175,11 @@ form.form-inline{
     display: flex;
     padding: 10px;
 
+
+}
+.search-box-content{
+    max-width: 400px;
+    width: 100%;
 }
 .carousel, .card-deck{
     padding-bottom: 20px !important;
@@ -246,4 +251,23 @@ footer {
 .overlay-popup:hover{
     text-decoration: none;
 }
-
+.on-input-search{
+    max-width: 280px!important;
+    width: 100%!important;
+}
+.search-block {
+    position: absolute;
+    max-width: 280px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(228, 237, 244, 0.8);
+    border: 1px solid #D5E3EC;
+    max-height: 500px;
+    overflow: auto;
+}
+.search-content{
+    display: flex;
+}
+.search-block img{
+    max-width: 75px;
+}

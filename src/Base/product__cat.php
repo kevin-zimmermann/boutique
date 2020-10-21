@@ -41,12 +41,13 @@ class product__cat extends DataBase
             $error[] = "Il manque un quelque chose....";
         }
         if (empty($error)) {
-            $test = $this->query('INSERT INTO produit(image, categorie_id, nom_produit, description, prix) VALUES(?,?,?,?,?) ', [
+            $test = $this->query('INSERT INTO produit(image, categorie_id, nom_produit, description, prix, date) VALUES(?,?,?,?,?,?) ', [
                 '',
                 $cat,
                 $nproduit,
                 $description,
                 $prix,
+                time()
             ]);
             $productId = $this->lastInsertId();
             $arrayTaille = [
@@ -118,7 +119,16 @@ class product__cat extends DataBase
 
     public function getProducts()
     {
-        $response = $this->query('SELECT * FROM produit');
+        if(isset($_GET['category_id']))
+        {
+            $response = $this->query('SELECT * FROM produit WHERE categorie_id = ?', [
+                $_GET['category_id']
+            ]);
+        }
+        else
+        {
+            $response = $this->query('SELECT * FROM produit');
+        }
         return $response->fetchAll(\PDO::FETCH_ASSOC);
     }
 

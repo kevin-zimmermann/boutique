@@ -69,7 +69,7 @@ $header = new Base\Header();
                 <div class="dropdown-menu">
                     <?php foreach ($header->getCategories() as $categorie) { ?>
                         <div class="dropdown-item">
-                            <a href="boutique.php"><?= $categorie['nom_categorie'] ?></a>
+                            <a href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></a>
                         </div>
                     <?php } ?>
                 </div>
@@ -79,10 +79,76 @@ $header = new Base\Header();
                 </a>
             </li>
         </ul>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="form-inline search-box-content">
+            <input class="form-control mr-sm-2 on-input-search" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-dark" type="submit">Search</button>
         </form>
     </div>
     </div>
 </header>
+<script>
+    function renderHtmlSearch(value)
+    {
+        let html = '<div class="search-content">';
+        html += '<div class="search-cell">';
+        html += '<img src="data/product_img/' + value.produit_id + '.jpg" >';
+        html += '</div>';
+        html += '<div class="name-product">';
+        html += '<a href="product.php?produit_id=' + value.produit_id + '">'
+        html += value.nom_produit;
+        html += '</a>'
+        html += '</div>'
+        return html + '</div>'
+    }
+    $('.on-input-search').on('input', function (e) {
+        e.preventDefault();
+        let value = $(this).val();
+        let offset = $(this).offset();
+        console.log('dd');
+        $.ajax({
+            url : 'search.php',
+            method : 'POST',
+            dataType : 'json',
+            data : {
+                q : value
+            },
+            success : (data) => {
+                let html = '';
+                data.forEach((value) => {
+                    html += renderHtmlSearch(value);
+                })
+                if($('.search-block').length === 0)
+                {
+                    let divSearch = $('<div></div>');
+                    divSearch.addClass('search-block');
+                    divSearch.html(html);
+                    $('body').append(divSearch);
+                    divSearch.css('display', 'none')
+                    divSearch.stop(true,true).slideDown();
+
+                    divSearch.css('top', offset.top  + 40).css('left', 10)
+                }
+                else
+                {
+                    let divSearch = $('.search-block');
+                    divSearch.stop(true, true).slideDown();
+                    divSearch.html(html);
+                }
+            },
+            error : (error) => {
+                console.log(error.responseText)
+            }
+        });
+    })
+    $('body').click(function (e) {
+        let div = $(this).find('.on-input-search');
+        let div2 = $(this).find('.search-block');
+        if(div2.length)
+        {
+           if((!$(e.target).is(div) && !$.contains(div[0], e.target)) && (!$(e.target).is(div2) && !$.contains(div2[0], e.target)))
+           {
+                div2.stop(true, true).slideUp();
+           }
+        }
+    })
+</script>
