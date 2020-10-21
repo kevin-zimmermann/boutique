@@ -60,9 +60,9 @@ if ($_POST['type'] == "deleteAddress")
 if ($_POST['type'] == "panierAdd")
 {
     $product = new Base\product__cat();
-    $url = "product.php";
+    $url = "cart.php";
     $error = $product->Cart();
-    $return = ['url' => $url, 'return' => $error];
+    $return = [$url, $error];
 }
 echo json_encode($return);
 
