@@ -47,7 +47,7 @@ if($_POST['type'] == 'editAddress')
 {
     $profil = new Base\profil_utilisateurs;
     $url = "profil_adresse.php";
-    $error = $profil->editAddres();
+    $error = $profil->editAddress();
     $return = [$url, $error];
 }
 if ($_POST['type'] == "deleteAddress")

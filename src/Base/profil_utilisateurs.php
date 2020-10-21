@@ -207,7 +207,7 @@ class profil_utilisateurs extends DataBase
             'error' => $error
         ];
     }
-    public function editAddres()
+    public function editAddress()
     {
         $addressId = $_GET['adresse_id'];
         $nom = $_POST['nom'];
