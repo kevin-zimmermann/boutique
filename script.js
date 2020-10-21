@@ -109,6 +109,7 @@ function checkpUser(){
         setSuccessFor(phone);
     }
 }
+
 function checkInputs() {
     const nomValue = nom.val().trim();
     const prenomValue = prenom.val().trim();

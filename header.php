@@ -42,7 +42,7 @@ $panier = new Base\actionPanier();
                                 ?>
                                 <a class="dropdown-item" href="admin.php">Panel admin</a>
                             <?php } ?>
-                            <a class="dropdown-item" href="admin.php">Mon profil</a>
+                            <a class="dropdown-item" href="profil.php">Mon profil</a>
                             <a class="dropdown-item" href="disconnect.php">Déconnexion</a>
                             <a class="dropdown-item" href="#"></a>
                         </div>

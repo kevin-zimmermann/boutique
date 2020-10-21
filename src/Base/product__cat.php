@@ -20,6 +20,7 @@ class product__cat extends DataBase
     protected $extensionType = ['.png', '.jpeg', '.jpg'];
     protected $currentEntity = 'product';
     protected $category = [];
+
     public function addProduct()
     {
         $error = [];
@@ -96,12 +97,14 @@ class product__cat extends DataBase
 
         return $productId;
     }
+
     public function setCatgeorie()
     {
         $this->currentEntity = 'category';
         $this->category = $this->query('SELECT * FROM categorie WHERE categorie_id = ?', [$_GET['categorie_id']])->fetch(\PDO::FETCH_ASSOC);
         return $this;
     }
+
     public function deleteCategorie()
     {
         $categorieId = $_POST['categorie_id'];
@@ -112,6 +115,7 @@ class product__cat extends DataBase
         return $categorieId;
 
     }
+
     public function getProducts()
     {
         $response = $this->query('SELECT * FROM produit');
@@ -123,10 +127,12 @@ class product__cat extends DataBase
         $this->product = $this->query('SELECT * FROM produit WHERE produit_id = ?', [$_GET['produit_id']])->fetch(\PDO::FETCH_ASSOC);
         return $this;
     }
+
     public function getSizes()
     {
-        return $this->query('SELECT * FROM stock WHERE produit_id = ? ORDER BY taille', [$_GET['produit_id']])->fetchAll(\PDO::FETCH_ASSOC);
+        return $this->query('SELECT * FROM stock WHERE produit_id = ? AND stock > 0 ORDER BY taille', [$_GET['produit_id']])->fetchAll(\PDO::FETCH_ASSOC);
     }
+
     public function addCategorie()
     {
         $error = [];
@@ -192,7 +198,7 @@ class product__cat extends DataBase
         $product = $this->query('SELECT * FROM produit WHERE produit_id = ?', [
             $productId,
         ])->fetch(\PDO::FETCH_ASSOC);
-        if (!empty($_FILES)){
+        if (!empty($_FILES)) {
             $checkLog = $this->checkLogo();
             $errors = [];
             if (!empty($checkLog['error'])) {
@@ -208,8 +214,7 @@ class product__cat extends DataBase
                 $prix,
                 $_GET['produit_id']
             ]);
-            foreach ($this->getSizes() as $size)
-            {
+            foreach ($this->getSizes() as $size) {
                 $currentSize = $_POST[$size['taille']];
                 $this->query('UPDATE stock set stock = ? WHERE produit_id = ? AND taille = ? ', [
                     $currentSize,
@@ -217,12 +222,13 @@ class product__cat extends DataBase
                     $size['taille']
                 ]);
             }
-            if (!empty($_FILES)){
-            $this->setLogo();
+            if (!empty($_FILES)) {
+                $this->setLogo();
             }
         }
         return [];
     }
+
     public function updateCategory()
     {
         $NameCategory = $_POST['nom_categorie'];
@@ -267,10 +273,54 @@ class product__cat extends DataBase
         $response = $this->query('SELECT * FROM categorie');
         return $response->fetchAll(\PDO::FETCH_ASSOC);
     }
-    public function getLastProducts(){
+
+    public function getLastProducts()
+    {
         $response = $this->query('SELECT * from produit WHERE categorie_id = 9 ORDER BY produit_id DESC LIMIT 3');
         return $response->fetchAll(\PDO::FETCH_ASSOC);
 
+    }
+
+    public function Cart()
+    {
+        $stock = $_POST['stock'];
+        $size = $_POST['size'];
+        $productId = $_GET['product_id'];
+        $stockSize = $this->query('SELECT * FROM stock WHERE taille = ? AND produit_id = ?', [
+            $size,
+            $productId
+        ])->fetch(\PDO::FETCH_ASSOC);
+        if($stockSize['stock'] >= $stock)
+        {
+            $id = $_SESSION['id'];
+
+            $existCarts = $this->query('SELECT * FROM panier WHERE product_id = ? AND user_id = ? AND size = ?', [
+                $productId,
+                $id,
+                $size
+            ])->fetch(\PDO::FETCH_ASSOC);
+            if(!empty($existCarts))
+            {
+                $this->query('UPDATE panier SET quantity = ? WHERE product_id = ? AND user_id = ? AND size = ?', [
+                    $stock,
+                    $productId,
+                    $id,
+                    $size
+                ]);
+            }
+            else
+            {
+                $this->query('INSERT INTO panier(product_id, user_id, quantity, size) VALUES(?,?,?,?)', [
+                    $productId,
+                    $id,
+                    $stock,
+                    $size
+                ]);
+            }
+
+            return [];
+        }
+        return ['Vous avez sélectionné trop de stock !'];
     }
 
 }
