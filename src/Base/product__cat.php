@@ -125,7 +125,7 @@ class product__cat extends DataBase
     }
     public function getSizes()
     {
-        return $this->query('SELECT * FROM stock WHERE produit_id = ? ORDER BY taille', [$_GET['produit_id']])->fetchAll(\PDO::FETCH_ASSOC);
+        return $this->query('SELECT * FROM stock WHERE produit_id = ? AND stock > 0 ORDER BY taille', [$_GET['produit_id']])->fetchAll(\PDO::FETCH_ASSOC);
     }
     public function addCategorie()
     {
