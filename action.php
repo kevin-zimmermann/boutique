@@ -57,6 +57,13 @@ if ($_POST['type'] == "deleteAddress")
     $error = $profil->deleteAdress();
     $return = ['url' => $url, 'return' => $error];
 }
+if ($_POST['type'] == "panierAdd")
+{
+    $product = new Base\product__cat();
+    $url = "product.php";
+    $error = $product->Cart();
+    $return = ['url' => $url, 'return' => $error];
+}
 echo json_encode($return);
 
 

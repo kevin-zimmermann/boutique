@@ -37,10 +37,10 @@ $sizes = $product->getSizes();
                 <div class="card-body">
                     <h5 class="card-title"><?= $product->nom_produit ?></h5>
                     <p><?= $product->description ?></p>
-                    <form action="action.php" id="form" class="form form-ajax-other" method="post">
+                    <form action="action.php?product_id=<?= $product->produit_id ?>" id="form" class="form form-ajax-other" method="post">
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Choisir taille:</label>
-                            <select class="form-control input change-input" id="exampleFormControlSelect1">
+                            <select class="form-control input change-input" name="size" id="exampleFormControlSelect1">
                                 <?php
                                 $i = 0;
                                 $stock = 0;
@@ -58,7 +58,7 @@ $sizes = $product->getSizes();
 
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Choisir quantité:</label>
-                            <select class="form-control input change-input-value" id="exampleFormControlSelect1" >
+                            <select class="form-control input change-input-value" name="stock" id="exampleFormControlSelect1" >
                                 <?php
                                 $i = 0;
                                 while ($i < $stock) {
