@@ -50,7 +50,7 @@ $size = $product->getSizes();
                             <?php } ?>
                         </div>
                         <?php
-                        var_dump($size);
+                        var_dump($product);
                         ?>
 
                         <div class="form-group">
