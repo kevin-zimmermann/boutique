@@ -1,45 +1,42 @@
-<html lang="fr">
-
+<!DOCTYPE html>
+<html>
 <head>
-     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Modifier votre profil</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="styles/css/style.css">
-    </head>
-<body> 
-    <div class="error">
-    <?php
-include 'src/Base.php'; 
-    $user = new Base\profil_utilisateurs();
-    ?>
-    </div>
-    <form action="action.php" id="form" class="form form-ajax" method="post">
-        <div class="form-control">
-            <h1 class="titre">Modifier son mot de passe</h1>
-        <div class="form-control">
-            <label for="password">Votre ancien mot de passe : </label>
-            <input type="password" id="password" name="password" class="input">
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-        </div>
-        <div class="form-control">
-            <label for="password">Votre nouveau mot de passe : </label>
-            <input type="password" id="password" name="new_password" class="input">
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-        </div>
-        <div class="form-control">
-            <label for="password">Confirmation du nouveau mot de passe : </label>
-            <input type="password" id="password" name="new_password" class="input">
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-        </div>
-        <input type="hidden" value="modif_password" name="type" class="input">
-        <button type="submit">Confirmer</button>
-    </form>
-    </main>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/css/fa.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/css/headerfooter.css">
+    <title> Profil - Foo2Foot</title>
+</head>
+<?php include 'header.php' ?>
+<body>
+<?php
+
+use Base\Profil;
+
+$user = new Base\profil_utilisateurs();
+
+if (!isset($_SESSION['id'])) {
+    header('location:index.php');
+}
+?>
+<main>
+    <h1 class="title"> Bienvenue sur votre page profil</h1>
+    <button class="btn btn-dark"><a href="profil_user.php">Modifier compte</a></button>
+    <button class="btn btn-dark"><a href="profil_password.php">Modifier mot de passe </a></button>
+    <button class="btn btn-dark"><a href="profil_adresse.php">Modifier/Supprimer/Ajouter adresse </a></button>
+    <button class="btn btn-dark"><a href="profil_commande.php">Voir le(s) commande(s)</a></button>
+</main>
 </body>
+<?php include 'footer.php' ?>
+
 
 </html>
-<script src="script.js"></script>
