@@ -27,6 +27,7 @@ $user = new Base\profil_utilisateurs();
 if (!isset($_SESSION['id'])) {
     header('location:index.php');
 }
+
 ?>
 <main>
     <h1 class="title"> Bienvenue sur votre page profil</h1>
