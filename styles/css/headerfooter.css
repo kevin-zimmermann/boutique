@@ -154,7 +154,7 @@ i {
 
 .list-header li{
     text-align: center;
-    display: inline-flex;
+    display: inline-block;
     padding: 5px;
     font-size: 20px;
 }
