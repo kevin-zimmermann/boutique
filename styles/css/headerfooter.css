@@ -14,7 +14,7 @@ html, body{
 body,ul,li,a,i{
     list-style: none !important;
     text-decoration: none !important;
-    color: #009ad6;
+    color: #009ad6 !important;
 
 }
 ul{
