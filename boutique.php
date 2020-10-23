@@ -35,7 +35,8 @@ $product = new Base\product__cat();
                             <h5 class="card-title-prix"><?= $product['prix'] ?>€</h5>
                         </div>
                         <div class="footer-product">
-                            <p class="card-text"><a href="product.php?produit_id=<?= $product['produit_id'] ?>"<button type="button" class="btn btn-primary">Voir plus</button></p><a/>
+                            <p class="card-text"></p>
+                                <button type="button" class="btn btn-dark"><a class="lien" href="product.php?produit_id=<?= $product['produit_id'] ?>">Voir plus </button></a>
                         </div>
                     </div>
                 </div>

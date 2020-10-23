@@ -14,7 +14,7 @@ $panier = new Base\actionPanier();
         <div class="inline-nav-img">
             <nav class="big-nav">
                 <div class="bond-title">
-                    <h1 class="title">FOO2F <a href="index"></a>
+                    <h1 class="title">FOO2F<a href="index"></a>
                         <span class="ballon-inner">
                             <i onMouseOver="" class=" bond far fa-futbol"></i>
                             <span class="ombre-other">
