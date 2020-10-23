@@ -64,7 +64,8 @@ $product = new Base\product__cat();
             <div class="card-body">
                 <h5 class="card-title"><?= $product['nom_produit'] ?></h5>
                 <h5 class="card-title-prix"><?= $product['prix'] ?>€</h5>
-                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p><button type="button" class="btn btn-dark">Voir plus</button></a>
+                <p class="card-text">Disponible dans la limite des stocks. Faite vite !</p>
+                <button type="button" class="btn btn-dark"><a class="lien" href="product.php?produit_id=<?= $product['produit_id'] ?>">Voir plus </button></a>
             </div>
             <div class="card-footer">
                 <small class="text-muted">Mis en ligne récemment</small>

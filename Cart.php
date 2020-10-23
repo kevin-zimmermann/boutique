@@ -50,7 +50,7 @@ $product= new \Base\product__cat();
                                 <td><?= $cart['nom_produit'] ?></td>
                                 <td><?= strtoupper($cart['size'])?></td>
                                 <td><?= $cart['quantity'] ?></td>
-                                <td><?= $cart['prix'] ?></td>
+                                <td><?= $cart['prix'] ?>€</td>
                                 <td class="ajax-delete" data-id="<?= $cart['produit_id'] ?>" data-name="product_id"><i
                                             class="fas fa-trash"></i></td>
                                 <td><a href="admin_modif_product.php?produit_id=<?= $cart['produit_id'] ?>"><i
