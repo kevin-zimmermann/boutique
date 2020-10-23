@@ -57,10 +57,36 @@ $product= new \Base\product__cat();
                                         <?php } ?>
                                     </select></td>
                                 <td><?= $cart['prix'] ?></td>
-                                <td class="ajax-delete" data-id="<?= $cart['produit_id'] ?>" data-name="product_id"><i
+                                <td class="ajax-delete" data-id="<?= $cart['panier_id'] ?>" data-name="panier_id"><i
                                             class="fas fa-trash"></i></td>
                             </tr>
                         <?php } ?>
+                        <div class="get-delete get-popup">
+                            <div class="get-delete-inner get-popup-inner">
+                                <h3>Confirmation <a class="overlay-popup close-popup-delete" href=""></a></h3>
+                                <div class="content-delete">
+                                    blabla
+                                </div>
+                                <div class="conf">
+                                    <form action="action.php" class="action-ajax" method="post">
+                                        <input type="hidden" name="type" value="deleteProductcart">
+                                        <input type="hidden" class="action-input-hidden">
+                                        <button class="btn btn-primary">button</button>
+                                    </form>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="get-error get-popup">
+                            <div class="get-error-inner r get-popup-inner">
+                                <h3>Oops il y a une erreur <a class="overlay-popup close-popup-error" href=""></a></h3>
+                                <div class="content-error">
+                                    blabla
+                                </div>
+                            </div>
+
+                        </div>
 
                         </tbody>
                     </table>
@@ -73,6 +99,47 @@ $product= new \Base\product__cat();
 </body>
 </html>
 <script>
+    function leavePopup(getPopup) {
+        getPopup.animate({opacity: 0}, {duration: 100}).delay(100).queue(function (next) {
+            $(this).removeClass('active-overlay');
+            next();
+        })
+    }
+
+    $('.ajax-delete').click(function () {
+        $('.get-delete').addClass('active-overlay');
+        $('.get-delete').animate({opacity: 1}, {duration: 100});
+        $('.get-delete').find('.action-input-hidden')
+            .attr('name', $(this).data('name'))
+            .val($(this).data('id'));
+    })
+    $('.action-ajax').submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr('action'),
+            method: $(this).attr('method'),
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: (data) => {
+                $('[data-id=' + data['return'] + ']').closest('.table-ajax').remove();
+                leavePopup($('.get-delete'));
+            },
+            error: (error) => {
+                console.log(error.responseText)
+            }
+        });
+        return false;
+    });
+    $('.get-popup').click(function (e) {
+        let div = $(this).find('.get-popup-inner');
+        if (!$(e.target).is(div) && !$.contains(div[0], e.target)) {
+            leavePopup($(this));
+        }
+    });
+    $('.overlay-popup').click(function () {
+        leavePopup($(this).closest('.get-popup'));
+        return false;
+    });
     $('.qte').change(function () {
         let value = $(this).val()
         let productId = $(this).data('product-id');

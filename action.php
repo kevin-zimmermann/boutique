@@ -64,6 +64,12 @@ if ($_POST['type'] == "panierAdd")
     $error = $product->Cart();
     $return = [$url, $error];
 }
+if($_POST['type'] == "deleteProductcart"){
+    $product = new Base\actionPanier();
+    $url = "cart.php";
+    $error = $product->deleteProductcart();
+    $return = ['url' => $url, 'return' => $error];
+}
 echo json_encode($return);
 
 

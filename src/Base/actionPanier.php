@@ -35,4 +35,11 @@ class actionPanier extends DataBase
             $size,
         ]);
     }
+    public function deleteProductcart(){
+        $panierId = $_POST['panier_id'];
+        $this->query('DELETE FROM panier WHERE panier_id = ?',[
+            $panierId
+        ]);
+        return $panierId;
+    }
 }
