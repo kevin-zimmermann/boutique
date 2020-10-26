@@ -36,7 +36,8 @@ $product= new \Base\product__cat();
                             <th scope="col">Nom produit</th>
                             <th scope="col">Taille</th>
                             <th scope="col">Quantité</th>
-                            <th scope="col">Prix</th>
+                            <th scope="col">Prix unité</th>
+                            <th scope="col">Prix total</th>
                             <th scope="col">Supprimer</th>
                         </tr>
                         </thead>
@@ -44,6 +45,7 @@ $product= new \Base\product__cat();
                         <?php foreach ($carts->getPanier() as $cart) {
 
                             $stock = $carts->setSize($cart['size'], $cart['produit_id']);
+                            $onep = $carts->onePrice($cart['produit_id']);
                             ?>
                             <tr class="table-ajax">
                                 <td><img width="49px" src="data/product_img/<?= $cart['produit_id'] ?>.jpg" alt="<?= $cart['nom_produit'] ?>"></td>
@@ -56,11 +58,13 @@ $product= new \Base\product__cat();
                                             </option>
                                         <?php } ?>
                                     </select></td>
-                                <td><?= $cart['prix'] ?></td>
+                                <td><?= $cart['prix'] ?>€</td>
+                                <td><?= $onep ?>€</td>
                                 <td class="ajax-delete" data-id="<?= $cart['panier_id'] ?>" data-name="panier_id"><i
                                             class="fas fa-trash"></i></td>
                             </tr>
                         <?php } ?>
+
                         <div class="get-delete get-popup">
                             <div class="get-delete-inner get-popup-inner">
                                 <h3>Confirmation <a class="overlay-popup close-popup-delete" href=""></a></h3>
@@ -90,10 +94,15 @@ $product= new \Base\product__cat();
 
                         </tbody>
                     </table>
+                    <div class="print-price">
+                        <h2>Prix TTC:</h2>
+                       <p><?php $carts->getPrice()?>€</p>
+                    </div>
                     <button class="btn btn-dark"><a href=".php">Passer commande</a></button>
                 </div>
         </div>
     </div>
+
 </main>
 <?php include 'footer.php' ?>
 </body>
