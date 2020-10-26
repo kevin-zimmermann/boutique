@@ -67,3 +67,19 @@ textarea.input{
 .input{
     width: 100%;
 }
+
+.paie {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.btn-dark {
+
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
+}

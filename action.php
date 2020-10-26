@@ -71,5 +71,3 @@ if($_POST['type'] == "deleteProductcart"){
     $return = ['url' => $url, 'return' => $error];
 }
 echo json_encode($return);
-
-
