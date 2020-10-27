@@ -18,8 +18,9 @@ class DataBase
     public function __construct()
     {
         $this->pdo = new \PDO('mysql:host=localhost;port=3306;dbname=boutique;charset=utf8', 'root', '');
-        
+
     }
+
 
     /**
      * @param $request

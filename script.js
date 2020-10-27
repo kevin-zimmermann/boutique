@@ -205,6 +205,7 @@ function isphone(phone){
     return /^(06|07)[0-9]{8}/.test(phone);
 }
 
+
 var stripe = Stripe('pk_test_51HgTpGLtuZgtK0iJM6Z9TRzIP0sywAv38DodZRUWHN3ZOg48fOrT5aNLdZNgEYvlQzvqzymxpIMQ76Udecu3NZpb0088vaq92Y');
 var elements = stripe.elements();
 var card = elements.create('card', {style: style});
