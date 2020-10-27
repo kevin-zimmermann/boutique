@@ -2,9 +2,8 @@
 $cart= new Base\actionPanier();
 // Product Details
 // Minimum amount is $0.50 US
-$itemName = "Demo Product";
 $itemNumber = "PN12345";
-$itemPrice = "";
+$itemPrice = $cart->getPrice()[0];
 $currency = "EUR";
 
 // Stripe API configuration

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actionPaiement.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Base/DataBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/DataBase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Base/actionPanier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/actionPanier.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,10 +156,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="188" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602768357296" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1603806118691">
+    <state x="988" y="415" key="NewPhpFileDialog" timestamp="1603810849172">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603806118691" />
+    <state x="988" y="415" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603810849172" />
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor" timestamp="1602086042687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
