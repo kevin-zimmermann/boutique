@@ -10,10 +10,10 @@ class actionPanier extends DataBase
     public function getPanier()
     {
         if (isset ($_SESSION['id'])) {
-            return $this->query ('SELECT panier.*, product.* FROM panier, produit as product WHERE user_id = ? 
+            return $this->query('SELECT panier.*, product.* FROM panier, produit as product WHERE user_id = ? 
                             AND panier.product_id = product.produit_id', [
                 $_SESSION['id']
-            ] )->fetchAll(PDO::FETCH_ASSOC);
+            ])->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 
@@ -24,6 +24,7 @@ class actionPanier extends DataBase
             $size
         ])->fetch(\PDO::FETCH_OBJ);
     }
+
     public function updateSize()
     {
         $size = $_POST['size'];
@@ -35,4 +36,50 @@ class actionPanier extends DataBase
             $size,
         ]);
     }
+
+    public function deleteProductcart()
+    {
+        $panierId = $_POST['panier_id'];
+        $this->query('DELETE FROM panier WHERE panier_id = ?', [
+            $panierId
+        ])->fetch();
+        return $panierId;
+    }
+
+    public function onePrice($productId)
+    {
+        $userId = $_SESSION['id'];
+        $tot = 0;
+        $price = $this->query('SELECT prix FROM produit where produit_id = ?', [
+            $productId
+        ])->fetch();
+
+        $qte = $this->query('SELECT quantity FROM panier where product_id = ?', [
+            $productId
+        ])->fetch();
+
+
+        $tot = $price['prix'] * $qte['quantity'];
+        return $tot;
+
+    }
+
+/*    public function countArticle()
+    {
+        $userId = $_SESSION['id'];
+        $c = $this->query('SELECT COUNT(*) FROM panier WHERE user_id = ?', [
+            $userId
+        ])->fetch();
+        return $c['0'];
+    }*/
+
+    public function getPrice()
+    {
+        $userId = $_SESSION['id'];
+        $total = $this->query('SELECT SUM(product.prix * panier.quantity) FROM panier, produit as product WHERE panier.user_id = ? AND panier.product_id = product.produit_id ',[
+            $userId
+        ])->fetch();
+        return $total;
+    }
+
 }
