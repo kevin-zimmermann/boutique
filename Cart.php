@@ -96,7 +96,7 @@ $product= new \Base\product__cat();
                     </table>
                     <div class="print-price">
                         <h2>Prix TTC:</h2>
-                       <p><?php $carts->getPrice()?>€</p>
+                       <p><?php echo $carts->getPrice()[0]?>€</p>
                     </div>
                     <button class="btn btn-dark"><a href=".php">Passer commande</a></button>
                 </div>
