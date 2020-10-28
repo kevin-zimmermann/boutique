@@ -26,7 +26,7 @@ $cart = new \Base\actionPanier();
 ?>
 
 <?php
-$payment_id = $statusMsg = '';
+/*$payment_id = $statusMsg = '';
 $ordStatus = 'error';
 $id = $_SESSION['id'];
 
@@ -108,24 +108,104 @@ $statusMsg = "Invalid card details! $api_error";
 }else{
 $statusMsg = "Error on form submission.";
 }
-?>
+*/?><!--
 
 <div class="container">
     <div class="status">
-        <?php if(!empty($payment_id)){ ?>
-            <h1 class="<?php echo $ordStatus; ?>"><?php echo $statusMsg; ?></h1>
+        <?php /*if(!empty($payment_id)){ */?>
+            <h1 class="<?php /*echo $ordStatus; */?>"><?php /*echo $statusMsg; */?></h1>
 
             <h4>Payment Information</h4>
-            <p><b>Reference Number:</b> <?php echo $payment_id; ?></p>
-            <p><b>Transaction ID:</b> <?php echo $transactionID; ?></p>
-            <p><b>Paid Amount:</b> <?php echo $paidAmount.' '.$paidCurrency; ?></p>
-            <p><b>Payment Status:</b> <?php echo $payment_status; ?></p>
+            <p><b>Reference Number:</b> <?php /*echo $payment_id; */?></p>
+            <p><b>Transaction ID:</b> <?php /*echo $transactionID; */?></p>
+            <p><b>Paid Amount:</b> <?php /*echo $paidAmount.' '.$paidCurrency; */?></p>
+            <p><b>Payment Status:</b> <?php /*echo $payment_status; */?></p>
 
             <h4>Product Information</h4>
-            <p><b>Price:</b> <?php echo $itemPrice.' '.$currency; ?></p>
-        <?php }else{ ?>
+            <p><b>Price:</b> <?php /*echo $itemPrice.' '.$currency; */?></p>
+        <?php /*}else{ */?>
             <h1 class="error">Your Payment has Failed</h1>
-        <?php } ?>
+        <?php /*} */?>
     </div>
     <a href="index.php" class="btn-link">Back to Payment Page</a>
 </div>
+-->
+<?php
+//check whether stripe token is not empty
+if(!empty($_POST['stripeToken'])){
+    //get token, card and user info from the form
+    $token  = $_POST['stripeToken'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $card_num = $_POST['card_num'];
+    $card_cvc = $_POST['cvc'];
+    $card_exp_month = $_POST['exp_month'];
+    $card_exp_year = $_POST['exp_year'];
+
+    //include Stripe PHP library
+    require_once('stripe-php/init.php');
+
+    //set api key
+    $stripe = array(
+        "secret_key"      => "Your_API_Secret_Key",
+        "publishable_key" => "Your_API_Publishable_Key"
+    );
+
+    \Stripe\Stripe::setApiKey($stripe['secret_key']);
+
+    //add customer to stripe
+    $customer = \Stripe\Customer::create(array(
+        'email' => $email,
+        'source'  => $token
+    ));
+
+    //item information
+    $itemName = "Premium Script semicolonworld";
+    $itemNumber = "PS123456";
+    $itemPrice = $cart->getPrice()[0];
+    $currency = "eur";
+    $orderID = "SKA92712382139";
+
+    //charge a credit or a debit card
+    $charge = \Stripe\Charge::create(array(
+        'customer' => $customer->id,
+        'amount'   => $itemPrice,
+        'currency' => $currency,
+        'description' => $itemName,
+        'metadata' => array(
+            'order_id' => $orderID
+        )
+    ));
+
+    //retrieve charge details
+    $chargeJson = $charge->jsonSerialize();
+
+    //check whether the charge is successful
+    if($chargeJson['amount_refunded'] == 0 && empty($chargeJson['failure_code']) && $chargeJson['paid'] == 1 && $chargeJson['captured'] == 1){
+        //order details
+        $amount = $chargeJson['amount'];
+        $balance_transaction = $chargeJson['balance_transaction'];
+        $currency = $chargeJson['currency'];
+        $status = $chargeJson['status'];
+        $date = date("Y-m-d H:i:s");
+
+        //insert tansaction data into the database
+        $sql = "INSERT INTO commandes (utilisateur_id,adresse_id,creationdate,prix,statut) VALUES (".$id."','".$adresseId."','".time()."','".$price."','".$payment_status.")";
+        $insert = $cart->query($sql);
+        $last_insert_id = $cart>insert_id;
+
+        //if order inserted successfully
+        if($last_insert_id && $status == 'succeeded'){
+            $statusMsg = "<h2>The transaction was successful.</h2><h4>Order ID: {$last_insert_id}</h4>";
+        }else{
+            $statusMsg = "Transaction has been failed";
+        }
+    }else{
+        $statusMsg = "Transaction has been failed";
+    }
+}else{
+    $statusMsg = "Form submission error.......";
+}
+
+//show success or error message
+echo $statusMsg;
