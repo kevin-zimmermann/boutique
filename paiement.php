@@ -24,8 +24,7 @@
 <?php include 'header.php' ?>
 <?php
 $carts = new Base\actionPanier();
-$product = new \Base\product__cat();
-
+$adress = new \Base\profil_utilisateurs();
 ?>
 <main>
     <h1>Charge <?php echo $carts->getPrice()[0] ?>€ with Stripe</h1>
@@ -39,7 +38,7 @@ $product = new \Base\product__cat();
 
         <span class="payment-errors"></span>
 
-        <form action="submit.php" method="POST" id="paymentFrm">
+        <form action="actionPaiement.php" method="POST" id="paymentFrm">
             <div class="form">
                 <label>Nom</label>
                 <input class="paie" type="text" name="name" size="50" placeholder="Nom sur la carte"/>
@@ -49,24 +48,43 @@ $product = new \Base\product__cat();
                 <input class="paie" type="text" name="email" size="50" placeholder="Votre@email.com"/>
             </div>
             <div class="form">
+                <label>Adresse de livraison:</label>
+                <select name="adresse" id="adresse-select" class="paie">
+                    <?php foreach ($adress->getAdress() as $adresse) { ?>
+                        <option name="adresse_id" value="<?= $adresse['adresse_id'] ?>"><?= $adresse['nom'] ?> <?= $adresse['prenom'] ?>  <?= $adresse['adresse'] ?> <?= $adresse['code_postal'] ?> <?= $adresse['ville'] ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="form">
+                <label>Numéro de téléphone:</label>
+                <select name="telephone" id="telephone" class="paie">
+                    <?php foreach ($adress->getAdress() as $adresse) { ?>
+                        <option name="telephone" value="<?= $adresse['telephone'] ?>"> <?= $adresse['telephone'] ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="form">
                 <label>Numéro de carte</label>
-                <input class="paie" type="text" name="card_num" size="20" autocomplete="off" class="card-number"
+                <input class="paie card-number" type="text" name="card_num" size="20" autocomplete="off"
                        placeholder="5555555555554444"/>
             </div>
             <div class="form">
                 <label>CVC</label>
-                <input class="paie" type="text" name="cvc" size="4" autocomplete="off" class="card-cvc"
+                <input class="paie card-cvc" type="text" name="cvc" size="4" autocomplete="off"
                        placeholder="123"/>
             </div>
+
             <div class="form">
                 <label>Expire le </label>
                 <div class="group">
-                    <input class="paie" type="number" max="12" min="01" name="exp_month" size="2"
-                           class="card-expiry-month" placeholder="MM"/>
-                    <input class="paie" type="number" max="99" min="0" name="exp_year" size="4" class="card-expiry-year" placeholder="YY"/>
+                    <input class="paie card-expiry-month" type="number" max="12" min="01" name="exp_month" size="2"
+                            placeholder="MM"/>
+                    <span class="esp"></span>
+                    <input class="paie card-expiry-year " type="number" max="99" min="0" name="exp_year" size="4"
+                           placeholder="YY"/>
                 </div>
             </div>
-            <button class="btn-dark" type="submit" id="payBtn">Valider le paiement</button>
+            <button class="btn-dark-paie" type="submit" id="payBtn">Valider le paiement</button>
         </form>
     </div>
 </main>
@@ -74,15 +92,18 @@ $product = new \Base\product__cat();
 </body>
 </html>
 <script type="text/javascript">
+
     //set your publishable key
-    Stripe.setPublishableKey('Your_API_Publishable_Key');
+    Stripe.setPublishableKey('pk_test_51HgTpGLtuZgtK0iJM6Z9TRzIP0sywAv38DodZRUWHN3ZOg48fOrT5aNLdZNgEYvlQzvqzymxpIMQ76Udecu3NZpb0088vaq92Y');
 
     //callback to handle the response from stripe
     function stripeResponseHandler(status, response) {
+
         if (response.error) {
             //enable the submit button
             $('#payBtn').removeAttr("disabled");
             //display the errors on the form
+            console.log(response.error)
             $(".payment-errors").html(response.error.message);
         } else {
             var form$ = $("#paymentFrm");
@@ -101,6 +122,7 @@ $product = new \Base\product__cat();
             //disable the submit button to prevent repeated clicks
             $('#payBtn').attr("disabled", "disabled");
 
+            // ftech ou ajax
             //create single-use token to charge the user
             Stripe.createToken({
                 number: $('.card-number').val(),
