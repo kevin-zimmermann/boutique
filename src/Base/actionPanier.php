@@ -64,14 +64,14 @@ class actionPanier extends DataBase
 
     }
 
-/*    public function countArticle()
-    {
-        $userId = $_SESSION['id'];
-        $c = $this->query('SELECT COUNT(*) FROM panier WHERE user_id = ?', [
-            $userId
-        ])->fetch();
-        return $c['0'];
-    }*/
+   public function countArticle()
+   {
+       $userId = $_SESSION['id'];
+       $c = $this->query('SELECT SUM(quantity) FROM panier WHERE user_id = ?', [
+           $userId
+       ])->fetch();
+       return $c['0'];
+   }
 
     public function getPrice()
     {

@@ -4,9 +4,9 @@
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/boutique.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/boutique.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actionPaiement.php" beforeDir="false" afterPath="$PROJECT_DIR$/actionPaiement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/admin.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +78,8 @@
       <workItem from="1603188141643" duration="18361000" />
       <workItem from="1603272385416" duration="3789000" />
       <workItem from="1603357437630" duration="966000" />
+      <workItem from="1603708678044" duration="11233000" />
+      <workItem from="1603795162203" duration="3741000" />
     </task>
     <task id="LOCAL-00001" summary="add admin.php">
       <created>1601996894656</created>
@@ -107,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603209981338</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test stripe">
+      <created>1603732012809</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603732012810</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +128,8 @@
     <MESSAGE value="header.php" />
     <MESSAGE value="page boutique.php" />
     <MESSAGE value="panier" />
-    <option name="LAST_COMMIT_MESSAGE" value="panier" />
+    <MESSAGE value="test stripe" />
+    <option name="LAST_COMMIT_MESSAGE" value="test stripe" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1602157973020">
@@ -130,42 +140,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="756" y="238" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602768405275" />
-    <state x="585" y="22" key="CommitChangelistDialog2" timestamp="1603209980002">
+    <state x="585" y="22" key="CommitChangelistDialog2" timestamp="1603732011286">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603209980002" />
+    <state x="585" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603732011286" />
     <state x="740" y="264" width="440" height="514" key="FileChooserDialogImpl" timestamp="1602083289115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="264" width="440" height="514" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602083289115" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1603284304154">
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1603450740452">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603284304154" />
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603450740452" />
     <state x="748" y="188" key="NewPhpClassDialog" timestamp="1602768357296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="188" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602768357296" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1603285876163">
+    <state x="988" y="415" key="NewPhpFileDialog" timestamp="1603887159269">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603285876163" />
+    <state x="988" y="415" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603887159269" />
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor" timestamp="1602086042687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603209992742">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603732027688">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603209992742" />
-    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603106861498">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603732027688" />
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603450732233">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603106861498" />
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1603111688660">
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603450732233" />
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1603450818428">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603111688660" />
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603450818428" />
     <state x="623" y="225" width="840" height="678" key="search.everywhere.popup" timestamp="1603286520878">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
