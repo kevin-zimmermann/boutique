@@ -24,6 +24,8 @@ use Base\Profil;
 
 $user = new Base\profil_utilisateurs();
 $admin = new Base\Admin();
+$carts = new \Base\actionPanier();
+$product= new \Base\product__cat();
 
 if (!$user->isAdmin()) {
     header('location:index.php');
@@ -35,6 +37,43 @@ if (!$user->isAdmin()) {
     <button class="btn btn-dark"><a href="admin_product.php">Modifier/Supprimer/Ajouter produit</a></button>
     <button class="btn btn-dark"><a href="admin_categorie.php">Modifier/Supprimer/Ajouter catégorie</a></button>
     <button class="btn btn-dark"><a href="admin_commande.php">Modifier/Supprimer commande</a></button>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card">
+                <div class="card-header">Liste des commandes</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#id commande</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Statut</th>
+                            <th scope="col">Supprimer</th>
+                            <th scope="col">Modifier</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($carts->getPrice() as $cart) { ?>
+                            <tr class="table-ajax">
+                                <th scope="row"><?= $cart['commande_id'] ?></th>
+                                <td><?= $cart['creationdate'] ?></td>
+                                <td><?= $cart['prix'] ?></td>
+                                <td><?= $cart['statut'] ?></td>
+                                <td class="ajax-delete" data-id="<?= $cart['commande_id'] ?>" data-name="commande_id"><i
+                                            class="fas fa-trash"></i></td>
+                                <td><a href="admin_modif_product.php?produit_id=<?= $cart['commande_id'] ?>"><i
+                                                class="fas fa-pen"></i></a></td>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </main>
 </body>
 <?php include 'footer.php' ?>

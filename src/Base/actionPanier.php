@@ -81,5 +81,4 @@ class actionPanier extends DataBase
         ])->fetch();
         return $total;
     }
-
 }
