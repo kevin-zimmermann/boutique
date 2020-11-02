@@ -81,5 +81,14 @@ class actionPanier extends DataBase
         ])->fetch();
         return $total;
     }
+    public function getPanierPrice()
+    {
+        $userId = $_SESSION['id'];
+        $total = $this->query('SELECT * FROM facturation WHERE user_id = ?',[
+            $userId
+        ])->fetch();
+        return $total;
+    }
+
 
 }

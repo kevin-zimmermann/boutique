@@ -25,9 +25,10 @@
 <?php
 $carts = new Base\actionPanier();
 $adress = new \Base\profil_utilisateurs();
+$discount = new \Base\discount();
 ?>
 <main>
-    <h1>Charge <?php echo $carts->getPrice()[0] ?>€ with Stripe</h1>
+    <h1>Charge <span class="price"> <?= $carts->getPanierPrice()['prix_reduc'] ?></span>€ with Stripe</h1>
     <div class="container">
         <h1 class="title"> Paiement Stripe</h1>
 
@@ -37,8 +38,15 @@ $adress = new \Base\profil_utilisateurs();
         </div>
 
         <span class="payment-errors"></span>
-
+        <div class="form">
+            <label for="reduc"> Coupon de réduction: </label>
+            <input type="text paie" class="text-coupon" name="coupon" id="coupon">
+            <button class="btn btn-dark coupon-verify">Valider coupon</a></button>
+            <br/>
+            <div class="error-return"></div>
+        </div>
         <form action="actionPaiement.php" method="POST" id="paymentFrm">
+
             <div class="form">
                 <label>Nom</label>
                 <input class="paie" type="text" name="name" size="50" placeholder="Nom sur la carte"/>
@@ -51,7 +59,8 @@ $adress = new \Base\profil_utilisateurs();
                 <label>Adresse de livraison:</label>
                 <select name="adresse" id="adresse-select" class="paie">
                     <?php foreach ($adress->getAdress() as $adresse) { ?>
-                        <option name="adresse_id" value="<?= $adresse['adresse_id'] ?>"><?= $adresse['nom'] ?> <?= $adresse['prenom'] ?>  <?= $adresse['adresse'] ?> <?= $adresse['code_postal'] ?> <?= $adresse['ville'] ?></option>
+                        <option name="adresse_id"
+                                value="<?= $adresse['adresse_id'] ?>"><?= $adresse['nom'] ?> <?= $adresse['prenom'] ?>  <?= $adresse['adresse'] ?> <?= $adresse['code_postal'] ?> <?= $adresse['ville'] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -59,7 +68,8 @@ $adress = new \Base\profil_utilisateurs();
                 <label>Numéro de téléphone:</label>
                 <select name="telephone" id="telephone" class="paie">
                     <?php foreach ($adress->getAdress() as $adresse) { ?>
-                        <option name="telephone" value="<?= $adresse['telephone'] ?>"> <?= $adresse['telephone'] ?></option>
+                        <option name="telephone"
+                                value="<?= $adresse['telephone'] ?>"> <?= $adresse['telephone'] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -74,13 +84,14 @@ $adress = new \Base\profil_utilisateurs();
                        placeholder="123"/>
             </div>
 
+
             <div class="form">
                 <label>Expire le </label>
                 <div class="group">
                     <input class="paie card-expiry-month" type="number" max="12" min="01" name="exp_month" size="2"
-                            placeholder="MM"/>
+                           placeholder="MM"/>
                     <span class="esp"></span>
-                    <input class="paie card-expiry-year " type="number" max="99" min="0" name="exp_year" size="4"
+                    <input class="paie card-expiry-year" type="number" max="99" min="0" name="exp_year" size="4"
                            placeholder="YY"/>
                 </div>
             </div>
@@ -92,6 +103,29 @@ $adress = new \Base\profil_utilisateurs();
 </body>
 </html>
 <script type="text/javascript">
+    $('.coupon-verify').click(function () {
+        let coupon = $('.text-coupon').val();
+        console.log(coupon)
+        $.ajax({
+            url: 'action.php',
+            method: 'POST',
+            dataType: 'json',
+            data: {
+                coupon: coupon,
+                type: 'checkcoupon'
+            },
+            success: (data) => {
+                console.log(data)
+                $('.price').html(data['return'][0])
+                $('.error-return').html(data['return'][1])
+            },
+            error: (error) => {
+                console.log(error.responseText)
+            }
+
+        })
+    })
+
 
     //set your publishable key
     Stripe.setPublishableKey('pk_test_51HgTpGLtuZgtK0iJM6Z9TRzIP0sywAv38DodZRUWHN3ZOg48fOrT5aNLdZNgEYvlQzvqzymxpIMQ76Udecu3NZpb0088vaq92Y');

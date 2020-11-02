@@ -3,6 +3,7 @@ include 'src/Base.php';
 $url = '';
 $admin = new \Base\Admin();
 $product = new \Base\product__cat();
+$reduc =  new \Base\discount();
 $return = [];
 
 switch ($_POST['type']) {
@@ -37,6 +38,14 @@ switch ($_POST['type']) {
     case 'modifCat' ;
         $url ='admin_categorie.php';
         $return = [$url, $product->updateCategory()];
+        break;
+    case 'addreduc' ;
+        $url ='admin_reduction.php';
+        $return = [$url, $reduc->addReduc()];
+        break;
+    case 'deleteReduc' ;
+        $url ='admin_reduction.php';
+        $return = ['url' => $url, 'return' => $reduc->deleteReduc()];
         break;
 }
 

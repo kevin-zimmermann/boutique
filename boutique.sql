@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 06 oct. 2020 à 10:34
+-- Généré le :  lun. 02 nov. 2020 à 09:44
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `adresse`;
 CREATE TABLE IF NOT EXISTS `adresse` (
   `adresse_id` int(11) NOT NULL AUTO_INCREMENT,
-  `utilisateurs_id` int(11) NOT NULL,
+  `utilisateur_id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `adresse` varchar(255) NOT NULL,
@@ -39,8 +39,17 @@ CREATE TABLE IF NOT EXISTS `adresse` (
   `ville` varchar(255) NOT NULL,
   `telephone` varchar(15) NOT NULL,
   PRIMARY KEY (`adresse_id`),
-  KEY `utilisateur_id` (`utilisateurs_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `utilisateur_id` (`utilisateur_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `adresse`
+--
+
+INSERT INTO `adresse` (`adresse_id`, `utilisateur_id`, `nom`, `prenom`, `adresse`, `code_postal`, `ville`, `telephone`) VALUES
+(5, 15, 'qsdsqdsd', 'qsdsqdqd', '  qsdsqdqsd ', '10935', 'Marseille', '0656862757'),
+(6, 15, 'jul', 'qsdsqdqd', '  qsdsqdqsd ', '10935', 'Marseille', '0656862757'),
+(7, 15, 'jul', 'qsdsqdqd', '  qsdsqdqsd ', '10935', 'Marseille', '0656862757');
 
 -- --------------------------------------------------------
 
@@ -67,7 +76,17 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   `categorie_id` int(11) NOT NULL AUTO_INCREMENT,
   `nom_categorie` varchar(255) NOT NULL,
   PRIMARY KEY (`categorie_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `categorie`
+--
+
+INSERT INTO `categorie` (`categorie_id`, `nom_categorie`) VALUES
+(9, 'Maillots'),
+(11, 'Shorts'),
+(12, 'Survêtements'),
+(18, 'Chaussettes');
 
 -- --------------------------------------------------------
 
@@ -118,7 +137,31 @@ CREATE TABLE IF NOT EXISTS `discount` (
   `nom` varchar(255) NOT NULL,
   `valeur` int(11) NOT NULL,
   PRIMARY KEY (`discount_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `panier`
+--
+
+DROP TABLE IF EXISTS `panier`;
+CREATE TABLE IF NOT EXISTS `panier` (
+  `panier_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `size` enum('s','m','l','xl') NOT NULL DEFAULT 's',
+  PRIMARY KEY (`panier_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `panier`
+--
+
+INSERT INTO `panier` (`panier_id`, `product_id`, `user_id`, `quantity`, `size`) VALUES
+(11, 3, 15, 4, 's'),
+(12, 9, 15, 2, 'xl');
 
 -- --------------------------------------------------------
 
@@ -132,13 +175,69 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `categorie_id` int(11) NOT NULL,
   `nom_produit` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `prix` int(11) NOT NULL,
-  `quantite` int(11) NOT NULL,
+  `prix` decimal(10,2) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `taille` varchar(30) NOT NULL,
+  `date` int(11) NOT NULL,
   PRIMARY KEY (`produit_id`),
   KEY `categorie_id` (`categorie_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `produit`
+--
+
+INSERT INTO `produit` (`produit_id`, `categorie_id`, `nom_produit`, `description`, `prix`, `image`, `date`) VALUES
+(3, 9, 'MAILLOT OM DOMICILE 2020/21', ' MAILLOT OM DOMICILE 2020/21', '89.99', '', 0),
+(4, 9, 'MAILLOT FRANCE DOMICILE 2020-2021', ' Maillot Nike France Domicile 2020-2021, coloris Bleu.', '90.00', '', 0),
+(5, 9, 'MAILLOT OM EXT&Eacute;RIEUR 2020/21', ' Maillot Puma Olympique de Marseille Ext&eacute;rieur 2020/21, coloris Bleu.', '90.00', '', 0),
+(7, 9, 'MAILLOT ARSENAL EXT&Eacute;RIEUR 2020/2021', ' Maillot adidas Arsenal Ext&eacute;rieur 2020/21, coloris Blanc et Noir.', '89.90', '', 0),
+(9, 9, 'MAILLOT MANCHESTER UNITED DOMICILE 2020/2021', ' Maillot Authentique adidas Manchester United Domicile 2020/2021, coloris Rouge.', '129.90', '', 0),
+(10, 9, 'MAILLOT REAL MADRID THIRD 2020/2021', ' Maillot adidas Real Madrid Third 2020/2021, coloris Noir et Rose.', '90.00', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `stock`
+--
+
+DROP TABLE IF EXISTS `stock`;
+CREATE TABLE IF NOT EXISTS `stock` (
+  `stock_id` int(11) NOT NULL AUTO_INCREMENT,
+  `taille` enum('s','m','l','xl') NOT NULL DEFAULT 's',
+  `produit_id` int(11) NOT NULL,
+  `stock` int(11) NOT NULL,
+  PRIMARY KEY (`stock_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `stock`
+--
+
+INSERT INTO `stock` (`stock_id`, `taille`, `produit_id`, `stock`) VALUES
+(16, 'xl', 4, 10),
+(15, 'l', 4, 10),
+(14, 'm', 4, 10),
+(13, 's', 4, 0),
+(20, 'xl', 5, 10),
+(19, 'l', 5, 10),
+(18, 'm', 5, 20),
+(17, 's', 5, 0),
+(9, 's', 3, 5),
+(10, 'm', 3, 50),
+(11, 'l', 3, 20),
+(12, 'xl', 3, 20),
+(25, 's', 7, 0),
+(26, 'm', 7, 10),
+(27, 'l', 7, 10),
+(28, 'xl', 7, 10),
+(40, 'xl', 10, 30),
+(39, 'l', 10, 30),
+(38, 'm', 10, 30),
+(37, 's', 10, 0),
+(33, 's', 9, 0),
+(34, 'm', 9, 10),
+(35, 'l', 9, 10),
+(36, 'xl', 9, 10);
 
 -- --------------------------------------------------------
 
@@ -158,24 +257,15 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `admin` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`id`, `email`, `nom`, `prenom`, `telephone`, `password`, `cart_id`, `admin`) VALUES
-(3, 'dsfdq', 'dqsfd', 'dsqfdsdqs', '90789078', 'tetete', 0, 0),
-(4, 'lea.martel@laplateforme.io', 'martel', 'Cam', '0676767687', '$2y$15$9MKbBmy5OBwwnc05cZPPTOsiLwqbETsUkr6bFWXGV7GHmCT1pzy1W', 0, 0),
-(5, 'kevin.zimmermann@laplateforme.io', 'martel', 'lea', '0676767621', '$2y$15$4cxEMQgJv4.GIj6LcQw2L.5MSl0Q801eoaUQrtGp59xkOqfKWXPXC', 0, 0),
-(6, 'totozimer@gmail.com', 'toto', 'toto', '0676732687', '$2y$15$sonyeSWpQpPkU73p0P9XV.BsZmRl4OU20.bArCYSgMCeEmjolWr6u', 0, 0),
-(7, 'camille.laplate@gmail.com', 'cam', 'camille', '0632456776', '$2y$15$FKEaM/rLKSmWqdHRlH4YWeAYObydY1qf6U5sVFgxVUu8ANH63lEY2', 0, 0),
-(8, 'bastien.albert@gmail.com', '', '', '', '$2y$15$C0OVj4tK7QqLzhZen02ryOs7gy4yoCKTdIx6NwtqenXivtMFphJ7e', 0, 0),
-(10, 'lina.laplate@gmail.com', 'martel', 'lina', '', '$2y$15$0xVL9f6mCwV0rakEK.k9G.uV8vMgI7gjHL9.pLZpfSNXi1ueSk3ie', 0, 0),
-(11, 'gftftfuf@gmail.com', 'martel', 'lina', '0633765643', '$2y$15$ey.7Tudz43v6P.8wmemoDOYZFNYKRQX7460yaIgJU5KXIC3bYACa6', 0, 0),
-(12, 'lea04martel@gmail.com', 'martel', 'lea', '0632456732', '$2y$15$4VZA0Yvtb30.6ptTAiyMx..m1UD58zKyKaGldKffY75gWahKrSRGK', 0, 0),
-(13, 'admin.admin@laplateforme.io', 'admin', 'admin', '0632456776', '$2y$15$HQuATnYS7tTfkQjo4m1Vbev1GhX2isq6Q1djVTTiW2aOLZWsxbizi', 0, 0),
-(14, 'admin@laplateforme.io', 'admin', 'admin', '0632456776', '$2y$15$rmnBixTd2z0TwwU0MFpXB.9GyS6VfRuZ8GAwxMo4YklRmiK1VZm9u', 0, 0);
+(13, 'admin.admsqdsin@laplateforme.io', 'admin', 'admin', '0632456776', '$2y$15$HQuATnYS7tTfkQjo4m1Vbev1GhX2isq6Q1djVTTiW2aOLZWsxbizi', 0, 0),
+(15, 'galactique13@hotmail.fr', 'admin', 'admin', '0656862757', '$2y$15$wlb3X8k0jmNOTojVRT/7V.1LoJ5nOWTP7OFi4AXED5zhjd9O8Bj96', 0, 1);
 
 --
 -- Contraintes pour les tables déchargées
@@ -185,7 +275,7 @@ INSERT INTO `utilisateurs` (`id`, `email`, `nom`, `prenom`, `telephone`, `passwo
 -- Contraintes pour la table `adresse`
 --
 ALTER TABLE `adresse`
-  ADD CONSTRAINT `adresse_ibfk_1` FOREIGN KEY (`utilisateurs_id`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `adresse_ibfk_1` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `carte`

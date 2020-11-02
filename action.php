@@ -71,4 +71,16 @@ if($_POST['type'] == "deleteProductcart")
     $error = $product->deleteProductcart();
     $return = ['url' => $url, 'return' => $error];
 }
+if ($_POST['type'] == "checkprice"){
+    $coupon = new Base\discount();
+    $url = "paiement.php";
+    $error = $coupon->addFacturation();
+    $return = ['url' => $url, 'return' => $error];
+}
+if ($_POST['type'] == "checkcoupon"){
+    $coupon = new Base\discount();
+    $url = "paiement.php";
+    $error = $coupon->getNewPrice();
+    $return = ['url' => $url, 'return' => $error];
+}
 echo json_encode($return);

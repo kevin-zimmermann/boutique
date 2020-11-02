@@ -23,6 +23,7 @@
 <?php
 $carts = new Base\actionPanier();
 $product= new \Base\product__cat();
+$discount = new \Base\discount();
 
 ?>
 <main>
@@ -98,7 +99,7 @@ $product= new \Base\product__cat();
                         <h2>Prix TTC:</h2>
                        <p><?php echo $carts->getPrice()[0]?>€</p>
                     </div>
-                    <button class="btn btn-dark"><a href="paiement.php">Passer commande</a></button>
+                    <button class="btn btn-dark validpanier">Passer commande</button>
                 </div>
         </div>
     </div>
@@ -107,6 +108,20 @@ $product= new \Base\product__cat();
 </body>
 </html>
 <script>
+    $('.validpanier').click(function (){
+        $.ajax({
+            url: 'action.php',
+            method: 'POST',
+            dataType: 'json',
+            data: {
+                type: 'checkprice'
+            },
+            success: (data) => {
+                console.log(data)
+                window.location.replace('paiement.php')
+            }
+        })
+    })
     function leavePopup(getPopup) {
         getPopup.animate({opacity: 0}, {duration: 100}).delay(100).queue(function (next) {
             $(this).removeClass('active-overlay');

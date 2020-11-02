@@ -22,7 +22,7 @@
 <?php include 'header.php' ?>
 <?php include 'config.php' ?>
 <?php
-$cart = new \Base\actionPanier();
+$cart = new \Base\discount();
 ?>
 
 <?php
@@ -142,7 +142,7 @@ $statusMsg = "Error on form submission.";
     $card_exp_month = $_POST['exp_month'];
     $card_exp_year = $_POST['exp_year'];
     $adresseId = $_POST['adresse'];
-    $price = $cart->getPrice()[0];
+    $price = $cart->getPanierPrice()['prix_reduc'];
     $id = $_SESSION['id'];
     $telephone = $_POST['telephone'];
     //include Stripe PHP library
@@ -165,7 +165,7 @@ $statusMsg = "Error on form submission.";
     //item information
     $itemName = "Commande chez Foo 2 Foot";
     $itemNumber = "1";
-    $itemPrice = $cart->getPrice()[0] * 100;
+    $itemPrice = $cart->getPanier()['prix_reduc'] * 100;
     $currency = "eur";
     $orderID = "HISUH3450";
 
