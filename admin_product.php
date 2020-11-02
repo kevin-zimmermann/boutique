@@ -32,11 +32,11 @@ if (!$user->isAdmin()) {
 }
 ?>
 <main>
-    <h1 class="title"> Bienvenue dans le Panel Administration</h1>
+    <h1 class="title"> Panel Admin</h1>
     <div class="container">
         <div class="row justify-content-center">
                 <div class="card">
-                    <div class="card-header">Liste des commandes</div>
+                    <div class="card-header">Liste des produits</div>
                     <div class="card-body">
                         <table class="table">
                             <thead class="thead-dark">

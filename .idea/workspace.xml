@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="">
+    <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="re commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/actionPaiement.php" beforeDir="false" afterPath="$PROJECT_DIR$/actionPaiement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Base/actionPanier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/actionPanier.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,10 +142,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="756" y="238" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602768405275" />
-    <state x="585" y="22" key="CommitChangelistDialog2" timestamp="1603732011286">
+    <state x="585" y="22" key="CommitChangelistDialog2" timestamp="1604314332224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603732011286" />
+    <state x="585" y="22" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604314332224" />
     <state x="740" y="264" width="440" height="514" key="FileChooserDialogImpl" timestamp="1602083289115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -164,18 +166,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603732027688">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604312300608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603732027688" />
-    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603450732233">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604312300608" />
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604312256520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603450732233" />
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1603450818428">
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604312256520" />
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1604312224866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603450818428" />
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604312224866" />
     <state x="623" y="225" width="840" height="678" key="search.everywhere.popup" timestamp="1603286520878">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
