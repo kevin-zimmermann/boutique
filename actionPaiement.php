@@ -59,7 +59,7 @@ $cart = new \Base\discount();
     //item information
     $itemName = "Commande chez Foo 2 Foot";
     $itemNumber = "1";
-    $itemPrice = $cart->getPanier()['prix_reduc'] * 100;
+    $itemPrice = $cart->getPanierPrice()['prix_reduc'] * 100;
     $currency = "eur";
     $orderID = "HISUH3450";
 
@@ -91,6 +91,7 @@ $cart = new \Base\discount();
             $payment_status
         ]);
         $last_insert_id = $cart->lastInsertId();
+        $cart->updateStock($last_insert_id);
         var_dump($last_insert_id);
         //if order inserted successfully
         if ($last_insert_id && $payment_status == 'succeeded') {

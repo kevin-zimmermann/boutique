@@ -30,7 +30,6 @@ if (!isset($_SESSION['id'])) {
 }
 ?>
 <main>
-    <h1 class="title"> Bienvenue dans le Panel Administration</h1>
     <div class="container">
         <div class="row justify-content-center">
             <div>

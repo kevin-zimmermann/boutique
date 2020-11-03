@@ -26,6 +26,7 @@ $user = new Base\profil_utilisateurs();
 $admin = new Base\Admin();
 $carts = new \Base\actionPanier();
 $product= new \Base\product__cat();
+$data = new DateTime();
 
 if (!$user->isAdmin()) {
     header('location:index.php');
@@ -36,7 +37,7 @@ if (!$user->isAdmin()) {
     <button class="btn btn-dark"><a href="admin_user.php">Modifier/Supprimer compte</a></button>
     <button class="btn btn-dark"><a href="admin_product.php">Modifier/Supprimer/Ajouter produit</a></button>
     <button class="btn btn-dark"><a href="admin_categorie.php">Modifier/Supprimer/Ajouter catégorie</a></button>
-    <button class="btn btn-dark"><a href="admin_commande.php">Modifier/Supprimer commande</a></button>
+    <button class="btn btn-dark"><a href="admin_reduction.php">Modifier/Supprimer coupon de réduction</a></button>
 
     <div class="container">
         <div class="row justify-content-center">
@@ -46,8 +47,11 @@ if (!$user->isAdmin()) {
                     <table class="table">
                         <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#id commande</th>
+                            <th scope="col">#id_com</th>
                             <th scope="col">Date</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prénom</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Prix</th>
                             <th scope="col">Statut</th>
                             <th scope="col">Supprimer</th>
@@ -55,11 +59,14 @@ if (!$user->isAdmin()) {
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($carts->getPrice() as $cart) { ?>
+                        <?php foreach ($carts->setPrice() as $cart) { ?>
                             <tr class="table-ajax">
                                 <th scope="row"><?= $cart['commande_id'] ?></th>
-                                <td><?= $cart['creationdate'] ?></td>
-                                <td><?= $cart['prix'] ?></td>
+                                <td><?= $data->setTimestamp($cart['creationdate'])->format('d/m/Y');?></td>
+                                <td><?= $cart['nom'] ?></td>
+                                <td><?= $cart['prenom'] ?></td>
+                                <td><?= $cart['email'] ?></td>
+                                <td><?= $cart['prix'] ?>€</td>
                                 <td><?= $cart['statut'] ?></td>
                                 <td class="ajax-delete" data-id="<?= $cart['commande_id'] ?>" data-name="commande_id"><i
                                             class="fas fa-trash"></i></td>
