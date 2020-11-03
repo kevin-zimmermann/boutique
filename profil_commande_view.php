@@ -41,27 +41,24 @@ if (!isset($_SESSION['id'])) {
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
-                                <th scope="col">id_produit</th>
+                                <th scope="col">id_com</th>
                                 <th scope="col">nom_produit</th>
                                 <th scope="col">Quantité</th>
                                 <th scope="col">Taille</th>
                                 <th scope="col">Prix</th>
                                 <th scope="col">Supprimer</th>
-                                <th scope="col">Modifier</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php foreach ($commande->getCommande() as $product) { ?>
                                 <tr class="table-ajax">
                                     <th scope="row"><?= $product['commande_id'] ?></th>
-                                    <td><?= $data->setTimestamp($product['creationdate'])->format('d/m/Y');?></td>
-                                    <td><?= $product['produit_id'] ?></td>
-                                    <td><?= $product['quantite'] ?></td>
+                                    <td><?= $product['nom_produit'] ?></td>
+                                    <td><?= $product['quantité'] ?></td>
+                                    <td><?= strtoupper($product['taille']) ?></td>
                                     <td><?= $product['prix'] ?>€</td>
-                                    <td class="ajax-delete" data-id="<?= $product['commande_id'] ?>" data-name="commande_id"><i
-                                            class="fas fa-trash"></i></td>
-                                    <td><a href="admin_modif_product.php?produit_id=<?= $product['commande_id'] ?>"><i
-                                                class="fas fa-pen"></i></a></td>
+                                    <td class="ajax-delete" data-id="<?= $product['commande_id'] ?>" data-name="commande_id">
+                                        <i class="fas fa-trash"></i></td>
                                 </tr>
                             <?php } ?>
                             </tbody>
