@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="re commit">
+      <change afterPath="$PROJECT_DIR$/boutique_all.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil_commande_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/product_img/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/product_img/20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Base/product__cat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/product__cat.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/stripe-php/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -77,6 +81,7 @@
       <workItem from="1603357437630" duration="966000" />
       <workItem from="1603708678044" duration="11233000" />
       <workItem from="1603795162203" duration="3741000" />
+      <workItem from="1604497096174" duration="2916000" />
     </task>
     <task id="LOCAL-00001" summary="add admin.php">
       <created>1601996894656</created>
@@ -113,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603732012810</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="profil_commande_view OK">
+      <created>1604422002216</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604422002216</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,7 +138,8 @@
     <MESSAGE value="page boutique.php" />
     <MESSAGE value="panier" />
     <MESSAGE value="test stripe" />
-    <option name="LAST_COMMIT_MESSAGE" value="test stripe" />
+    <MESSAGE value="profil_commande_view OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="profil_commande_view OK" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1602157973020">
@@ -153,18 +166,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="188" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602768357296" />
-    <state x="988" y="415" key="NewPhpFileDialog" timestamp="1603887159269">
+    <state x="988" y="415" key="NewPhpFileDialog" timestamp="1604505311137">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="988" y="415" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603887159269" />
+    <state x="988" y="415" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604505311137" />
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor" timestamp="1602086042687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604421172239">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604422065939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604421172239" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604422065939" />
     <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604312256520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

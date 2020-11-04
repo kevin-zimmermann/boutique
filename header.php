@@ -67,7 +67,7 @@ $panier = new Base\actionPanier();
                 </a>
             </li>
             <li class="dropdown">
-                <a data-toggle="dropdown" href="boutique.php">Boutique</a>
+                <a data-toggle="dropdown" href="boutique_all.php">Boutique</a>
                 <div class="dropdown-menu">
                     <?php foreach ($header->getCategories() as $categorie) { ?>
                         <div class="dropdown-item">

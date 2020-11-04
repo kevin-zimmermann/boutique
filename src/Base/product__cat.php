@@ -132,6 +132,13 @@ class product__cat extends DataBase
         return $response->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getAllProduct()
+    {
+        $response = $this->query('SELECT * FROM produit');
+        return $response->fetchAll(\PDO::FETCH_ASSOC);
+
+    }
+
     public function setProduct()
     {
         $this->product = $this->query('SELECT * FROM produit WHERE produit_id = ?', [$_GET['produit_id']])->fetch(\PDO::FETCH_ASSOC);
