@@ -64,31 +64,32 @@ class actionPanier extends DataBase
 
     }
 
-   public function countArticle()
-   {
-       $userId = $_SESSION['id'];
-       $c = $this->query('SELECT SUM(quantity) FROM panier WHERE user_id = ?', [
-           $userId
-       ])->fetch();
-       return $c['0'];
-   }
+    public function countArticle()
+    {
+        $userId = $_SESSION['id'];
+        $c = $this->query('SELECT SUM(quantity) FROM panier WHERE user_id = ?', [
+            $userId
+        ])->fetch();
+        return $c['0'];
+    }
 
     public function getPrice()
     {
         $userId = $_SESSION['id'];
-        $total = $this->query('SELECT SUM(product.prix * panier.quantity) FROM panier, produit as product WHERE panier.user_id = ? AND panier.product_id = product.produit_id ',[
-            $userId
-        ])->fetch();
-        return $total;
-    }
-    public function getPanierPrice()
-    {
-        $userId = $_SESSION['id'];
-        $total = $this->query('SELECT * FROM facturation WHERE user_id = ?',[
+        $total = $this->query('SELECT SUM(product.prix * panier.quantity) FROM panier, produit as product WHERE panier.user_id = ? AND panier.product_id = product.produit_id ', [
             $userId
         ])->fetch();
         return $total;
     }
 
+    public function getPanierPrice()
+    {
+        $userId = $_SESSION['id'];
+        $total = $this->query('SELECT * FROM facturation WHERE user_id = ?', [
+            $userId
+        ])->fetch();
+        return $total;
+    }
+    
 
 }
