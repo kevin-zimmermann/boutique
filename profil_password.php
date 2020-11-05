@@ -12,6 +12,9 @@
     <?php
     include 'src/Base.php';
     $user = new Base\profil_utilisateurs();
+    if (!isset($_SESSION['id'])) {
+        header('location:index.php');
+    } ?>
     ?>
 </div>
 <form action="action.php" id="form" class="form form-ajax" method="post">

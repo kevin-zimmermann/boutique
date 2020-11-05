@@ -23,19 +23,19 @@
 
 use Base\Profil;
 
-$user = new Base\profil_utilisateurs();
-$user = new Base\profil_utilisateurs();
-$carts = new \Base\actionPanier();
-$product= new \Base\product__cat();
-$data = new DateTime();
 
-if (!isset($_SESSION['id'])) {
+$data = new DateTime();
+$commande = new Base\commande();
+$user = new \Base\profil_utilisateurs();
+
+if (!$user->isAdmin()) {
     header('location:index.php');
 }
 ?>
 <main>
     <div class="container">
         <div class="row justify-content-center">
+            <div>
                 <div class="card">
                     <div class="card-header">Liste des commandes</div>
                     <div class="card-body">
@@ -43,22 +43,22 @@ if (!isset($_SESSION['id'])) {
                             <thead class="thead-dark">
                             <tr>
                                 <th scope="col">id_com</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Nom</th>
-                                <th scope="col">Prenom</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">View</th>
+                                <th scope="col">nom_produit</th>
+                                <th scope="col">Quantité</th>
+                                <th scope="col">Taille</th>
+                                <th scope="col">Prix</th>
+                                <th scope="col">Supprimer</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($carts->getCommande() as $product) { ?>
+                            <?php foreach ($commande->getCommande() as $product) { ?>
                                 <tr class="table-ajax">
                                     <th scope="row"><?= $product['commande_id'] ?></th>
-                                    <td><?= $data->setTimestamp($product['creationdate'])->format('d/m/Y');?></td>
-                                    <td><?= $product['nom'] ?></td>
-                                    <td><?= $product['prenom'] ?></td>
-                                    <td><?= $product['email'] ?></td>
-                                    <td> <a href="profil_commande_view.php?commande_id=<?= $product['commande_id'] ?>">View</a></td>
+                                    <td><?= $product['nom_produit'] ?></td>
+                                    <td><?= $product['quantité'] ?></td>
+                                    <td><?= strtoupper($product['taille']) ?></td>
+                                    <td><?= $product['prix'] ?>€</td>
+
                                 </tr>
                             <?php } ?>
                             </tbody>

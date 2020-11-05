@@ -57,8 +57,6 @@ if (!isset($_SESSION['id'])) {
                                     <td><?= $product['quantité'] ?></td>
                                     <td><?= strtoupper($product['taille']) ?></td>
                                     <td><?= $product['prix'] ?>€</td>
-                                    <td class="ajax-delete" data-id="<?= $product['commande_id'] ?>" data-name="commande_id">
-                                        <i class="fas fa-trash"></i></td>
                                 </tr>
                             <?php } ?>
                             </tbody>
