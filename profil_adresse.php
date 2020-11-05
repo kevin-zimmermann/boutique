@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/css/headerfooter.css">
+    <link rel="stylesheet" href="styles/css/admin.css">
 
     <title> Panel admin - Foo2Foot</title>
 </head>
@@ -34,7 +35,7 @@ if (!isset($_SESSION['id'])) {
         <div class="row justify-content-center">
             <div>
                 <div class="card">
-                    <div class="card-header">Liste des commandes</div>
+                    <div class="card-header">Liste des adresses</div>
                     <div class="card-body">
                         <table class="table">
                             <thead class="thead-dark">

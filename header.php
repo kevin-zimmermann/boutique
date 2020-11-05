@@ -17,14 +17,15 @@ $panier = new Base\actionPanier();
         <div class="no-responsive-header">
             <div class="inline-nav-img">
                 <nav class="big-nav">
-                    <div class="bond-title">
-                        <h1 class="title">FOO2F<a href="index"></a>
+                    <div class="bond-title"><a href="index.php">
+                        <h1 class="title">FOO2F
                             <span class="ballon-inner">
                             <i onMouseOver="" class=" bond far fa-futbol"></i>
                             <span class="ombre-other">
                                 <span class="ombre"></span></span>
                             <span class="ballon"></span>
                         </span>OT
+                        </a>
                         </h1>
                     </div>
                     <?php if (isset($_SESSION['id'])) { ?>
