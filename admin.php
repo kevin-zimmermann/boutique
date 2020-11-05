@@ -25,7 +25,7 @@ use Base\Profil;
 $user = new Base\profil_utilisateurs();
 $admin = new Base\Admin();
 $carts = new \Base\actionPanier();
-$product= new \Base\product__cat();
+$product = new \Base\product__cat();
 $data = new DateTime();
 
 if (!$user->isAdmin()) {
@@ -33,11 +33,14 @@ if (!$user->isAdmin()) {
 }
 ?>
 <main>
-    <h1 class="title"> Bienvenue dans le Panel Administration</h1>
-    <button class="btn btn-dark"><a href="admin_user.php">Modifier/Supprimer compte</a></button>
-    <button class="btn btn-dark"><a href="admin_product.php">Modifier/Supprimer/Ajouter produit</a></button>
-    <button class="btn btn-dark"><a href="admin_categorie.php">Modifier/Supprimer/Ajouter catégorie</a></button>
-    <button class="btn btn-dark"><a href="admin_reduction.php">Modifier/Supprimer coupon de réduction</a></button>
+    <div class="profil">
+
+        <h1 class="title"> Bienvenue dans le Panel Administration</h1>
+        <button class="btn btn-dark"><a href="admin_user.php">Modifier/Supprimer compte</a></button>
+        <button class="btn btn-dark"><a href="admin_product.php">Modifier/Supprimer/Ajouter produit</a></button>
+        <button class="btn btn-dark"><a href="admin_categorie.php">Modifier/Supprimer/Ajouter catégorie</a></button>
+        <button class="btn btn-dark"><a href="admin_reduction.php">Modifier/Supprimer coupon de réduction</a></button>
+    </div>
 
     <div class="container">
         <div class="row justify-content-center">
@@ -61,7 +64,7 @@ if (!$user->isAdmin()) {
                         <?php foreach ($carts->setPrice() as $cart) { ?>
                             <tr class="table-ajax">
                                 <th scope="row"><?= $cart['commande_id'] ?></th>
-                                <td><?= $data->setTimestamp($cart['creationdate'])->format('d/m/Y');?></td>
+                                <td><?= $data->setTimestamp($cart['creationdate'])->format('d/m/Y'); ?></td>
                                 <td><?= $cart['nom'] ?></td>
                                 <td><?= $cart['prenom'] ?></td>
                                 <td><?= $cart['email'] ?></td>

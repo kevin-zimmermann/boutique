@@ -33,18 +33,20 @@ $category = $product->setCatgeorie();
 ?>
 <main>
     <div class="container">
-    <form action="actionAdmin.php?categorie_id=<?= $category->categorie_id ?>" method="post" id="form" class="form form-ajax">
-        <div class="form-article">
-        <label for="nom_categorie">Modifier nom Catégorie</label>
-        <input type="text" name="nom_categorie" id="nom_categorie" value="<?= $category->nom_categorie ?>" class="input">
-    </div>
-        <input type="hidden" name="type" value="modifCat" class="input">
-        <button type="submit">Valider</button>
-    </form>
+        <form action="actionAdmin.php?categorie_id=<?= $category->categorie_id ?>" method="post" id="form"
+              class="form form-ajax">
+            <div class="form-article">
+                <label for="nom_categorie">Modifier nom Catégorie</label>
+                <input type="text" name="nom_categorie" id="nom_categorie" value="<?= $category->nom_categorie ?>"
+                       class="input">
+            </div>
+            <input type="hidden" name="type" value="modifCat" class="input">
+            <button class="btn btn-dark" type="submit">Valider <i class="fas fa-check"></i></button>
+        </form>
     </div>
     <script src="script.js"></script>
 </main>
 </body>
-<?php include 'footer.php'?>
+<?php include 'footer.php' ?>
 </html>
 

@@ -27,7 +27,7 @@ if (!isset($_SESSION['id'])) {
 } ?>
 <main>
     <div class="container">
-        <h1 class="title"> Formulaire produit</h1>
+        <h1 class="title"> Ajouter une adresse</h1>
         <form action="action.php" id="form" class="form form-ajax" method="post">
 
             <div class="form-article">
