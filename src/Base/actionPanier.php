@@ -64,64 +64,32 @@ class actionPanier extends DataBase
 
     }
 
-   public function countArticle()
-   {
-       $userId = $_SESSION['id'];
-       $c = $this->query('SELECT SUM(quantity) FROM panier WHERE user_id = ?', [
-           $userId
-       ])->fetch();
-       return $c['0'];
-   }
+    public function countArticle()
+    {
+        $userId = $_SESSION['id'];
+        $c = $this->query('SELECT SUM(quantity) FROM panier WHERE user_id = ?', [
+            $userId
+        ])->fetch();
+        return $c['0'];
+    }
 
     public function getPrice()
     {
         $userId = $_SESSION['id'];
-        $total = $this->query('SELECT SUM(product.prix * panier.quantity) FROM panier, produit as product WHERE panier.user_id = ? AND panier.product_id = product.produit_id ',[
+        $total = $this->query('SELECT SUM(product.prix * panier.quantity) FROM panier, produit as product WHERE panier.user_id = ? AND panier.product_id = product.produit_id ', [
             $userId
         ])->fetch();
         return $total;
-    }
-
-    public function setPrice(){
-        $response = $this->query('SELECT u.*, c.* FROM commandes as c, utilisateurs as u WHERE c.utilisateur_id = u.id');
-        return $response->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getPanierPrice()
     {
         $userId = $_SESSION['id'];
-        $total = $this->query('SELECT * FROM facturation WHERE user_id = ?',[
+        $total = $this->query('SELECT * FROM facturation WHERE user_id = ?', [
             $userId
         ])->fetch();
         return $total;
     }
+    
 
-    public function updateStock($commande_id) {
-        $userId = $_SESSION['id'];
-        $req = $this->query('SELECT * FROM commandes WHERE commande_id = ?', [
-            $commande_id
-        ])->fetch();
-        if ($req['statut'] == "succeeded") {
-            $recups = $this->query('SELECT * FROM panier WHERE user_id = ?', [
-                $userId
-            ])->fetchAll(\PDO::FETCH_ASSOC);
-            foreach($recups as $recup)
-            {
-                $newreq = $this->query('UPDATE stock SET quantity = (quantity - ?) WHERE product_id = ? AND size = ?', [
-                    $recup['quantity'],
-                    $recup['product_id'],
-                    $recup['size'],
-                ]);
-                $this->query('INSERT INTO commande_produit(commande_id, quantité, produit_id, taille)  VALUES(?,?,?,?) ', [
-                    $req['commande_id'],
-                    $recup['quantity'],
-                    $recup['product_id'],
-                    $recup['size'],
-                ]);
-                $this->query('DELETE FROM panier WHERE panier_id = ?', [
-                    $recup['panier_id']
-                ])->fetch();
-            }
-        }
-    }
 }

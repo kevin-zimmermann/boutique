@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 02 nov. 2020 à 09:44
+-- Généré le :  mer. 04 nov. 2020 à 22:28
 -- Version du serveur :  10.4.10-MariaDB
--- Version de PHP :  7.3.12
+-- Version de PHP :  7.4.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   `categorie_id` int(11) NOT NULL AUTO_INCREMENT,
   `nom_categorie` varchar(255) NOT NULL,
   PRIMARY KEY (`categorie_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `categorie`
@@ -97,15 +97,23 @@ INSERT INTO `categorie` (`categorie_id`, `nom_categorie`) VALUES
 DROP TABLE IF EXISTS `commandes`;
 CREATE TABLE IF NOT EXISTS `commandes` (
   `commande_id` int(11) NOT NULL AUTO_INCREMENT,
-  `utilisateurs_id` int(11) NOT NULL,
+  `utilisateur_id` int(11) NOT NULL,
   `adresse_id` int(11) NOT NULL,
-  `creationdate` date NOT NULL,
-  `quantité` int(11) NOT NULL,
+  `creationdate` int(11) NOT NULL,
   `prix` int(11) NOT NULL,
-  `article` int(11) NOT NULL,
+  `statut` varchar(255) NOT NULL,
   PRIMARY KEY (`commande_id`),
-  KEY `utilisateur_id` (`utilisateurs_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `utilisateur_id` (`utilisateur_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `commandes`
+--
+
+INSERT INTO `commandes` (`commande_id`, `utilisateur_id`, `adresse_id`, `creationdate`, `prix`, `statut`) VALUES
+(1, 14, 1, 1604060827, 53968, 'succeeded'),
+(2, 14, 1, 1604313983, 540, 'succeeded'),
+(3, 15, 5, 1604314642, 620, 'succeeded');
 
 -- --------------------------------------------------------
 
@@ -133,11 +141,43 @@ CREATE TABLE IF NOT EXISTS `commande_produit` (
 DROP TABLE IF EXISTS `discount`;
 CREATE TABLE IF NOT EXISTS `discount` (
   `discount_id` int(11) NOT NULL AUTO_INCREMENT,
-  `valid_time` datetime NOT NULL,
+  `valid_time` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `valeur` int(11) NOT NULL,
+  `type` enum('pourcent','euro') NOT NULL,
   PRIMARY KEY (`discount_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `discount`
+--
+
+INSERT INTO `discount` (`discount_id`, `valid_time`, `nom`, `valeur`, `type`) VALUES
+(4, 1605139200, 'MERDE10', 10, 'euro'),
+(5, 1604361600, 'blabla', 1000, 'euro');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `facturation`
+--
+
+DROP TABLE IF EXISTS `facturation`;
+CREATE TABLE IF NOT EXISTS `facturation` (
+  `facturation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `coupon_id` int(11) NOT NULL,
+  `prix_tot` decimal(10,2) NOT NULL,
+  `prix_reduc` decimal(10,2) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`facturation_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `facturation`
+--
+
+INSERT INTO `facturation` (`facturation_id`, `coupon_id`, `prix_tot`, `prix_reduc`, `user_id`) VALUES
+(12, 0, '619.76', '619.76', 15);
 
 -- --------------------------------------------------------
 
@@ -282,12 +322,6 @@ ALTER TABLE `adresse`
 --
 ALTER TABLE `carte`
   ADD CONSTRAINT `carte_ibfk_1` FOREIGN KEY (`utilisateurs_id`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `commandes`
---
-ALTER TABLE `commandes`
-  ADD CONSTRAINT `commandes_ibfk_1` FOREIGN KEY (`utilisateurs_id`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `commande_produit`
