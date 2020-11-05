@@ -71,7 +71,7 @@ $datetime = new \DateTime();
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-ombre">
         <h1 class="title"> Ajouter un coupon de réduction</h1>
         <form action="actionAdmin.php" id="form" class="form form-ajax-other" method="post">
             <div class="form-article">

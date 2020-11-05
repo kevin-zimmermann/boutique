@@ -68,7 +68,7 @@ if (!isset($_SESSION['id'])) {
                             <?php } ?>
                             </tbody>
                         </table>
-                        <button class="btn btn-dark"><a href="profil_add_adress.php">Ajouter une adresse</a></button>
+                        <button class="btn btn-dark"><a class="lien" href="profil_add_adress.php">Ajouter une adresse</a></button>
 
                     </div>
                 </div>
