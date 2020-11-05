@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/css/headerfooter.css">
+    <link rel="stylesheet" href="styles/css/admin.css">
+
     <title> Panel admin - Foo2Foot</title>
 </head>
 <?php include 'header.php' ?>
@@ -30,25 +32,48 @@ if (!$user->isAdmin()) {
 }
 ?>
 <main>
-<form action="actionAdmin.php?user_id=<?= $admin->id ?>" method="post" id="form" class="form form-ajax">
-    <label for="name">Nouveau nom</label>
-    <input type="text" name="nom" id="name" value="<?= $admin->nom ?>" class="input">
-    <label for="prenom">Nouveau prenom</label>
-    <input type="text" name="prenom" id="prenom" value="<?= $admin->prenom ?>" class="input">
-    <label for="email">Nouveau email</label>
-    <input type="email" name="email" id="email" value="<?= $admin->email ?>" class="input">
-    <label for="telephone">Nouveau numéro de telephone</label>
-    <input type="text" name="telephone" id="telephone"  value="<?= $admin->telephone ?>" class="input">
+    <div class="container">
+        <form action="actionAdmin.php?user_id=<?= $admin->id ?>" method="post" id="form" class="form form-ajax">
+            <div class="form-article">
+                <label for="name">Nouveau nom</label>
+                <input type="text" name="nom" id="name" value="<?= $admin->nom ?>" class="input">
+            </div>
 
-    <?php if($admin->id != $_SESSION['id']) { ?>
-        <label for="admin">Admin?</label>
-        <input type="checkbox" name="admin" id="admin" <?= $admin->admin ? 'checked' : '' ?> class="input">
-    <?php } ?>
-    <input type="hidden" name="type" value="modifAdminUser" class="input">
-    <button type="submit">Valider <i class="fas fa-check"></i></button>
-</form>
+            <div class="form-article">
+
+                <label for="prenom">Nouveau prenom</label>
+                <input type="text" name="prenom" id="prenom" value="<?= $admin->prenom ?>" class="input">
+            </div>
+
+            <div class="form-article">
+
+                <label for="email">Nouveau email</label>
+                <input type="email" name="email" id="email" value="<?= $admin->email ?>" class="input">
+            </div>
+
+            <div class="form-article">
+
+                <label for="telephone">Nouveau numéro de telephone</label>
+                <input type="text" name="telephone" id="telephone" value="<?= $admin->telephone ?>"
+                       class="input">
+            </div>
+
+
+            <?php if ($admin->id != $_SESSION['id']) { ?>
+                <div class="form-article">
+                    <label for="admin">Admin?</label>
+                    <input type="checkbox" name="admin" id="admin" <?= $admin->admin ? 'checked' : '' ?>
+                           class="input">
+                </div>
+            <?php } ?>
+            <div class="form-article">
+                <input type="hidden" name="type" value="modifAdminUser" class="input">
+                <button type="submit">Valider <i class="fas fa-check"></i></button>
+            </div>
+        </form>
+    </div>
     <script src="script.js"></script>
 </main>
 </body>
-<?php include 'footer.php'?>
+<?php include 'footer.php' ?>
 </html>

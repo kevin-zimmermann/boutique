@@ -31,11 +31,13 @@ if (!isset($_SESSION['id'])) {
 
 ?>
 <main>
+    <div class="profil">
     <h1 class="title"> Bienvenue sur votre page profil</h1>
     <button class="btn btn-dark"><a href="profil_user.php">Modifier compte</a></button>
     <button class="btn btn-dark"><a href="profil_password.php">Modifier mot de passe </a></button>
     <button class="btn btn-dark"><a href="profil_adresse.php">Modifier/Supprimer/Ajouter adresse </a></button>
     <button class="btn btn-dark"><a href="profil_commande.php">Voir le(s) commande(s)</a></button>
+    </div>
 </main>
 </body>
 <?php include 'footer.php' ?>

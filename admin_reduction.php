@@ -88,7 +88,7 @@ $datetime = new \DateTime();
             </div>
             <div class="form-article">
                 <label for="format">Type de réduction:</label> <br/>
-                <select id="format" name="format" class="input">
+                <select id="format" name="format" class="input form-control">
                     <option value="pourcent">%</option>
                     <option value="euro">€</option>
                 </select>
