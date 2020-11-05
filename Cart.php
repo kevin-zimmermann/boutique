@@ -70,13 +70,13 @@ $discount = new \Base\discount();
                             <div class="get-delete-inner get-popup-inner">
                                 <h3>Confirmation <a class="overlay-popup close-popup-delete" href=""></a></h3>
                                 <div class="content-delete">
-                                    blabla
+                                    Supprimer cette élément ?
                                 </div>
                                 <div class="conf">
                                     <form action="action.php" class="action-ajax" method="post">
                                         <input type="hidden" name="type" value="deleteProductcart">
                                         <input type="hidden" class="action-input-hidden">
-                                        <button class="btn btn-primary">button</button>
+                                        <button class="btn btn-primary">Supprimer</button>
                                     </form>
 
                                 </div>
@@ -87,7 +87,7 @@ $discount = new \Base\discount();
                             <div class="get-error-inner r get-popup-inner">
                                 <h3>Oops il y a une erreur <a class="overlay-popup close-popup-error" href=""></a></h3>
                                 <div class="content-error">
-                                    blabla
+                                    Supprimer cette élément ?
                                 </div>
                             </div>
 

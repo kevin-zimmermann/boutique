@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="re commit">
-      <change afterPath="$PROJECT_DIR$/boutique_all.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/product_img/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/product_img/20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Base/product__cat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/product__cat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_modif_categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modif_categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/stripe-php/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -27,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="lea" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -82,6 +84,7 @@
       <workItem from="1603708678044" duration="11233000" />
       <workItem from="1603795162203" duration="3741000" />
       <workItem from="1604497096174" duration="2916000" />
+      <workItem from="1604570824663" duration="4983000" />
     </task>
     <task id="LOCAL-00001" summary="add admin.php">
       <created>1601996894656</created>
@@ -174,10 +177,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604422065939">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604507194484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604422065939" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604507194484" />
     <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604312256520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

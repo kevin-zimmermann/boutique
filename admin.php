@@ -42,7 +42,7 @@ if (!$user->isAdmin()) {
     <div class="container">
         <div class="row justify-content-center">
             <div class="card">
-                <div class="card-header">Liste des commandes</div>
+                <div class="card-header">Commandes en cours</div>
                 <div class="card-body">
                     <table class="table">
                         <thead class="thead-dark">
@@ -55,7 +55,6 @@ if (!$user->isAdmin()) {
                             <th scope="col">Prix</th>
                             <th scope="col">Statut</th>
                             <th scope="col">Supprimer</th>
-                            <th scope="col">Modifier</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -70,8 +69,6 @@ if (!$user->isAdmin()) {
                                 <td><?= $cart['statut'] ?></td>
                                 <td class="ajax-delete" data-id="<?= $cart['commande_id'] ?>" data-name="commande_id"><i
                                             class="fas fa-trash"></i></td>
-                                <td><a href="admin_modif_product.php?produit_id=<?= $cart['commande_id'] ?>"><i
-                                                class="fas fa-pen"></i></a></td>
                             </tr>
                         <?php } ?>
                         </tbody>
@@ -81,6 +78,75 @@ if (!$user->isAdmin()) {
         </div>
     </div>
     </div>
+    <div class="get-delete get-popup">
+        <div class="get-delete-inner get-popup-inner">
+            <h3>Confirmation <a class="overlay-popup close-popup-delete" href=""></a></h3>
+            <div class="content-delete">
+                Supprimer cette élément ?
+            </div>
+            <div class="conf">
+                <form action="actionAdmin.php" class="action-ajax" method="post">
+                    <input type="hidden" name="type" value="deleteProduct">
+                    <input type="hidden" class="action-input-hidden">
+                    <button class="btn btn-primary">Supprimer</button>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="get-error get-popup">
+        <div class="get-error-inner r get-popup-inner">
+            <h3>Oops il y a une erreur <a class="overlay-popup close-popup-error" href=""></a></h3>
+            <div class="content-error">
+                Supprimer cette élément ?
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function leavePopup(getPopup) {
+            getPopup.animate({opacity: 0}, {duration: 100}).delay(100).queue(function (next) {
+                $(this).removeClass('active-overlay');
+                next();
+            })
+        }
+
+        $('.ajax-delete').click(function () {
+            $('.get-delete').addClass('active-overlay');
+            $('.get-delete').animate({opacity: 1}, {duration: 100});
+            $('.get-delete').find('.action-input-hidden')
+                .attr('name', $(this).data('name'))
+                .val($(this).data('id'));
+        })
+        $('.action-ajax').submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: (data) => {
+                    $('[data-id=' + data['return'] + ']').closest('.table-ajax').remove();
+                    leavePopup($('.get-delete'));
+                },
+                error: (error) => {
+                    console.log(error.responseText)
+                }
+            });
+            return false;
+        });
+        $('.get-popup').click(function (e) {
+            let div = $(this).find('.get-popup-inner');
+            if (!$(e.target).is(div) && !$.contains(div[0], e.target)) {
+                leavePopup($(this));
+            }
+        });
+        $('.overlay-popup').click(function () {
+            leavePopup($(this).closest('.get-popup'));
+            return false;
+        });
+    </script>
 </main>
 </body>
 <?php include 'footer.php' ?>
