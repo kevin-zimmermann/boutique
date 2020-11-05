@@ -95,13 +95,6 @@ $panier = new Base\actionPanier();
         <div id="myLinks">
             <h5 class="text-white h4"><a href="index.php">Accueil</a></h5>
             <h5 class="text-white h4"><a href="boutique_all.php">Boutique</a></h5>
-            <div class="dropdown-menu">
-                <?php foreach ($header->getCategories() as $categorie) { ?>
-                    <div class="dropdown-item">
-                        <a href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><? $categorie['nom_categorie'] ?></a>
-                    </div>
-                <?php } ?>
-            </div>
             <?php if ($user->getIsConnect()) {
                 ?>
                 <h5 class="text-white h4">
@@ -197,4 +190,5 @@ $panier = new Base\actionPanier();
             x.style.display = "block";
         }
     }
+
 </script>

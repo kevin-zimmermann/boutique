@@ -47,11 +47,12 @@ if (!isset($_SESSION['id'])) {
                                 <th scope="col">Date</th>
                                 <th scope="col">Nom</th>
                                 <th scope="col">Prenom</th>
+                                <th scope="col">Email</th>
                                 <th scope="col">View</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($carts->setPrice() as $product) { ?>
+                            <?php foreach ($carts->getCommande() as $product) { ?>
                                 <tr class="table-ajax">
                                     <th scope="row"><?= $product['commande_id'] ?></th>
                                     <td><?= $data->setTimestamp($product['creationdate'])->format('d/m/Y');?></td>

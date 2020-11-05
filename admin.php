@@ -27,6 +27,7 @@ $admin = new Base\Admin();
 $carts = new \Base\actionPanier();
 $product = new \Base\product__cat();
 $data = new DateTime();
+$commandes = new \Base\commande();
 
 if (!$user->isAdmin()) {
     header('location:index.php');
@@ -58,20 +59,22 @@ if (!$user->isAdmin()) {
                             <th scope="col">Prix</th>
                             <th scope="col">Statut</th>
                             <th scope="col">Supprimer</th>
+                            <th scope="col">View PD</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($carts->setPrice() as $cart) { ?>
+                        <?php foreach ($commandes->getAllCommande() as $commande) { ?>
                             <tr class="table-ajax">
-                                <th scope="row"><?= $cart['commande_id'] ?></th>
-                                <td><?= $data->setTimestamp($cart['creationdate'])->format('d/m/Y'); ?></td>
-                                <td><?= $cart['nom'] ?></td>
-                                <td><?= $cart['prenom'] ?></td>
-                                <td><?= $cart['email'] ?></td>
-                                <td><?= $cart['prix'] ?>€</td>
-                                <td><?= $cart['statut'] ?></td>
-                                <td class="ajax-delete" data-id="<?= $cart['commande_id'] ?>" data-name="commande_id"><i
+                                <th scope="row"><?= $commande['commande_id'] ?></th>
+                                <td><?= $data->setTimestamp($commande['creationdate'])->format('d/m/Y'); ?></td>
+                                <td><?= $commande['nom'] ?></td>
+                                <td><?= $commande['prenom'] ?></td>
+                                <td><?= $commande['email'] ?></td>
+                                <td><?= $commande['prix'] ?>€</td>
+                                <td><?= $commande['statut'] ?></td>
+                                <td class="ajax-delete" data-id="<?= $commande['commande_id'] ?>" data-name="commande_id"><i
                                             class="fas fa-trash"></i></td>
+                                <td> <a href="admin_commande_view.php?commande_id=<?= $commande['commande_id'] ?>">View</a></td>
                             </tr>
                         <?php } ?>
                         </tbody>

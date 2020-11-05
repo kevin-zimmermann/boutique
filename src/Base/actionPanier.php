@@ -90,6 +90,41 @@ class actionPanier extends DataBase
         ])->fetch();
         return $total;
     }
-    
-
+    public function getCommande()
+    {
+        return $this->query('SELECT c.*, d.*, u.* 
+                                    FROM commandes as c, adresse as d, utilisateurs as u 
+                                    WHERE c.utilisateur_id = ? AND d.adresse_id = c.adresse_id AND c.utilisateur_id = u.id', [
+            $_SESSION['id']
+        ])->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function updateStock($commendeId)
+    {
+        $req = $this->query('SELECT * FROM commandes WHERE commande_id = ?', [
+            $commendeId
+        ])->fetch(PDO::FETCH_ASSOC);
+        if ($req['statut'] == "succeeded") {
+            $userId = $_SESSION['id'];
+            $recups = $this->query('SELECT * FROM panier WHERE user_id = ?', [
+                $userId
+            ])->fetchAll(\PDO::FETCH_ASSOC);
+            foreach($recups as $recup)
+            {
+                $newreq = $this->query('UPDATE stock SET stock = (stock - ?) WHERE produit_id = ? AND taille = ?', [
+                    $recup['quantity'],
+                    $recup['product_id'],
+                    $recup['size'],
+                ]);
+                $this->query('INSERT INTO commande_produit(commande_id, quantité, produit_id, taille)  VALUES(?,?,?,?) ', [
+                    $req['commande_id'],
+                    $recup['quantity'],
+                    $recup['product_id'],
+                    $recup['size'],
+                ]);
+                $this->query('DELETE FROM panier WHERE panier_id = ?', [
+                    $recup['panier_id']
+                ])->fetch();
+            }
+        }
+    }
 }

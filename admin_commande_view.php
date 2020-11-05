@@ -26,8 +26,9 @@ use Base\Profil;
 
 $data = new DateTime();
 $commande = new Base\commande();
+$user = new \Base\profil_utilisateurs();
 
-if (!isset($_SESSION['id'])) {
+if (!$user->isAdmin()) {
     header('location:index.php');
 }
 ?>
@@ -57,6 +58,7 @@ if (!isset($_SESSION['id'])) {
                                     <td><?= $product['quantité'] ?></td>
                                     <td><?= strtoupper($product['taille']) ?></td>
                                     <td><?= $product['prix'] ?>€</td>
+
                                 </tr>
                             <?php } ?>
                             </tbody>
