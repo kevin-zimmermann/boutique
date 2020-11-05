@@ -76,10 +76,6 @@ $panier = new Base\actionPanier();
                     <?php } ?>
                 </div>
             </li>
-            <li><a href="calendrier.php">
-                    Calendrier
-                </a>
-            </li>
         </ul>
         <form class="form-inline search-box-content">
             <input class="form-control mr-sm-2 on-input-search" type="text" placeholder="Search" aria-label="Search">

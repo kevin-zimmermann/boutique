@@ -15,10 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/css/headerfooter.css">
-    <link rel="stylesheet" href="styles/css/style.css">
     <link rel="stylesheet" href="styles/css/admin.css">
-
-
     <title> Panel admin - Foo2Foot</title>
 </head>
 <body>
@@ -36,7 +33,7 @@ $adress = $user->setAdress();
 ?>
 <main>
     <div class="container">
-        <h1 class="title"> Formulaire produit</h1>
+        <h1 class="title">Changement d'adresse</h1>
         <form action="action.php?adresse_id=<?= $adress->adresse_id ?>" id="form" class="form form-ajax" method="post">
 
             <div class="form-article">
