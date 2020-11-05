@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="re commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_add_adress.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_add_adress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_adresse.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_adresse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_commande.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_commande_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_modif_adresse.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_modif_adresse.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lea" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -122,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604422002216</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="recup commande">
+      <created>1604576960504</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604576960504</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
