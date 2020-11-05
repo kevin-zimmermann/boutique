@@ -3,13 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="re commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil_add_adress.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_add_adress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_commande_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_commande_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_reduction.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_reduction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paiement.php" beforeDir="false" afterPath="$PROJECT_DIR$/paiement.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profil_adresse.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_adresse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profil_commande.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profil_commande_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil_modif_adresse.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_modif_adresse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/headerfooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/headerfooter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,14 +192,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604507194484">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604586864088">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604507194484" />
-    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604312256520">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604586864088" />
+    <state x="735" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604586769249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604312256520" />
+    <state x="735" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604586769249" />
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604586816441">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604586816441" />
     <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1604312224866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

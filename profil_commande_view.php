@@ -46,7 +46,6 @@ if (!isset($_SESSION['id'])) {
                                 <th scope="col">Quantité</th>
                                 <th scope="col">Taille</th>
                                 <th scope="col">Prix</th>
-                                <th scope="col">Supprimer</th>
                             </tr>
                             </thead>
                             <tbody>
