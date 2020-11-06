@@ -213,10 +213,7 @@ function addResponsive(){
     append.addClass('table-responsive');
     append.append(html);
     cardBody.html(append);
-    /*const x = document.getElementsByClassName('.card-body');
-    const a = document.createElement("div")
-    a.innerHTML
-    document.body.appendChild(a);*/
+
 
 }
 
