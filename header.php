@@ -112,7 +112,7 @@ $panier = new Base\actionPanier();
                     </a></h5>
             <?php } ?>
         </div>
-        <a href="" class="icon" onclick="myFunction()">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
