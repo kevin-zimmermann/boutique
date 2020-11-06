@@ -75,7 +75,8 @@ $panier = new Base\actionPanier();
                     <a data-toggle="dropdown" href="boutique_all.php">Boutique</a>
                     <div class="dropdown-menu">
                         <?php foreach ($header->getCategories() as $categorie) { ?>
-                                <a class="dropdown-item" href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></a>
+                            <a class="dropdown-item"
+                               href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></a>
 
                         <?php } ?>
                     </div>
@@ -106,6 +107,11 @@ $panier = new Base\actionPanier();
                         Profil
                     </a>
                     </a></h5>
+                <?php
+                if ($user->isAdmin()) {
+                    ?>
+                    <a class="dropdown-item" href="admin.php">Panel admin</a>
+                <?php } ?>
                 <h5 class="text-white h4">
                     <a href="disconnect.php">Déconnexion</a>
                     </a></h5>

@@ -20,30 +20,45 @@
     <title> Accueil - Foo2Foot</title>
 </head>
 <body>
-<?php include 'header.php'?>
+<?php include 'header.php' ?>
 <?php
 $product = new Base\product__cat();
+$header = new Base\Header();
 ?>
-    <main>
-        <div class="cards-list">
-            <?php foreach ($product->getProducts() as $product) { ?>
-                <div class="card-desk-content">
-                    <div class="card">
-                        <img class="card-img-top" src="data/product_img/<?= $product['produit_id'] ?>.jpg" alt="<?= $product['nom_produit'] ?>">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $product['nom_produit'] ?></h5>
-                            <h5 class="card-title-prix"><?= $product['prix'] ?>€</h5>
-                        </div>
-                        <div class="footer-product">
-                            <p class="card-text"></p>
-                                <button type="button" class="btn btn-dark"><a class="lien" href="product.php?produit_id=<?= $product['produit_id'] ?>">Voir plus </button></a>
-                        </div>
-                    </div>
+<main>
+    <div class="all-cat">
+        <ul>
+            <?php foreach ($header->getCategories() as $categorie) { ?>
+                <div class="print-cat">
+                    <li>
+                        <a href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></a>
+                    </li>
                 </div>
             <?php } ?>
-        </div>
+        </ul>
+    </div>
+    <div class="cards-list">
+        <?php foreach ($product->getProducts() as $product) { ?>
+            <div class="card-desk-content">
+                <div class="card">
+                    <img class="card-img-top" src="data/product_img/<?= $product['produit_id'] ?>.jpg"
+                         alt="<?= $product['nom_produit'] ?>">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $product['nom_produit'] ?></h5>
+                        <h5 class="card-title-prix"><?= $product['prix'] ?>€</h5>
+                    </div>
+                    <div class="footer-product">
+                        <p class="card-text"></p>
+                        <button type="button" class="btn btn-dark"><a class="lien" href="product.php?produit_id=<?= $product['produit_id'] ?>">Voir
+                                plus</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
 
-    </main>
+</main>
 <?php include 'footer.php' ?>
 </body>
 </html>

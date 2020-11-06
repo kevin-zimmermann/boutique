@@ -37,7 +37,7 @@ if (!$user->isAdmin()) {
             <div>
                 <div class="card">
                     <div class="card-header">Liste des comptes utilisateurs</div>
-                    <div class="card-body">
+                    <div class="card-body responsive">
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>

@@ -48,7 +48,7 @@ if (!$user->isAdmin()) {
         <div class="row justify-content-center">
             <div class="card">
                 <div class="card-header">Commandes en cours</div>
-                <div class="card-body">
+                <div class="card-body responsive">
                     <table class="table">
                         <thead class="thead-dark">
                         <tr>

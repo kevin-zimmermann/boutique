@@ -37,7 +37,7 @@ $datetime = new \DateTime();
         <div class="row justify-content-center">
             <div class="card" style="width: -webkit-fill-available;">
                 <div class="card-header">Liste des coupons de réduction</div>
-                <div class="card-body">
+                <div class="card-body responsive">
                     <table class="table">
                         <thead class="thead-dark">
                         <tr>
