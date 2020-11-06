@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="re commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Base/commande.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/commande.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_add_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/product_img/32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/product_img/32.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/product_img/36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/product_img/36.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_commande_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/boutique.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/boutique.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/css/headerfooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/headerfooter.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,10 +196,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604586864088">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604663294690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604586864088" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604663294690" />
     <state x="735" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604586769249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -204,10 +208,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604586816441" />
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1604312224866">
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1604668943032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604312224866" />
+    <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604668943032" />
     <state x="805" y="418" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1604576637319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

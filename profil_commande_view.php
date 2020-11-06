@@ -36,7 +36,7 @@ if (!isset($_SESSION['id'])) {
     <div class="container">
         <div class="row justify-content-center">
                 <div class="card">
-                    <div class="card-header">Liste des commandes</div>
+                    <div class="card-header">Récap produit</div>
                     <div class="card-body">
                         <table class="table">
                             <thead class="thead-dark">

@@ -30,6 +30,11 @@
     height: 100%;
 }
 
+.des {
+
+    color: #333333;
+}
+
 .card-body {
     text-align: center;
 }

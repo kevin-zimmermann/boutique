@@ -27,7 +27,7 @@ if (!$user->isAdmin()) {
     header('location:index.php');
 } ?>
 <main>
-    <div class="container">
+    <div class="container-ombre">
         <h1 class="title"> Formulaire produit</h1>
         <form action="actionAdmin.php" id="form" class="form form-ajax" method="post" enctype="multipart/form-data">
             <div class="form-article">

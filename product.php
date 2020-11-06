@@ -34,7 +34,7 @@ $sizes = $product->getSizes();
                      alt="<?= $product->nom_produit ?>">
                 <div class="card-body">
                     <h5 class="card-title"><?= $product->nom_produit ?></h5>
-                    <p><?= $product->description ?></p>
+                    <p class="des"><?= $product->description ?></p>
                     <form action="action.php?product_id=<?= $product->produit_id ?>" id="form" class="form form-ajax-other form-ajax" method="post">
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Choisir taille:</label>
@@ -69,7 +69,7 @@ $sizes = $product->getSizes();
                 </div>
                 <a class="footer-product">
                     <input type="hidden" name="type" value="panierAdd" class="input">
-                    <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+                    <button type="submit" class="btn btn-dark">Ajouter au panier</button>
                 </div>
                 </form>
             </div>
