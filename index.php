@@ -20,7 +20,7 @@
     <title> Accueil - Foo2Foot</title>
 </head>
 <body>
-<?php include 'header.php'?>
+<?php include 'header.php' ?>
 <?php
 $product = new Base\product__cat();
 ?>
