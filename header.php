@@ -18,15 +18,16 @@ $panier = new Base\actionPanier();
             <div class="inline-nav-img">
                 <nav class="big-nav">
                     <div class="bond-title"><a href="index.php">
-                        <h1 class="title">FOO2F
-                            <span class="ballon-inner">
+                            <h1 class="title">FOO2F
+                                <span class="ballon-inner">
                             <i onMouseOver="" class=" bond far fa-futbol"></i>
                             <span class="ombre-other">
                                 <span class="ombre"></span></span>
                             <span class="ballon"></span>
                         </span>OT
+                            </h1>
                         </a>
-                        </h1>
+
                     </div>
                     <?php if (isset($_SESSION['id'])) { ?>
                     <ul>
@@ -58,12 +59,11 @@ $panier = new Base\actionPanier();
                             </a>
                         </li>
                     </ul>
+                </nav>
             </div>
-            </nav>
             <?php
             }
             ?>
-            </nav>
         </div>
         <div class="list-header">
             <ul>
@@ -110,15 +110,13 @@ $panier = new Base\actionPanier();
                 <h5 class="text-white h4">
                     <a href="disconnect.php">Déconnexion</a>
                     </a></h5>
-            <?php } else {
-                return false;
-            }
-            ?>
+            <?php } ?>
         </div>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <a href="" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
+
 </header>
 <script>
     function renderHtmlSearch(value) {
