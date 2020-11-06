@@ -30,6 +30,11 @@ header {
     padding-bottom: 10px;
 }
 
+a.dropdown-item:focus, .dropdown-item:focus-within {
+
+    background-color: #D5E3EC !important;
+}
+
 .bond-title {
     position: relative;
 }
@@ -56,6 +61,7 @@ header {
 
 .ballon-inner {
     position: relative;
+    margin-left: -10px;
 }
 
 .ombre-other {

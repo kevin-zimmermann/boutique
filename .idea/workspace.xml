@@ -4,18 +4,9 @@
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="re commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_commande_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_commande_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_reduction.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_reduction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paiement.php" beforeDir="false" afterPath="$PROJECT_DIR$/paiement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil_adresse.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_adresse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil_commande.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil_commande_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Base/commande.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/commande.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/css/headerfooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/headerfooter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +83,7 @@
       <workItem from="1603795162203" duration="3741000" />
       <workItem from="1604497096174" duration="2916000" />
       <workItem from="1604570824663" duration="4983000" />
+      <workItem from="1604657379128" duration="4672000" />
     </task>
     <task id="LOCAL-00001" summary="add admin.php">
       <created>1601996894656</created>
@@ -142,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604576960504</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ajout css">
+      <created>1604593148875</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604593148875</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +156,8 @@
     <MESSAGE value="test stripe" />
     <MESSAGE value="profil_commande_view OK" />
     <MESSAGE value="modif admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="modif admin" />
+    <MESSAGE value="ajout css" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout css" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1602157973020">
