@@ -94,6 +94,14 @@ class actionPanier extends DataBase
         ])->fetch();
         return $total;
     }
+    public function getCommande()
+    {
+        return $this->query('SELECT c.*, d.*, u.* 
+                                    FROM commandes as c, adresse as d, utilisateurs as u 
+                                    WHERE c.utilisateur_id = ? AND d.adresse_id = c.adresse_id AND c.utilisateur_id = u.id', [
+            $_SESSION['id']
+        ])->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function updateStock($commande_id) {
         $userId = $_SESSION['id'];
