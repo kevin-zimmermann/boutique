@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="re commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil_add_adress.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_add_adress.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil_adresse.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_adresse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil_commande.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil_commande_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil_modif_adresse.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_modif_adresse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Base/commande.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base/commande.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/headerfooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/headerfooter.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +83,7 @@
       <workItem from="1603795162203" duration="3741000" />
       <workItem from="1604497096174" duration="2916000" />
       <workItem from="1604570824663" duration="4983000" />
+      <workItem from="1604657379128" duration="4672000" />
     </task>
     <task id="LOCAL-00001" summary="add admin.php">
       <created>1601996894656</created>
@@ -136,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604576960504</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ajout css">
+      <created>1604593148875</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604593148875</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +156,8 @@
     <MESSAGE value="test stripe" />
     <MESSAGE value="profil_commande_view OK" />
     <MESSAGE value="modif admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="modif admin" />
+    <MESSAGE value="ajout css" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout css" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1602157973020">
@@ -186,14 +192,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604507194484">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604586864088">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604507194484" />
-    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604312256520">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604586864088" />
+    <state x="735" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604586769249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604312256520" />
+    <state x="735" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604586769249" />
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604586816441">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="716" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604586816441" />
     <state x="659" y="308" key="git4idea.merge.GitPullDialog" timestamp="1604312224866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
