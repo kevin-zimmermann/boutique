@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="re commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_modif_categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modif_categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_add_adress.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_add_adress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_adresse.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_adresse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_commande.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_commande_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_commande_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_modif_adresse.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_modif_adresse.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lea" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -128,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604422002216</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="recup commande">
+      <created>1604576960504</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604576960504</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +150,8 @@
     <MESSAGE value="panier" />
     <MESSAGE value="test stripe" />
     <MESSAGE value="profil_commande_view OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="profil_commande_view OK" />
+    <MESSAGE value="modif admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif admin" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1602157973020">
@@ -161,10 +170,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="264" width="440" height="514" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602083289115" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1603450740452">
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1604576626996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603450740452" />
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604576626996" />
     <state x="748" y="188" key="NewPhpClassDialog" timestamp="1602768357296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -189,6 +198,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="659" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604312224866" />
+    <state x="805" y="418" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1604576637319">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="805" y="418" key="git4idea.rebase.GitUnstructuredEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604576637319" />
     <state x="623" y="225" width="840" height="678" key="search.everywhere.popup" timestamp="1603286520878">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

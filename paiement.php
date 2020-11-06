@@ -29,7 +29,7 @@ $discount = new \Base\discount();
 ?>
 <main>
     <h1>Charge <span class="price"> <?= $carts->getPanierPrice()['prix_reduc'] ?></span>€ with Stripe</h1>
-    <div class="container">
+    <div class="container-ombre">
         <h1 class="title"> Paiement Stripe</h1>
 
         <div class="group">

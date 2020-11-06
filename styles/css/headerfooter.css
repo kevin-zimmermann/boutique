@@ -122,7 +122,6 @@ i {
     align-items: center;
     margin-right: 10px;
     text-decoration: none !important;
-    align-items: center;
 
 }
 
@@ -302,7 +301,6 @@ footer {
 
 main .btn-dark{
     margin: 10px;
-    width: 326px;
 }
 
 .profil {

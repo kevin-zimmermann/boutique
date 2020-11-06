@@ -81,6 +81,10 @@ class actionPanier extends DataBase
         ])->fetch();
         return $total;
     }
+    public function setPrice(){
+        $response = $this->query('SELECT u.*, c.* FROM commandes as c, utilisateurs as u WHERE c.utilisateur_id = u.id');
+        return $response->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function getPanierPrice()
     {
@@ -90,27 +94,19 @@ class actionPanier extends DataBase
         ])->fetch();
         return $total;
     }
-    public function getCommande()
-    {
-        return $this->query('SELECT c.*, d.*, u.* 
-                                    FROM commandes as c, adresse as d, utilisateurs as u 
-                                    WHERE c.utilisateur_id = ? AND d.adresse_id = c.adresse_id AND c.utilisateur_id = u.id', [
-            $_SESSION['id']
-        ])->fetchAll(PDO::FETCH_ASSOC);
-    }
-    public function updateStock($commendeId)
-    {
+
+    public function updateStock($commande_id) {
+        $userId = $_SESSION['id'];
         $req = $this->query('SELECT * FROM commandes WHERE commande_id = ?', [
-            $commendeId
-        ])->fetch(PDO::FETCH_ASSOC);
+            $commande_id
+        ])->fetch();
         if ($req['statut'] == "succeeded") {
-            $userId = $_SESSION['id'];
             $recups = $this->query('SELECT * FROM panier WHERE user_id = ?', [
                 $userId
             ])->fetchAll(\PDO::FETCH_ASSOC);
             foreach($recups as $recup)
             {
-                $newreq = $this->query('UPDATE stock SET stock = (stock - ?) WHERE produit_id = ? AND taille = ?', [
+                $newreq = $this->query('UPDATE stock SET quantity = (quantity - ?) WHERE product_id = ? AND size = ?', [
                     $recup['quantity'],
                     $recup['product_id'],
                     $recup['size'],
@@ -127,4 +123,5 @@ class actionPanier extends DataBase
             }
         }
     }
+
 }

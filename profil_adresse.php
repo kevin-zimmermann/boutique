@@ -33,7 +33,6 @@ if (!isset($_SESSION['id'])) {
 <main>
     <div class="container">
         <div class="row justify-content-center">
-            <div>
                 <div class="card">
                     <div class="card-header">Liste des adresses</div>
                     <div class="card-body">
@@ -69,7 +68,7 @@ if (!isset($_SESSION['id'])) {
                             <?php } ?>
                             </tbody>
                         </table>
-                        <button class="btn btn-dark"><a href="profil_add_adress.php">Ajouter une adresse</a></button>
+                        <button class="btn btn-dark"><a class="lien" href="profil_add_adress.php">Ajouter une adresse</a></button>
 
                     </div>
                 </div>
@@ -80,13 +79,13 @@ if (!isset($_SESSION['id'])) {
         <div class="get-delete-inner get-popup-inner">
             <h3>Confirmation <a class="overlay-popup close-popup-delete" href=""></a></h3>
             <div class="content-delete">
-                blabla
+                Supprimer cette élément ?
             </div>
             <div class="conf">
                 <form action="action.php" class="action-ajax" method="post">
                     <input type="hidden" name="type" value="deleteAddress">
                     <input type="hidden" class="action-input-hidden">
-                    <button class="btn btn-primary">button</button>
+                    <button class="btn btn-primary">Supprimer</button>
                 </form>
 
             </div>
@@ -97,7 +96,7 @@ if (!isset($_SESSION['id'])) {
         <div class="get-error-inner r get-popup-inner">
             <h3>Oops il y a une erreur <a class="overlay-popup close-popup-error" href=""></a></h3>
             <div class="content-error">
-                blabla
+                Supprimer cette élément ?
             </div>
         </div>
 
