@@ -7,6 +7,7 @@ const confPassword = $('#confpassword');
 var checkvalid = true;
 
 $(document).ready(function () {
+    addResponsive();
     $(".form-ajax").submit(function (e) {
         e.preventDefault();
         if ($(this).find("[name=type]").val() === "inscription") {
@@ -203,6 +204,20 @@ function ismdp(password) {
 
 function isphone(phone){
     return /^(06|07)[0-9]{8}/.test(phone);
+}
+
+function addResponsive(){
+    let cardBody = $('.card-body');
+    let html = cardBody.html();
+    let append = $('<div></div>');
+    append.addClass('table-responsive');
+    append.append(html);
+    cardBody.html(append);
+    /*const x = document.getElementsByClassName('.card-body');
+    const a = document.createElement("div")
+    a.innerHTML
+    document.body.appendChild(a);*/
+
 }
 
 

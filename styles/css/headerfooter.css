@@ -360,7 +360,7 @@ main .btn-dark{
 }
 
 @media screen and (max-width: 980px) {
-    .no-responsive-header {
+    .big-header {
         display: none;
     }
 

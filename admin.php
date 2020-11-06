@@ -60,7 +60,7 @@ if (!$user->isAdmin()) {
                             <th scope="col">Prix</th>
                             <th scope="col">Statut</th>
                             <th scope="col">Supprimer</th>
-                            <th scope="col">View PD</th>
+                            <th scope="col">View</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -73,9 +73,12 @@ if (!$user->isAdmin()) {
                                 <td><?= $commande['email'] ?></td>
                                 <td><?= $commande['prix'] ?>€</td>
                                 <td><?= $commande['statut'] ?></td>
-                                <td class="ajax-delete" data-id="<?= $commande['commande_id'] ?>" data-name="commande_id"><i
+                                <td class="ajax-delete" data-id="<?= $commande['commande_id'] ?>"
+                                    data-name="commande_id"><i
                                             class="fas fa-trash"></i></td>
-                                <td> <a href="admin_commande_view.php?commande_id=<?= $commande['commande_id'] ?>">View</a></td>
+                                <td>
+                                    <a href="admin_commande_view.php?commande_id=<?= $commande['commande_id'] ?>">View</a>
+                                </td>
                             </tr>
                         <?php } ?>
                         </tbody>
