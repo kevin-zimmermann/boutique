@@ -328,6 +328,7 @@ main .btn-dark{
 .topnav #myLinks {
     display: none;
 }
+
 .fontlogo{
     font-family: "Permanent Marker";
 }
@@ -357,8 +358,9 @@ main .btn-dark{
     background-color: whitesmoke;
     color: white;
 }
+
 @media screen and (max-width: 980px) {
-    .big-header {
+    .no-responsive-header {
         display: none;
     }
 
