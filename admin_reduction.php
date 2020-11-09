@@ -38,35 +38,37 @@ $datetime = new \DateTime();
             <div class="card" style="width: -webkit-fill-available;">
                 <div class="card-header">Liste des coupons de réduction</div>
                 <div class="card-body responsive">
-                    <table class="table">
-                        <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">#id</th>
-                            <th scope="col">Date limite</th>
-                            <th scope="col">Nom du coupon</th>
-                            <th scope="col">Valeur</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Supprimer</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php if (empty($reduc->getReduc())) {
-                            echo "Aucun coupon de réduction n'existe";
-                        } else {
-                            foreach ($reduc->getReduc() as $reduction) { ?>
-                                <tr class="table-ajax">
-                                    <th scope="row"><?= $reduction['discount_id'] ?></th>
-                                    <td><?= $datetime->setTimestamp($reduction['valid_time'])->format('d/m/Y')?></td>
-                                    <td><?= $reduction['nom'] ?></td>
-                                    <td><?= $reduction['valeur'] ?></td>
-                                    <td><?= $reduction['type'] ?></td>
-                                    <td class="ajax-delete" data-id="<?= $reduction['discount_id'] ?>"
-                                        data-name="discount_id"><i class="fas fa-trash"></i></td>
-                                </tr>
-                            <?php }
-                        } ?>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#id</th>
+                                <th scope="col">Date limite</th>
+                                <th scope="col">Nom du coupon</th>
+                                <th scope="col">Valeur</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Supprimer</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php if (empty($reduc->getReduc())) {
+                                echo "Aucun coupon de réduction n'existe";
+                            } else {
+                                foreach ($reduc->getReduc() as $reduction) { ?>
+                                    <tr class="table-ajax">
+                                        <th scope="row"><?= $reduction['discount_id'] ?></th>
+                                        <td><?= $datetime->setTimestamp($reduction['valid_time'])->format('d/m/Y') ?></td>
+                                        <td><?= $reduction['nom'] ?></td>
+                                        <td><?= $reduction['valeur'] ?></td>
+                                        <td><?= $reduction['type'] ?></td>
+                                        <td class="ajax-delete" data-id="<?= $reduction['discount_id'] ?>"
+                                            data-name="discount_id"><i class="fas fa-trash"></i></td>
+                                    </tr>
+                                <?php }
+                            } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -131,7 +133,8 @@ $datetime = new \DateTime();
                 next();
             })
         }
-        $('.close-popup').click(function (e){
+
+        $('.close-popup').click(function (e) {
             e.preventDefault()
             leavePopup($(this).closest('.get-popup'))
         })
@@ -199,7 +202,7 @@ $datetime = new \DateTime();
                     console.log(data[1])
                     if (data[1].error.length) {
                         $(".content-error").html(data[1].error)
-                        $('.get-error').css('display','block').animate({opacity: 1}, {duration: 100});
+                        $('.get-error').css('display', 'block').animate({opacity: 1}, {duration: 100});
                         $('.get-error').find('.content-error').html($(this).data('phrase-error'));
                         console.log($('.get-error'))
                     } else {

@@ -38,6 +38,7 @@ if (!isset($_SESSION['id'])) {
                 <div class="card">
                     <div class="card-header">Récap produit</div>
                     <div class="card-body">
+                        <div class="table-responsive">
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
@@ -60,6 +61,7 @@ if (!isset($_SESSION['id'])) {
                             <?php } ?>
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>

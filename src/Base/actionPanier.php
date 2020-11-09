@@ -114,7 +114,7 @@ class actionPanier extends DataBase
             ])->fetchAll(\PDO::FETCH_ASSOC);
             foreach($recups as $recup)
             {
-                $newreq = $this->query('UPDATE stock SET quantity = (quantity - ?) WHERE product_id = ? AND size = ?', [
+                $newreq = $this->query('UPDATE stock SET stock = (stock - ?) WHERE produit_id = ? AND taille = ?', [
                     $recup['quantity'],
                     $recup['product_id'],
                     $recup['size'],

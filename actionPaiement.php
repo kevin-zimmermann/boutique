@@ -92,10 +92,9 @@ $cart = new \Base\discount();
         ]);
         $last_insert_id = $cart->lastInsertId();
         $cart->updateStock($last_insert_id);
-        var_dump($last_insert_id);
         //if order inserted successfully
         if ($last_insert_id && $payment_status == 'succeeded') {
-            $statusMsg = "<h2>The transaction was successful.</h2><h4>Order ID: {$last_insert_id}</h4>";
+            $statusMsg = "<h2>The transaction was successful.</h2><h4>Order ID: {$last_insert_id}</h4><a href='index.php'>Retour à l'accueil</a>";
         } else {
             $statusMsg = "Transaction has been failed";
         }

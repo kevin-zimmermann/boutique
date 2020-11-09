@@ -38,7 +38,7 @@ $product = $produit->setProduct();
 <main>
     <div class="container">
         <h1 class="title"> Formulaire produit</h1>
-        <form action="actionAdmin.php" id="form" class="form form-ajax" method="post" enctype="multipart/form-data">
+        <form action="actionAdmin.php?produit_id=<?= $product->produit_id ?>" id="form" class="form form-ajax" method="post" enctype="multipart/form-data">
             <div class="form-article">
                 <label for="categorie-select">Catégorie</label> <br/>
                 <select name="categorie" id="categorie-select" class="input">
@@ -57,10 +57,10 @@ $product = $produit->setProduct();
             </div>
             <div class="form-article">
                 <label for="des">Description</label> <br/>
-                <textarea id="description" name="description" class="input" value="<?= $product->description ?>"> </textarea>
+                <textarea id="description" name="description" class="input"><?= $product->description ?></textarea>
             </div>
             <div class="form-article">
-                <?php foreach ($product->getSizes() as $size) { ?>
+                <?php foreach ($product->getSize() as $size) { ?>
                 <label><?= strtoupper($size['taille']) ?></label>
                 <input type="number" value="<?= $size['stock'] ?>" name="<?= $size['taille'] ?>" class="input">
                 <?php } ?>
@@ -70,7 +70,7 @@ $product = $produit->setProduct();
                 <input type="number" id="prix" name="prix" class="input" min="0" step="0.01"
                        value="<?= $product->prix ?>">
             </div>
-            <input type="hidden" value="addproduct" name="type" class="input">
+            <input type="hidden" value="modifAdminProduct" name="type" class="input">
             <button type="submit">Envoyer</button>
         </form>
     </div>

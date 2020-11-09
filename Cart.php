@@ -22,14 +22,15 @@
 <?php include 'header.php' ?>
 <?php
 $carts = new Base\actionPanier();
-$product= new \Base\product__cat();
+$product = new \Base\product__cat();
 $discount = new \Base\discount();
 
 ?>
 <main>
     <div class="container">
         <div class="row justify-content-center">
-                <div class="card-body">
+            <div class="card-body">
+                <div class="table-responsive">
                     <table class="table">
                         <thead class="thead-dark">
                         <tr>
@@ -49,11 +50,13 @@ $discount = new \Base\discount();
                             $onep = $carts->onePrice($cart['produit_id']);
                             ?>
                             <tr class="table-ajax">
-                                <td><img width="49px" src="data/product_img/<?= $cart['produit_id'] ?>.jpg" alt="<?= $cart['nom_produit'] ?>"></td>
+                                <td><img width="49px" src="data/product_img/<?= $cart['produit_id'] ?>.jpg"
+                                         alt="<?= $cart['nom_produit'] ?>"></td>
                                 <td><?= $cart['nom_produit'] ?></td>
-                                <td><?= strtoupper($cart['size'])?></td>
-                                <td><select class="qte" data-product-id="<?= $cart['produit_id'] ?>" data-size="<?= $cart['size'] ?>">
-                                        <?php for ($i = 1; $i <= $stock->stock; ++$i) {?>
+                                <td><?= strtoupper($cart['size']) ?></td>
+                                <td><select class="qte" data-product-id="<?= $cart['produit_id'] ?>"
+                                            data-size="<?= $cart['size'] ?>">
+                                        <?php for ($i = 1; $i <= $stock->stock; ++$i) { ?>
                                             <option value="<?= $i ?>" <?= $i == $cart['quantity'] ? 'selected' : '' ?>>
                                                 <?= $i ?>
                                             </option>
@@ -90,17 +93,18 @@ $discount = new \Base\discount();
                                     Supprimer cette élément ?
                                 </div>
                             </div>
-
                         </div>
 
-                        </tbody>
-                    </table>
-                    <div class="print-price">
-                        <h2>Prix TTC:</h2>
-                       <p><?php echo $carts->getPrice()[0]?>€</p>
-                    </div>
-                    <button class="btn btn-dark validpanier">Passer commande</button>
                 </div>
+
+                </tbody>
+                </table>
+                <div class="print-price">
+                    <h2>Prix TTC:</h2>
+                    <p><?php echo $carts->getPrice()[0] ?>€</p>
+                </div>
+                <button class="btn btn-dark validpanier">Passer commande</button>
+            </div>
         </div>
     </div>
 </main>
@@ -108,7 +112,7 @@ $discount = new \Base\discount();
 </body>
 </html>
 <script>
-    $('.validpanier').click(function (){
+    $('.validpanier').click(function () {
         $.ajax({
             url: 'action.php',
             method: 'POST',
@@ -122,6 +126,7 @@ $discount = new \Base\discount();
             }
         })
     })
+
     function leavePopup(getPopup) {
         getPopup.animate({opacity: 0}, {duration: 100}).delay(100).queue(function (next) {
             $(this).removeClass('active-overlay');
@@ -168,14 +173,14 @@ $discount = new \Base\discount();
         let productId = $(this).data('product-id');
         let size = $(this).data('size');
         $.ajax({
-            url : 'size.php',
-            method : 'POST',
-            data : {
-                productId : productId,
-                size : size,
-                value : value
+            url: 'size.php',
+            method: 'POST',
+            data: {
+                productId: productId,
+                size: size,
+                value: value
             },
-            success : (data) =>{
+            success: (data) => {
 
             }
 
