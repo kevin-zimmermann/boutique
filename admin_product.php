@@ -36,9 +36,10 @@ if (!$user->isAdmin()) {
     <h1 class="title"> Panel Admin</h1>
     <div class="container">
         <div class="row justify-content-center">
-                <div class="card">
-                    <div class="card-header">Liste des produits</div>
-                    <div class="card-body responsive">
+            <div class="card">
+                <div class="card-header">Liste des produits</div>
+                <div class="card-body responsive">
+                    <div class="table-responsive">
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
@@ -56,12 +57,14 @@ if (!$user->isAdmin()) {
                             <?php foreach ($product->getProducts() as $product) { ?>
                                 <tr class="table-ajax">
                                     <th scope="row"><?= $product['produit_id'] ?></th>
-                                    <td><img width="49px" src="data/product_img/<?= $product['produit_id'] ?>.jpg" alt="<?= $product['nom_produit'] ?>"></td>
+                                    <td><img width="49px" src="data/product_img/<?= $product['produit_id'] ?>.jpg"
+                                             alt="<?= $product['nom_produit'] ?>"></td>
                                     <td><?= $product['categorie_id'] ?></td>
                                     <td><?= $product['nom_produit'] ?></td>
                                     <td><?= $product['description'] ?></td>
                                     <td><?= $product['prix'] ?></td>
-                                    <td class="ajax-delete" data-id="<?= $product['produit_id'] ?>" data-name="product_id"><i
+                                    <td class="ajax-delete" data-id="<?= $product['produit_id'] ?>"
+                                        data-name="product_id"><i
                                                 class="fas fa-trash"></i></td>
                                     <td><a href="admin_modif_product.php?produit_id=<?= $product['produit_id'] ?>"><i
                                                     class="fas fa-pen"></i></a></td>
@@ -69,11 +72,13 @@ if (!$user->isAdmin()) {
                             <?php } ?>
                             </tbody>
                         </table>
-                        <button class="btn btn-dark"><a class="lien" href="admin_add_product.php">Ajouter des produits</a></button>
+                        <button class="btn btn-dark"><a class="lien" href="admin_add_product.php">Ajouter des
+                                produits</a></button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="get-delete get-popup">
         <div class="get-delete-inner get-popup-inner">
@@ -102,6 +107,7 @@ if (!$user->isAdmin()) {
 
     </div>
     <script>
+
         function leavePopup(getPopup) {
             getPopup.animate({opacity: 0}, {duration: 100}).delay(100).queue(function (next) {
                 $(this).removeClass('active-overlay');
@@ -115,6 +121,7 @@ if (!$user->isAdmin()) {
             $('.get-delete').find('.action-input-hidden')
                 .attr('name', $(this).data('name'))
                 .val($(this).data('id'));
+            console.log('ee');
         })
         $('.action-ajax').submit(function (e) {
             e.preventDefault();

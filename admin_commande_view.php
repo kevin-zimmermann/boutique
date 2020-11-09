@@ -41,31 +41,35 @@ if (!$user->isAdmin()) {
                 <div class="card">
                     <div class="card-header">Liste des commandes</div>
                     <div class="card-body responsive">
-                        <table class="table">
-                            <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">id_com</th>
-                                <th scope="col">nom_produit</th>
-                                <th scope="col">Quantité</th>
-                                <th scope="col">Taille</th>
-                                <th scope="col">Prix</th>
-                                <th scope="col">Supprimer</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php foreach ($commande->getCommande() as $product) { ?>
-                                <tr class="table-ajax">
-                                    <th scope="row"><?= $product['commande_id'] ?></th>
-                                    <td><?= $product['nom_produit'] ?></td>
-                                    <td><?= $product['quantité'] ?></td>
-                                    <td><?= strtoupper($product['taille']) ?></td>
-                                    <td><?= $product['prix'] ?>€</td>
-                                    <td class="ajax-delete" data-id="<?= $product['commande_id']  ?>" data-name="adresse_id"><i
-                                                class="fas fa-trash"></i></td>
+                        <div class="table-responsive">
+
+                            <table class="table">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">id_com</th>
+                                    <th scope="col">nom_produit</th>
+                                    <th scope="col">Quantité</th>
+                                    <th scope="col">Taille</th>
+                                    <th scope="col">Prix</th>
+                                    <th scope="col">Supprimer</th>
                                 </tr>
-                            <?php } ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($commande->getCommande() as $product) { ?>
+                                    <tr class="table-ajax">
+                                        <th scope="row"><?= $product['commande_id'] ?></th>
+                                        <td><?= $product['nom_produit'] ?></td>
+                                        <td><?= $product['quantité'] ?></td>
+                                        <td><?= strtoupper($product['taille']) ?></td>
+                                        <td><?= $product['prix'] ?>€</td>
+                                        <td class="ajax-delete" data-id="<?= $product['commande_id'] ?>"
+                                            data-name="adresse_id"><i
+                                                    class="fas fa-trash"></i></td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

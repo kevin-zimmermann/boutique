@@ -207,12 +207,12 @@ function isphone(phone){
 }
 
 function addResponsive(){
-    let cardBody = $('.responsive');
-    let html = cardBody.html();
-    let append = $('<div></div>');
-    append.addClass('table-responsive');
-    append.append(html);
-    cardBody.html(append);
+    // let cardBody = $('.responsive');
+    // let html = cardBody.html();
+    // let append = $('<div></div>');
+    // append.addClass('table-responsive');
+    // append.append(html);
+    // cardBody.html(append);
 }
 
 

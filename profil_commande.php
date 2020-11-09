@@ -27,7 +27,7 @@ use Base\Profil;
 $user = new Base\profil_utilisateurs();
 $user = new Base\profil_utilisateurs();
 $carts = new \Base\actionPanier();
-$product= new \Base\product__cat();
+$product = new \Base\product__cat();
 $data = new DateTime();
 
 if (!isset($_SESSION['id'])) {
@@ -37,9 +37,11 @@ if (!isset($_SESSION['id'])) {
 <main>
     <div class="container">
         <div class="row justify-content-center">
-                <div class="card">
-                    <div class="card-header">Liste des commandes</div>
-                    <div class="card-body responsive">
+            <div class="card">
+                <div class="card-header">Liste des commandes</div>
+                <div class="card-body responsive">
+                    <div class="table-responsive">
+
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
@@ -55,11 +57,12 @@ if (!isset($_SESSION['id'])) {
                             <?php foreach ($carts->getCommande() as $product) { ?>
                                 <tr class="table-ajax">
                                     <th scope="row"><?= $product['commande_id'] ?></th>
-                                    <td><?= $data->setTimestamp($product['creationdate'])->format('d/m/Y');?></td>
+                                    <td><?= $data->setTimestamp($product['creationdate'])->format('d/m/Y'); ?></td>
                                     <td><?= $product['nom'] ?></td>
                                     <td><?= $product['prenom'] ?></td>
                                     <td><?= $product['email'] ?></td>
-                                    <td> <a href="profil_commande_view.php?commande_id=<?= $product['commande_id'] ?>">View</a></td>
+                                    <td><a href="profil_commande_view.php?commande_id=<?= $product['commande_id'] ?>">View</a>
+                                    </td>
                                 </tr>
                             <?php } ?>
                             </tbody>
@@ -68,6 +71,7 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </main>
 </body>

@@ -49,40 +49,43 @@ if (!$user->isAdmin()) {
             <div class="card">
                 <div class="card-header">Commandes en cours</div>
                 <div class="card-body responsive">
-                    <table class="table">
-                        <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">#id_com</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Prénom</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Prix</th>
-                            <th scope="col">Statut</th>
-                            <th scope="col">Supprimer</th>
-                            <th scope="col">View</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach ($commandes->getAllCommande() as $commande) { ?>
-                            <tr class="table-ajax">
-                                <th scope="row"><?= $commande['commande_id'] ?></th>
-                                <td><?= $data->setTimestamp($commande['creationdate'])->format('d/m/Y'); ?></td>
-                                <td><?= $commande['nom'] ?></td>
-                                <td><?= $commande['prenom'] ?></td>
-                                <td><?= $commande['email'] ?></td>
-                                <td><?= $commande['prix'] ?>€</td>
-                                <td><?= $commande['statut'] ?></td>
-                                <td class="ajax-delete" data-id="<?= $commande['commande_id'] ?>"
-                                    data-name="commande_id"><i
-                                            class="fas fa-trash"></i></td>
-                                <td>
-                                    <a href="admin_commande_view.php?commande_id=<?= $commande['commande_id'] ?>">View</a>
-                                </td>
+                    <div class="table-responsive">
+
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#id_com</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Prénom</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Prix</th>
+                                <th scope="col">Statut</th>
+                                <th scope="col">Supprimer</th>
+                                <th scope="col">View</th>
                             </tr>
-                        <?php } ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($commandes->getAllCommande() as $commande) { ?>
+                                <tr class="table-ajax">
+                                    <th scope="row"><?= $commande['commande_id'] ?></th>
+                                    <td><?= $data->setTimestamp($commande['creationdate'])->format('d/m/Y'); ?></td>
+                                    <td><?= $commande['nom'] ?></td>
+                                    <td><?= $commande['prenom'] ?></td>
+                                    <td><?= $commande['email'] ?></td>
+                                    <td><?= $commande['prix'] ?>€</td>
+                                    <td><?= $commande['statut'] ?></td>
+                                    <td class="ajax-delete" data-id="<?= $commande['commande_id'] ?>"
+                                        data-name="commande_id"><i
+                                                class="fas fa-trash"></i></td>
+                                    <td>
+                                        <a href="admin_commande_view.php?commande_id=<?= $commande['commande_id'] ?>">View</a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
