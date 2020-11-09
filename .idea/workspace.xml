@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="re commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/product_img/40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/product_img/40.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/product_img/0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/product_img/0.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/product_img/40.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/product_img/44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/product_img/44.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/headerfooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/headerfooter.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lea" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -198,10 +201,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604675590662">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604934284758">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604675590662" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604934284758" />
     <state x="735" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604586769249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
