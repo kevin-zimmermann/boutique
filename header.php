@@ -13,6 +13,37 @@ $panier = new Base\actionPanier();
 </head>
 
 <header>
+    <div class="topnav">
+        <a href="index.php" class="active fontlogo">FOO2FOOT</a>
+        <div id="myLinks">
+            <h5 class="text-white h4"><a href="index.php">Accueil</a></h5>
+            <h5 class="text-white h4"><a href="boutique_all.php">Boutique</a></h5>
+            <?php if ($user->getIsConnect()) {
+                ?>
+                <h5 class="text-white h4">
+                    <a href="cart.php">
+                        Panier
+                    </a>
+                    </a></h5>
+                <h5 class="text-white h4">
+                    <a href="profil.php">
+                        Profil
+                    </a>
+                    </a></h5>
+                <?php
+                if ($user->isAdmin()) {
+                    ?>
+                    <a class="dropdown-item" href="admin.php">Panel admin</a>
+                <?php } ?>
+                <h5 class="text-white h4">
+                    <a href="disconnect.php">Déconnexion</a>
+                    </a></h5>
+            <?php } ?>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
     <div class="big-header">
         <div class="no-responsive-header">
             <div class="inline-nav-img">
@@ -88,38 +119,6 @@ $panier = new Base\actionPanier();
                 <button class="btn btn-dark" type="submit">Search</button>
             </form>
         </div>
-    </div>
-
-    <div class="topnav">
-        <a href="index.php" class="active fontlogo">FOO2FOOT</a>
-        <div id="myLinks">
-            <h5 class="text-white h4"><a href="index.php">Accueil</a></h5>
-            <h5 class="text-white h4"><a href="boutique_all.php">Boutique</a></h5>
-            <?php if ($user->getIsConnect()) {
-                ?>
-                <h5 class="text-white h4">
-                    <a href="cart.php">
-                        Panier
-                    </a>
-                    </a></h5>
-                <h5 class="text-white h4">
-                    <a href="profil.php">
-                        Profil
-                    </a>
-                    </a></h5>
-                <?php
-                if ($user->isAdmin()) {
-                    ?>
-                    <a class="dropdown-item" href="admin.php">Panel admin</a>
-                <?php } ?>
-                <h5 class="text-white h4">
-                    <a href="disconnect.php">Déconnexion</a>
-                    </a></h5>
-            <?php } ?>
-        </div>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
     </div>
 
 </header>

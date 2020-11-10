@@ -217,7 +217,13 @@ footer {
 
     font-size: 35px;
 }
-
+.get-delete .get-popup{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
 .get-delete, .get-error {
     position: absolute;
     top: 0;
@@ -306,8 +312,8 @@ footer {
 }
 
 main .btn-dark{
-    margin: 10px;
-    width:320px;
+    margin: 5px;
+    width: 320px;
 }
 
 .profil {
@@ -361,7 +367,7 @@ main .btn-dark{
 }
 
 @media screen and (max-width: 980px) {
-    .big-header {
+    .no-responsive-header {
         display: none;
     }
 

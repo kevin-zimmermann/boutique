@@ -30,12 +30,13 @@ $header = new Base\Header();
         <ul>
             <?php foreach ($header->getCategories() as $categorie) { ?>
                 <div class="print-cat">
-                    <li>
-                        <a href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></a>
+                    <li id="one_cat">
+                        <a class="link" href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></a>
                     </li>
                 </div>
             <?php } ?>
         </ul>
+        <h2 class="value_cat"><?= $product->gettheCat()[0]['nom_categorie'] ?></h2>
     </div>
     <div class="cards-list">
         <?php foreach ($product->getProducts() as $product) { ?>
@@ -62,3 +63,14 @@ $header = new Base\Header();
 <?php include 'footer.php' ?>
 </body>
 </html>
+<!--<script>-->
+<!--    $(document).ready(function(){-->
+<!--    var valuecat = $('.value_cat').html();-->
+<!--    var bla = $('.link').html();-->
+<!---->
+<!---->
+<!--        console.log(valuecat);-->
+<!--        console.log(bla);-->
+<!---->
+<!--    });-->
+<!--</script>-->

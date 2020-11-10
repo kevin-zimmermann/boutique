@@ -15,5 +15,6 @@
                 <li><a href=""> <i class="fab fa-twitter"></i></a></li>
         </ul>
     </div>
+    <p>COPYRIGHT© BY KE20 & Lea MARTEL</p>
 </footer>
 <script src="script.js"></script>

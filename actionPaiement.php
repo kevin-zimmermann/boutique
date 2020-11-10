@@ -23,6 +23,7 @@
 <?php include 'config.php' ?>
 <?php
 $cart = new \Base\discount();
+
 ?>
 <?php
 //check whether stripe token is not empty
