@@ -31,13 +31,15 @@ $header = new Base\Header();
             <?php foreach ($header->getCategories() as $categorie) { ?>
                 <div class="print-cat">
                     <li id="one_cat">
-                        <a class="link <?= $_GET['category_id'] == $categorie['categorie_id'] ? 'is-active' : '' ?>" href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></a>
+                        <a class="link <?= $_GET['category_id'] == $categorie['categorie_id'] ? 'is-active' : '' ?>"
+                           href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></a>
                     </li>
                 </div>
             <?php } ?>
         </ul>
         <h2 class="value_cat"><?= $product->gettheCat()[0]['nom_categorie'] ?></h2>
     </div>
+    <h2 id="value_cat"><?= $product->gettheCat()[0]['nom_categorie'] ?></h2>
     <div class="cards-list">
         <?php foreach ($product->getProducts() as $product) { ?>
             <div class="card-desk-content">
@@ -50,7 +52,8 @@ $header = new Base\Header();
                     </div>
                     <div class="footer-product">
                         <p class="card-text"></p>
-                        <button type="button" class="btn btn-dark"><a class="lien" href="product.php?produit_id=<?= $product['produit_id'] ?>">Voir
+                        <button type="button" class="btn btn-dark"><a class="lien"
+                                                                      href="product.php?produit_id=<?= $product['produit_id'] ?>">Voir
                                 plus</button>
                         </a>
                     </div>
