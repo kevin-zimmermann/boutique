@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="106c014e-e88e-4b5a-960c-43243ef026f8" name="Default Changelist" comment="re commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/product_img/0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/product_img/0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/product_img/40.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/product_img/44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/product_img/44.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/headerfooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/headerfooter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil_add_adress.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil_add_adress.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="lea" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,6 +82,7 @@
       <workItem from="1604570824663" duration="4983000" />
       <workItem from="1604657379128" duration="4672000" />
       <workItem from="1604930596768" duration="1588000" />
+      <workItem from="1605022445773" duration="2917000" />
     </task>
     <task id="LOCAL-00001" summary="add admin.php">
       <created>1601996894656</created>
@@ -149,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604675518160</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ajouts chaussettes">
+      <created>1604942137627</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604942137627</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +171,8 @@
     <MESSAGE value="modif admin" />
     <MESSAGE value="ajout css" />
     <MESSAGE value="ajout survette + modif css" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout survette + modif css" />
+    <MESSAGE value="ajouts chaussettes" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajouts chaussettes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1602157973020">
@@ -201,10 +207,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="437" y="0" width="1366" height="1040" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602086042687" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604934284758">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604942334699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604934284758" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604942334699" />
     <state x="735" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604586769249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -26,7 +26,7 @@ if (!isset($_SESSION['id'])) {
     header('location:index.php');
 } ?>
 <main>
-    <div class="container">
+    <div class="container-ombre">
         <h1 class="title"> Ajouter une adresse</h1>
         <form action="action.php" id="form" class="form form-ajax" method="post">
 
