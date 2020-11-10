@@ -189,6 +189,7 @@ form.form-inline {
     position: absolute;
     display: flex;
     padding: 10px;
+    max-width: 400px;
 }
 
 .search-box-content {
@@ -395,6 +396,7 @@ main .btn-dark {
 
     .topnav {
         display: block;
+        z-index: 1000000;
     }
 
     #value_cat {
@@ -402,7 +404,6 @@ main .btn-dark {
     }
     .list-header li {
         display: none;
-
     }
 
 }

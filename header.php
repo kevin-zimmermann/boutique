@@ -108,10 +108,11 @@ header('location:index.php');
                 <li class="dropdown">
                     <a data-toggle="dropdown" href="boutique_all.php">Boutique</a>
                     <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           href="boutique_all.php">Voir tous les produits</a>
                         <?php foreach ($header->getCategories() as $categorie) { ?>
                             <a class="dropdown-item"
                                href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></a>
-
                         <?php } ?>
                     </div>
                 </li>
