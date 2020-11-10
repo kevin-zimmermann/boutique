@@ -119,14 +119,11 @@ class product__cat extends DataBase
 
     public function getProducts()
     {
-        if(isset($_GET['category_id']))
-        {
+        if (isset($_GET['category_id'])) {
             $response = $this->query('SELECT * FROM produit WHERE categorie_id = ?', [
                 $_GET['category_id']
             ]);
-        }
-        else
-        {
+        } else {
             $response = $this->query('SELECT * FROM produit');
         }
         return $response->fetchAll(\PDO::FETCH_ASSOC);
@@ -149,6 +146,7 @@ class product__cat extends DataBase
     {
         return $this->query('SELECT * FROM stock WHERE produit_id = ? AND stock > 0 ORDER BY taille', [$_GET['produit_id']])->fetchAll(\PDO::FETCH_ASSOC);
     }
+
     public function getSize()
     {
         return $this->query('SELECT * FROM stock WHERE produit_id = ? ORDER BY taille', [$_GET['produit_id']])->fetchAll(\PDO::FETCH_ASSOC);
@@ -303,6 +301,15 @@ class product__cat extends DataBase
 
     }
 
+    public function gettheCat()
+    {
+        $response = $this->query('SELECT * from categorie WHERE categorie_id = ?', [
+            $_GET['category_id'],
+        ]);
+        return $response->fetchAll(\PDO::FETCH_ASSOC);
+
+    }
+
     public function Cart()
     {
         $stock = $_POST['stock'];
@@ -312,10 +319,8 @@ class product__cat extends DataBase
             $size,
             $productId
         ])->fetch(\PDO::FETCH_ASSOC);
-        if(isset($_SESSION['id']))
-        {
-            if($stockSize['stock'] >= $stock)
-            {
+        if (isset($_SESSION['id'])) {
+            if ($stockSize['stock'] >= $stock) {
                 $id = $_SESSION['id'];
 
                 $existCarts = $this->query('SELECT * FROM panier WHERE product_id = ? AND user_id = ? AND size = ?', [
@@ -323,17 +328,14 @@ class product__cat extends DataBase
                     $id,
                     $size
                 ])->fetch(\PDO::FETCH_ASSOC);
-                if(!empty($existCarts))
-                {
+                if (!empty($existCarts)) {
                     $this->query('UPDATE panier SET quantity = ? WHERE product_id = ? AND user_id = ? AND size = ?', [
                         $stock,
                         $productId,
                         $id,
                         $size
                     ]);
-                }
-                else
-                {
+                } else {
                     $this->query('INSERT INTO panier(product_id, user_id, quantity, size) VALUES(?,?,?,?)', [
                         $productId,
                         $id,
@@ -344,9 +346,7 @@ class product__cat extends DataBase
 
                 return [];
             }
-        }
-        else
-        {
+        } else {
             if (!isset($_SESSION['panier'])) {
                 $_SESSION['panier'] = array();
             }

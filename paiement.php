@@ -26,6 +26,9 @@
 $carts = new Base\actionPanier();
 $adress = new \Base\profil_utilisateurs();
 $discount = new \Base\discount();
+if (empty($_SESSION['id'])) {
+    header('location:index.php');
+}
 ?>
 <main>
     <h1>Charge <span class="price"> <?= $carts->getPanierPrice()['prix_reduc'] ?></span>€ with Stripe</h1>
