@@ -35,10 +35,10 @@ if (!isset($_SESSION['id'])) {
 <main>
     <div class="container">
         <div class="row justify-content-center">
-                <div class="card">
-                    <div class="card-header">Récap produit</div>
-                    <div class="card-body">
-                        <div class="table-responsive">
+            <div class="card">
+                <div class="card-header">Récap produit</div>
+                <div class="card-body">
+                    <div class="table-responsive">
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
@@ -60,8 +60,12 @@ if (!isset($_SESSION['id'])) {
                                 </tr>
                             <?php } ?>
                             </tbody>
+                            <div class="print-price">
+                                <h2>Prix TTC:</h2>
+                                <p><?php echo $commande->priceCommande()[0]['prix']?>€</p>
+                            </div>
                         </table>
-                        </div>
+
                     </div>
                 </div>
             </div>

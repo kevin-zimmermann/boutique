@@ -19,6 +19,11 @@ class commande extends DataBase
                                     WHERE  d.adresse_id = c.adresse_id AND c.utilisateur_id = u.id'
         )->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function priceCommande(){
+        return $this->query('SELECT prix FROM commandes WHERE commande_id = ?',[
+            $_GET['commande_id']
+        ])->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 
 
