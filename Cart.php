@@ -96,7 +96,6 @@ $discount = new \Base\discount();
                         </div>
 
                 </div>
-
                 </tbody>
                 </table>
                 <div class="print-price">
