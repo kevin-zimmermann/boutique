@@ -31,7 +31,7 @@ $header = new Base\Header();
             <?php foreach ($header->getCategories() as $categorie) { ?>
                 <div class="print-cat">
                     <li id="one_cat">
-                        <a class="link" href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></a>
+                        <a class="link <?= $_GET['category_id'] == $categorie['categorie_id'] ? 'is-active' : '' ?>" href="boutique.php?category_id=<?= $categorie['categorie_id'] ?>"><?= $categorie['nom_categorie'] ?></a>
                     </li>
                 </div>
             <?php } ?>
@@ -63,14 +63,3 @@ $header = new Base\Header();
 <?php include 'footer.php' ?>
 </body>
 </html>
-<!--<script>-->
-<!--    $(document).ready(function(){-->
-<!--    var valuecat = $('.value_cat').html();-->
-<!--    var bla = $('.link').html();-->
-<!---->
-<!---->
-<!--        console.log(valuecat);-->
-<!--        console.log(bla);-->
-<!---->
-<!--    });-->
-<!--</script>-->

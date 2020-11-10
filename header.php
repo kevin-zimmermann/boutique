@@ -7,6 +7,9 @@ $user = new Base\profil_utilisateurs();
 $header = new Base\Header();
 $product = new Base\product__cat();
 $panier = new Base\actionPanier();
+if (isset($actionAdmin) && $actionAdmin == true && !$user->isAdmin()){
+header('location:index.php');
+}
 ?>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

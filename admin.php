@@ -17,23 +17,21 @@
     <link rel="stylesheet" href="styles/css/admin.css">
     <title> Panel admin - Foo2Foot</title>
 </head>
-<?php include 'header.php' ?>
 <body>
+<?php
+$actionAdmin = true;
+?>
+<?php include 'header.php' ?>
 <?php
 
 use Base\Profil;
 
-$user = new Base\profil_utilisateurs();
 $admin = new Base\Admin();
-$carts = new \Base\actionPanier();
-$product = new \Base\product__cat();
 $data = new DateTime();
 $commandes = new \Base\commande();
 
-if (!$user->isAdmin()) {
-    header('location:index.php');
-}
 ?>
+
 <main>
     <div class="profil">
 

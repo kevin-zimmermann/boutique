@@ -373,6 +373,9 @@ main .btn-dark{
     background-color: whitesmoke;
     color: white;
 }
+.is-active{
+    color: black !important;
+}
 
 @media screen and (max-width: 980px) {
     .no-responsive-header {
